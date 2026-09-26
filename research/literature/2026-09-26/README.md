@@ -17,6 +17,7 @@
 - [阶段 2：逐篇分析](structured_review.md)
 - [阶段 3：直接比较与创新判断](comparison_and_novelty.md)
 - [文献库 JSON](sources.json) · [BibTeX](references.bib)
+- [作者代码核查](code_audit.md) · [固定代码证据](code_evidence.json)
 - [工作日志](work_log.md) · [PDF 清单](pdf_manifest.json) · [PDF 原文](pdfs/)
 
 本报告不宣称穷尽全部数据库。预印本和正式版按同一工作去重，实际阅读版本另记。PDF 仅归档已经获取、许可允许转载的原件，其余保留入口和原因。

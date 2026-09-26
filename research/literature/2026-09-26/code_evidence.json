@@ -1,0 +1,90 @@
+{
+  "accessed": "2026-09-26",
+  "method": "static source reading only; no author code executed",
+  "snapshots": [
+    {
+      "id": "P12",
+      "repository": "zhouworks/Multifunctional-peptide-classification",
+      "commit": "1f7b35ffa8b3d51a32a92a9753ddf642d1b5c9de",
+      "files": [
+        {
+          "path": "model_GAT/GAT.py",
+          "git_blob_sha": "fa29b752a3b90f14ea68f6da7304c79960fc73b2",
+          "url": "https://github.com/zhouworks/Multifunctional-peptide-classification/blob/1f7b35ffa8b3d51a32a92a9753ddf642d1b5c9de/model_GAT/GAT.py"
+        },
+        {
+          "path": "model_GAT/GAT_train.py",
+          "git_blob_sha": "24b401b74411af7c4b566fefab82d435161af120",
+          "url": "https://github.com/zhouworks/Multifunctional-peptide-classification/blob/1f7b35ffa8b3d51a32a92a9753ddf642d1b5c9de/model_GAT/GAT_train.py"
+        },
+        {
+          "path": "model_GAT/predict.py",
+          "git_blob_sha": "a1a87f20830d77083d9d3dd55ea16eddbad77701",
+          "url": "https://github.com/zhouworks/Multifunctional-peptide-classification/blob/1f7b35ffa8b3d51a32a92a9753ddf642d1b5c9de/model_GAT/predict.py"
+        },
+        {
+          "path": "utils/threshold.py",
+          "git_blob_sha": "6f210934a31605c3f79972a0bd54f8d6497eaff7",
+          "url": "https://github.com/zhouworks/Multifunctional-peptide-classification/blob/1f7b35ffa8b3d51a32a92a9753ddf642d1b5c9de/utils/threshold.py"
+        },
+        {
+          "path": "utils/evaluation.py",
+          "git_blob_sha": "e23ccb865785a745b8285895238ce0cfebe397a0",
+          "url": "https://github.com/zhouworks/Multifunctional-peptide-classification/blob/1f7b35ffa8b3d51a32a92a9753ddf642d1b5c9de/utils/evaluation.py"
+        }
+      ]
+    },
+    {
+      "id": "P15",
+      "repository": "AaronFeller/PeptideCLM-2",
+      "commit": "6b9708d4cb05717307d310daaf1c0f88c71ff084",
+      "files": [
+        {
+          "path": "training/00_pretraining/pretraining.py",
+          "git_blob_sha": "06ea8c9ee60ee65d196f51b66512bcec6b4b6c4f",
+          "url": "https://github.com/AaronFeller/PeptideCLM-2/blob/6b9708d4cb05717307d310daaf1c0f88c71ff084/training/00_pretraining/pretraining.py"
+        },
+        {
+          "path": "training/00_pretraining/model/MTR_model.py",
+          "git_blob_sha": "efc09d55f2ae7c93e7c9c41e7a4a4406b6e527fc",
+          "url": "https://github.com/AaronFeller/PeptideCLM-2/blob/6b9708d4cb05717307d310daaf1c0f88c71ff084/training/00_pretraining/model/MTR_model.py"
+        },
+        {
+          "path": "training/00_pretraining/run_pretraining.sbatch",
+          "git_blob_sha": "daf059111055c2faa76314dc36d7a0c5db59b048",
+          "url": "https://github.com/AaronFeller/PeptideCLM-2/blob/6b9708d4cb05717307d310daaf1c0f88c71ff084/training/00_pretraining/run_pretraining.sbatch"
+        },
+        {
+          "path": "training/01_regression_benchmarks_training_code/finetune_ensemble.py",
+          "git_blob_sha": "1f4b00b042df457ae5e4845fcd43250ee76b2c5c",
+          "url": "https://github.com/AaronFeller/PeptideCLM-2/blob/6b9708d4cb05717307d310daaf1c0f88c71ff084/training/01_regression_benchmarks_training_code/finetune_ensemble.py"
+        },
+        {
+          "path": "training/02_classification_benchmarks_training_code/scripts/classification_finetuning_v2.py",
+          "git_blob_sha": "3233b956b80338922d7e3169c3216aa9a971fcad",
+          "url": "https://github.com/AaronFeller/PeptideCLM-2/blob/6b9708d4cb05717307d310daaf1c0f88c71ff084/training/02_classification_benchmarks_training_code/scripts/classification_finetuning_v2.py"
+        },
+        {
+          "path": "training/02_classification_benchmarks_training_code/experiment/benchmark_manifest.json",
+          "git_blob_sha": "ea4b3fb6cce3523957b1a18ba15cffc5564b3572",
+          "url": "https://github.com/AaronFeller/PeptideCLM-2/blob/6b9708d4cb05717307d310daaf1c0f88c71ff084/training/02_classification_benchmarks_training_code/experiment/benchmark_manifest.json"
+        },
+        {
+          "path": "training/02_classification_benchmarks_training_code/adapters/common.py",
+          "git_blob_sha": "7e442cc942882c0477b51865e35945fedcea13c7",
+          "url": "https://github.com/AaronFeller/PeptideCLM-2/blob/6b9708d4cb05717307d310daaf1c0f88c71ff084/training/02_classification_benchmarks_training_code/adapters/common.py"
+        },
+        {
+          "path": "training/02_classification_benchmarks_training_code/run_experiment.py",
+          "git_blob_sha": "807acf89cb875128a4425f0f57b04dfcd2242175",
+          "url": "https://github.com/AaronFeller/PeptideCLM-2/blob/6b9708d4cb05717307d310daaf1c0f88c71ff084/training/02_classification_benchmarks_training_code/run_experiment.py"
+        },
+        {
+          "path": "figure_generation/results/runs_LoRA_highrank/thpep/peptideclm-2-hybrid-large/seed_101/run_metadata.json",
+          "git_blob_sha": "9f09426c949e836dc9c8027a1be83fe7d9bc024e",
+          "url": "https://github.com/AaronFeller/PeptideCLM-2/blob/6b9708d4cb05717307d310daaf1c0f88c71ff084/figure_generation/results/runs_LoRA_highrank/thpep/peptideclm-2-hybrid-large/seed_101/run_metadata.json"
+        }
+      ]
+    }
+  ]
+}

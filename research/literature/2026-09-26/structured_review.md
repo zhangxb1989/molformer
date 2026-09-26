@@ -250,20 +250,20 @@ AOP-DRL: A deep representation learning framework for the computational predicti
 
 MFP-MFL: Leveraging Graph Attention and Multi-Feature Integration for Superior Multifunctional Bioactive Peptide Prediction
 
-来源：[10.3390/ijms26031317](https://pmc.ncbi.nlm.nih.gov/articles/PMC11818429/)。阅读：full_text_key_sections；published full text or author manuscript。
+来源：[10.3390/ijms26031317](https://pmc.ncbi.nlm.nih.gov/articles/PMC11818429/)。阅读：full_text_key_sections；published PDF plus static audit of author code commit 1f7b35ffa8b3d51a32a92a9753ddf642d1b5c9de。
 
 | 字段 | 抽取内容 |
 |---|---|
 | 任务定义 | 五功能多标签：AMP/AIP/AHP/ACP/ADP。 |
 | 数据集与标签 | 表 2：单功能 5,719，双功能 198；据此为 5,917 独立序列，标签条目不能当独立样本。 |
 | 输入与表示 | ESM-2、ProtT5、RoBERTa 多特征融合。 |
-| 模型与预训练 | MFP-MFL：GAT、FGM 对抗训练、加权集成。 |
-| Loss | 同时最小化 Linit 与 Ladv；原 PDF p.19 式 (10)–(11) 仅印有 y log p 项。是否实现完整 BCE 及两项权重须查代码，NR。 |
-| Inference | 每功能 sigmoid，集成输出；阈值未核实。 |
-| Metrics | 多标签 precision、coverage、accuracy、exact match、absolute false；主表 accuracy 0.786、precision 0.799。 |
-| 划分与泄漏控制 | 文中训练/验证流程须结合数据文件确认；未认定严格同源外推。 |
-| 限制与可比性 | 结论部分交换部分指标对应关系，采用主表；不能把多标签 accuracy 与二分类 accuracy 等同。 |
-| 证据位置 | 原 PDF p.5 特征集成结果表、p.14–15 数据计数、p.19 式 (10)–(11) 与结论；已核对公式页图像。 |
+| 模型与预训练 | 论文 MFP-MFL：GAT、FGM 对抗训练、多特征集成；所核公开推理快照对 30 模型等权平均。 |
+| Loss | 原 PDF p.19 式 (10)–(11) 只印正类项；作者代码 1f7b35f 的 GAT.py 使用完整 BCEWithLogitsLoss，无显式类别权重。训练入口对初始与对抗 loss 各反传一次、系数均为 1；FGM 源文件未见，扰动实现仍未核实。 |
+| Inference | 公开 predict.py 对 30 个模型 sigmoid 概率取算术平均；用被评分数据的真实标签在 0.30–0.69 中选最优阈值（全零得分回退 0），不是固定 0.5。 |
+| Metrics | 多标签 precision、coverage、accuracy、exact match、absolute false；主表 accuracy 0.786、precision 0.799。公开代码 Accuracy 是样本平均标签集合 Jaccard。 |
+| 划分与泄漏控制 | 公开训练/集成推理入口用 test 标签选阈值后在同批 test 数据计分，存在测试集参与调参；论文表格与该提交的对应尚未证实。未认定严格同源外推。 |
+| 限制与可比性 | 结论部分交换指标，采用主表；多标签 Jaccard 不能与二分类 accuracy 等同。已核代码的阈值相关成绩不视作独立测试估计；静态核查不等于复现。 |
+| 证据位置 | 原 PDF p.5 特征集成结果表、p.14–15 数据计数、p.19 式 (10)–(11) 与结论；已核对公式页图像。 作者仓库固定提交 1f7b35ffa8b3d51a32a92a9753ddf642d1b5c9de 的 GAT.py/GAT_train.py/predict.py/threshold.py/evaluation.py；逐行证据见 code_audit.md。 |
 
 
 ## P13 · BPFun（2025）
@@ -318,12 +318,12 @@ Scaling SMILES-Based Chemical Language Models for Therapeutic Peptide Engineerin
 | 数据集与标签 | CycPeptMPDB、THPep、CellPPD、AmpHGT、PepMSND；预训练含逾亿小分子与肽。 |
 | 输入与表示 | SMILES。 |
 | 模型与预训练 | PeptideCLM-2 多个规模/预训练目标变体，约 32–337M 参数。 |
-| Loss | 所读预印本：MLM 掩码 25%、99 个 RDKit 属性 MTR、混合 0.6MLM+0.4MTR；下游精确 loss NR。 |
-| Inference | 更换预测头后微调；与 RDKit/Morgan 集成基线比较。 |
+| Loss | 预印本/作者启动示例：25% span 掩码、99 RDKit 属性、0.6 token CE+0.4 MTR MSE。代码 labels 仅忽略 padding，CE 并非仅在掩码位计算。公开分类入口 BCEWithLogitsLoss；专用通透性回归入口 MSELoss；正式版实验对应未验证。 |
+| Inference | 公开分类代码使用 LoRA（r=16、alpha=32、dropout=0.1）及预测头；回归有独立集成入口。预印本与 RDKit/Morgan 基线比较；不将代码快照配置直接等同正式论文全部实验。 |
 | Metrics | 各任务分类/回归指标不同；本轮不逐项抄录未核对的最终版数值。 |
-| 划分与泄漏控制 | 预印本微调节写 THPep 随机 5 折、3 seeds；基线节又称 triplicate random splits，具体嵌套需核对代码，NR。Table 2 报告预训练重叠，不能据此声称无泄漏。 |
+| 划分与泄漏控制 | 预印本 THPep 写随机 5 折/3 seeds，另称三次随机划分。代码优先使用现成 train/val/test，缺文件才 5 折 KFold；manifest 声称 cluster-aware，seed 101 运行记录指向 prepared_data、fold=null，但划分生成文件未见，协议仍未闭合。Table 2 预训练重叠不能当无泄漏证明。 |
 | 限制与可比性 | 已确认 2026-07-13 正式在线发表，实际方法仍来自 2026-06-23 预印本 v5；正式全文访问受限，版本差异核对未完成。该预印本 CC BY 许可不可直接套用于正式版。 |
-| 证据位置 | PMC12803269 v5 的 Downstream evaluation protocols/Table 2；正式元数据另见 PubMed 42443143 与 ACS DOI。 |
+| 证据位置 | PMC12803269 v5 的 Downstream evaluation protocols/Table 2；正式元数据另见 PubMed 42443143 与 ACS DOI。 作者仓库 2026-07-23 提交 6b9708d4cb05717307d310daaf1c0f88c71ff084 的预训练、分类、回归、manifest 与运行记录；固定行链接见 code_audit.md。 |
 
 
 ## P16 · LANTERN（2026）

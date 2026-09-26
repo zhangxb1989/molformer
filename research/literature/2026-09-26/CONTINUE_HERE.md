@@ -4,7 +4,7 @@
 
 ## 先读
 
-README.md、quality_check.md、comparison_and_novelty.md、structured_review.md、sources.json、screening.md、pdf_manifest.json、archive_verification.json。不要从零重查。
+README.md、code_audit.md、quality_check.md、comparison_and_novelty.md、structured_review.md、sources.json、screening.md、pdf_manifest.json、archive_verification.json。不要从零重查。
 
 ## 已完成
 
@@ -13,7 +13,8 @@ README.md、quality_check.md、comparison_and_novelty.md、structured_review.md�
 3. P19 当前官方原件与旧记录字节不同，manifest 保留 previous_download，当前字段对应实际归档原件。其余 7 份与旧哈希相同。不要把旧 P19 哈希覆盖回当前文件。
 4. 清理题名/期刊中的 HTML 标签、实体及换行，同步 JSON、Markdown、BibTeX、PDF 清单和本地历史命名的 inventory。
 5. P14 的 7,475 条通透数据补记 PAMPA 6,869/Caco-2 606。P14 Table 1 的历史分类指标与 P09 原表 AUC/F1 名称不一致，且划分不同；该表不可用于直接排名。
-6. P12/P13 公式页人工核对：前者仍需代码核实完整 BCE 实现，后者主文确为 MSE。P21 继续采用 2026 正式版，不能恢复旧预印本的负采样计数矛盾。
+6. P12/P13 公式页人工核对：P12 后续已由作者固定代码提交确认完整 BCE、两次等系数反传，并发现测试标签参与阈值选择；P13 主文确为 MSE。P21 继续采用 2026 正式版，不能恢复旧预印本的负采样计数矛盾。
+7. 新增 code_audit.md、code_evidence.json：P12/P15 作者代码静态核查，固定提交与文件 SHA；未运行训练。P15 已补分类 BCE/专用回归 MSE、25% 掩码启动示例；THPep 划分生成和最终论文对应仍未闭合。
 
 ## 仍有证据或访问限制
 

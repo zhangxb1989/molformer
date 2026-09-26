@@ -29,7 +29,7 @@ PeptiVerse 正式 PDF p.5 Table 1 将 PepLand c-CPP/c-Sol 的 0.838/0.662 放在
 
 ### P15 版本核查结果
 
-正式 DOI/作者/日期可由 ACS 和 PubMed 确认；本次 ACS 正式全文抓取返回 403，尚未取得可核对完整 Methods 的正式版本。预印本 v5 的微调节写 THPep 随机 5 折与三种 seeds，基线节又写 triplicate random splits；具体嵌套与代码对应仍为 NR。预印本许可只对应该预印本，不能据此转载正式排版 PDF。**正式版方法差异核对仍未完成，不能标成已解决。**
+正式 DOI/作者/日期可由 ACS 和 PubMed 确认；本次 ACS 正式全文抓取返回 403，尚未取得可核对完整 Methods 的正式版本。预印本 v5 的微调节写 THPep 随机 5 折与三种 seeds，基线节又写 triplicate random splits；本轮代码核查已补齐 loss 与条件划分入口，但 prepared_data 的生成及与预印本/正式版结果对应仍未证实，详见 code_audit.md。预印本许可只对应该预印本，不能据此转载正式排版 PDF。**正式版方法差异核对仍未完成，不能标成已解决。**
 
 ## PDF 实际交付与校验
 
@@ -40,6 +40,10 @@ PeptiVerse 正式 PDF p.5 Table 1 将 PepLand c-CPP/c-Sol 的 0.838/0.662 放在
 ## 保留限制
 
 - 其余 20 条没有归档 PDF，来源与访问/许可限制见 [pdf_manifest.json](pdf_manifest.json)。P17 保留官方链接，转载许可仍未核实。
-- NR 指本轮证据不足，不等于论文没有报告。尤其摘要/部分阅读项、P12 代码中的损失实现、P15 正式版方法，仍不能补猜。
+- NR 指本轮证据不足，不等于论文没有报告。尤其摘要/部分阅读项、P12 FGM 的具体实现、P15 正式版方法及 THPep 划分生成，仍不能补猜。
 - 三年窗口不支持全历史 first 认证；原稿 128/109、阳阴计数、六个全阳性外测和实际 checkpoint 均属于另需原始数据的稿件审计，不是本轮已核实的训练事实。
 - 本轮没有启动模型训练，也没有产生新的性能结果。所有外部性能数值保留作者、任务、版本和比较限制。
+
+## 作者代码续查
+
+P12 已确认完整 BCE、两次等系数反传、30 模型概率等权平均，并识别测试标签参与阈值选择。P15 已核实启动示例的 25% 掩码及 0.6/0.4 权重、分类 BCE 与专用回归 MSE；THPep 的现成文件入口和 5 折 fallback 必须区分。代码版本不能自动代替正式论文方法，详细证据及未闭合项见 [code_audit.md](code_audit.md) 和 [code_evidence.json](code_evidence.json)。
