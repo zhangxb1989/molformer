@@ -629,7 +629,7 @@
     ],
     "download_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12803269.5/PMC12803269.5.pdf",
     "reason": "Original PDF obtained through NCBI official cloud; redistribution license verified in official metadata and PDF.",
-    "license_scope": "bioRxiv preprint v5 only; journal-version redistribution permission not verified",
+    "license_scope": "bioRxiv preprint v5 only; final main-article redistribution permission not verified; separately licensed final SI recorded in supplement_manifest.json",
     "download_version": "bioRxiv v5, 2026-06-23; not the final journal PDF",
     "bytes": 8449958,
     "pages": 36,
@@ -650,7 +650,10 @@
     "remote_sha256_verified": true,
     "github_blob_sha": "35abd87f9433e973e215fabf362faf64c1865647",
     "remote_verified_commit": "f4bbf7471ec32a629f7b231902288b34de73fce5",
-    "verified_date": "2026-09-26"
+    "verified_date": "2026-09-26",
+    "supplement_ids": [
+      "P15-SI"
+    ]
   },
   {
     "id": "P16",

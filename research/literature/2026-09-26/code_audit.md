@@ -1,6 +1,6 @@
 # 作者代码核查：MFP-MFL 与 PeptideCLM-2
 
-核查日期：2026-09-26。范围为作者公开代码的静态阅读及与所读论文的对照，未运行训练、未复现分数。所有链接固定到代码提交，避免默认分支更新后证据漂移。代码可确认“该快照实现了什么”，不能单独证明论文表格由该快照生成。
+核查日期：2026-09-26。初次范围为作者代码静态阅读；本次追加 THPep 历史划分重建及公开预测的独立指标重算。未训练模型，未执行作者代码。所有链接固定到代码提交，避免默认分支更新后证据漂移。代码可确认“该快照实现了什么”，不能单独证明论文表格由该快照生成。
 
 ## P12 MFP-MFL
 
@@ -23,7 +23,7 @@
 
 ## P15 PeptideCLM-2
 
-固定作者仓库提交 `6b9708d4cb05717307d310daaf1c0f88c71ff084`（2026-07-23）。正式论文在线发表于 2026-07-13；本次取得的方法文本仍是 2026-06-23 bioRxiv v5。代码快照晚于正式在线日期，不能把它直接视为正式论文提交时的运行版本。
+固定作者仓库提交 `6b9708d4cb05717307d310daaf1c0f88c71ff084`（2026-07-23）。正式论文在线发表于 2026-07-13；所读材料包括 2026-06-23 bioRxiv v5，以及本次取得的正式补充材料 S5/S6/S8。代码快照晚于正式在线日期，不能把它直接视为正式论文提交时的运行版本。
 
 | 核查点 | 可确认的实现 | 证据 |
 |---|---|---|
@@ -36,9 +36,11 @@
 | THPep 声明与实际文件 | manifest 声明 cluster_aware_single_table；adapter 实际读取按 seed 准备好的 train/val/test。命名本身不能证明真正按簇隔离 | [manifest L53–65](https://github.com/AaronFeller/PeptideCLM-2/blob/6b9708d4cb05717307d310daaf1c0f88c71ff084/training/02_classification_benchmarks_training_code/experiment/benchmark_manifest.json#L53)、[adapter L161–174](https://github.com/AaronFeller/PeptideCLM-2/blob/6b9708d4cb05717307d310daaf1c0f88c71ff084/training/02_classification_benchmarks_training_code/adapters/common.py#L161) |
 | THPep 运行记录 | 仓库有 101/202/303 三个 seed 的结果目录；检查的 hybrid-large seed 101 metadata 指向 prepared_data，fold 为 null。该记录证明存在此运行配置，不足以证明全套结果是 3×5 折 | [seed 101 metadata](https://github.com/AaronFeller/PeptideCLM-2/blob/6b9708d4cb05717307d310daaf1c0f88c71ff084/figure_generation/results/runs_LoRA_highrank/thpep/peptideclm-2-hybrid-large/seed_101/run_metadata.json) |
 
-**剩余缺口：**该仓库树未发现对应 `tmp/prepared_data/thpep/` 的划分文件或生成脚本；manifest 的 cluster-aware 声明、所读预印本“随机 5 折/三次随机划分”与实际结果之间仍不能闭合。公开 runner/metadata 中的 `training/classification_finetuning_v2.py` 路径也与当前树中的嵌套位置不同，不能宣称仓库可原样复现。没有运行代码，也没有因这些路径问题修改作者仓库。
+**THPep 后续核查已推进：**当前树仍无准备脚本，但历史提交 `4740c70…` 中找回 `prepare_benchmark_data.py`；其按标签分层随机留出的测试结果，与三个 seeds×三种模型的全部 9 份导出逐行匹配。389/98/122 是脚本重建的训练/验证/测试数量；没有完整训练日志，不宣称端到端复现。函数未实施 cluster 分组，不能根据 manifest 名称写成已证实的簇隔离或统一 3×5 折。
 
-正式 ACS 全文方法尚未取得；上述代码核查补齐部分 loss 和推理配置，不代替正式版与预印本的逐项对照。准确表述是“预印本方法 + 固定提交代码补充证据，正式版方法一致性未验证”。
+正式 SI 表 S5/S6 已直接确认分类固定划分优先、回归 MSE/内折集成等方法。S8 的三种 PeptideCLM-2 指标共 18 个均值/样本 SD，与公开预测在测试标签上择优阈值的重算值匹配；固定 logit 0 的 MCC/F1 不匹配。Notebook 同时保留两条路径，本次用数值匹配进一步缩小证据缺口。范围、数值及固定来源见 [THPep 专项核查](thpep_protocol_audit.md)。
+
+**保留缺口：**正式主文的全部方法、THPep 实际训练日志、上游 main90 构建规则与其他任务/基线的计算口径仍未完成核对。公开 runner/metadata 的部分路径与当前树嵌套位置不同，不能宣称仓库可原样复现。未因这些问题修改作者仓库。
 
 ## 证据留存
 

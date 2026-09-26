@@ -151,8 +151,27 @@
       "sha256": "27a2245ad4d7bcd012c4291b8af8b2fab5fdaa7be0ab4ccdd2892bb2d435e900",
       "git_blob_sha": "7682f8c244172cf0cd5fd89b7adfaeb681633144",
       "commit": "f4bbf7471ec32a629f7b231902288b34de73fce5"
+    },
+    {
+      "id": "P15-SI",
+      "parent_id": "P15",
+      "path": "pdfs/P15_2026_PeptideCLM2_final_supporting.pdf",
+      "bytes": 6841761,
+      "sha256": "9e77faa7ac39271a779bf64c9924c68e2a04d60e1fcc0d220e76bddcf84d1a86",
+      "git_blob_sha": "8428777963d3d5ad45b374092c1ad2add3553a1a",
+      "status": "verified",
+      "commit": "e2a586368935b8a944f0c822d67b471e0743a8b9"
     }
   ],
   "previous_pdf_archive_commit": "ac3d399aadf06ce7a74e2810204ee47ee9f528c4",
-  "verification_note": "Each record identifies the immutable commit actually downloaded. Earlier PDFs retain their earlier verified commit; their blobs are unchanged in the latest archive tree."
+  "verification_note": "Each record identifies the immutable commit actually downloaded. Earlier PDFs retain their earlier verified commit; their blobs are unchanged in the latest archive tree.",
+  "supplement_archive_commit": "e2a586368935b8a944f0c822d67b471e0743a8b9",
+  "totals": {
+    "paper_records": 28,
+    "main_or_preprint_pdfs": 16,
+    "supplement_pdfs": 1,
+    "pdf_files": 17,
+    "pdf_pages": 263,
+    "paper_records_without_main_pdf": 12
+  }
 }

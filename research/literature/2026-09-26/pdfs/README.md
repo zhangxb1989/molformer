@@ -1,6 +1,6 @@
 # PDF 原文与署名
 
-PDF 按原样保存，未修改。作者署名和各论文许可保留，仓库代码许可证不替代第三方论文许可。CC BY-NC-ND 项限本非商业研究归档，不修改原件。P15 是预印本 v5，其许可不适用于正式排版版本。
+PDF 按原样保存，未修改。作者署名和各论文许可保留，仓库代码许可证不替代第三方论文许可。CC BY-NC-ND 项限本非商业研究归档，不修改原件。P15 主文是预印本 v5；另存正式补充材料，其 CC BY-NC 许可单独核验。两者许可均不能自动扩展到正式主文。
 
 新增原件来源：NIH NLM NCBI PMC Article Datasets on AWS，访问日期 2026-09-26；[官方说明](https://pmc.ncbi.nlm.nih.gov/tools/pmcaws/)。这是注明日期的研究存档，不保证反映 NLM 后续最新修订，也不表示 NLM/NIH 对本项目背书。
 
@@ -21,4 +21,6 @@ PDF 按原样保存，未修改。作者署名和各论文许可保留，仓库�
 - [P23 · A systematic study of key elements underlying molecular property prediction](P23_2023_Systematic_molecular_benchmark.pdf)。Jianyuan Deng, Zhibo Yang, Hehe Wang, Iwao Ojima, Dimitris Samaras, Fusheng Wang。2023。论文版本 DOI：[doi:10.1038/s41467-023-41948-6](https://doi.org/10.1038/s41467-023-41948-6)；[许可](http://creativecommons.org/licenses/by/4.0/)；原件未改动。
 - [P24 · Molecular descriptor driven QSPR modeling of Papp, TEER and Efflux Ratio from Caco‐2 cells using machine learning for various phytochemicals](P24_2026_Phytochemical_Caco2_QSPR.pdf)。Jin‐Woo Kim, Rixing Cong, Jin‐Soo Park, Keunwan Park, Kyungsu Kang, Soon‐Mi Shim。2026。论文版本 DOI：[doi:10.1002/jsfa.70701](https://doi.org/10.1002/jsfa.70701)；[许可](https://creativecommons.org/licenses/by-nc-nd/4.0/)；原件未改动。
 
-共 16 份原件，哈希/页数见 [manifest](../pdf_manifest.json)，逐份远端校验见 [archive_verification.json](../archive_verification.json)。P19 当前官方原件与旧缓存字节不同，旧哈希保留于 previous_download，不覆盖回当前字段。
+共 16 份论文主文/预印本，加1份正式补充材料，合计17个PDF、263页；主文哈希/页数见 [manifest](../pdf_manifest.json)，补充文件见 [supplement_manifest](../supplement_manifest.json)，逐份远端校验见 [archive_verification.json](../archive_verification.json)。P19 当前官方原件与旧缓存字节不同，旧哈希保留于 previous_download，不覆盖回当前字段。
+
+- P15-SI · Supporting Information: Scaling SMILES-Based Chemical Language Models for Therapeutic Peptide Engineering。Aaron L. Feller、Maxim Secor、Sebastian Swanson、Claus O. Wilke、Kristine Deibler，2026。[原样PDF](P15_2026_PeptideCLM2_final_supporting.pdf)；[DOI](https://doi.org/10.1021/acs.jcim.6c00652.s001)；[官方来源与许可元数据](https://api.figshare.com/v2/articles/32979761)；[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)。用于本非商业文献研究，原件未修改。

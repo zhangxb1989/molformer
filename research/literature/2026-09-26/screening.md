@@ -21,7 +21,7 @@
 | P12 | 2025 | [MFP_MFL](https://pmc.ncbi.nlm.nih.gov/articles/PMC11818429/) | full_text_key_sections | include |
 | P13 | 2025 | [BPFun](https://link.springer.com/article/10.1186/s12859-025-06190-5) | full_text_key_sections | include |
 | P14 | 2026 | [PeptiVerse](https://pmc.ncbi.nlm.nih.gov/articles/PMC13388690/) | full_text_key_sections | include |
-| P15 | 2026 | [PeptideCLM2](https://pubs.acs.org/doi/10.1021/acs.jcim.6c00652) | preprint_full_text | include |
+| P15 | 2026 | [PeptideCLM2](https://pubs.acs.org/doi/10.1021/acs.jcim.6c00652) | preprint_full_text_and_final_supplement | include |
 | P16 | 2026 | [LANTERN](https://pmc.ncbi.nlm.nih.gov/articles/PMC13045841/) | full_text_key_sections | include |
 | P17 | 2026 | [PepBenchmark](https://proceedings.iclr.cc/paper_files/paper/2026/hash/56a225639da77e8f7c0409f6d5ba996b-Abstract-Conference.html) | full_text_key_sections | include |
 | P18 | 2024 | [Phenols_CDFT](https://www.sciencedirect.com/science/article/abs/pii/S2210271X24003219) | abstract_or_partial | include |
@@ -42,7 +42,7 @@
 - P08 PeptideCLM：2024 预印本与 2025 正式版归并。
 - P09 PepLand：2023 预印本与 2025 正式版归并。
 - P14 PeptiVerse：早期预印本与 2026-07 正式版归并。
-- P15 PeptideCLM-2：2026 正式版元数据已确认，实际详细阅读预印本 v5。
+- P15 PeptideCLM-2：2026 正式版元数据已确认，阅读预印本 v5 与正式补充材料 S5/S6/S8；补充材料不另算文献。
 - P16 LANTERN：2025 预印本与 2026 PeerJ 版归并。
 - P17 PepBenchmark：arXiv 与 ICLR 2026 proceedings 归并，会议状态已核验。
 - P21 HELM-BERT：2025 预印本与 2026 正式版归并，分析更新到正式正文。
@@ -58,4 +58,4 @@
 
 ## 续接复核说明
 
-2026-09-26 完成记录一致性检查及关键证据抽查，未重新扩大候选库。P15 正式版元数据由 PubMed 42443143 再次核验，方法仍限预印本 v5；P21 继续使用正式版。详细纠正及未解决项见 [quality_check.md](quality_check.md)。
+2026-09-26 完成记录一致性检查及关键证据抽查，未重新扩大候选库。P15 正式版元数据由 PubMed 42443143 再次核验，已补读正式 SI 并核查 THPep 公开预测，正式主文方法对照仍不完整；P21 继续使用正式版。详细纠正及未解决项见 [quality_check.md](quality_check.md)。

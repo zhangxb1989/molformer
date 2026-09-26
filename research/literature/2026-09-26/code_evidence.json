@@ -86,5 +86,12 @@
         }
       ]
     }
-  ]
+  ],
+  "independent_prediction_audit": {
+    "report": "thpep_protocol_audit.md",
+    "evidence": "thpep_evidence.json",
+    "results": "thpep_audit_results.json",
+    "author_code_executed": false,
+    "scope": "9 released THPep prediction exports; historical test split reconstruction; 18 rounded formal SI S8 values matched"
+  }
 }

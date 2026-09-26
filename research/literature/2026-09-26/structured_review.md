@@ -310,20 +310,20 @@ PeptiVerse: A unified platform for therapeutic peptide property prediction
 
 Scaling SMILES-Based Chemical Language Models for Therapeutic Peptide Engineering
 
-来源：[10.1021/acs.jcim.6c00652](https://pubs.acs.org/doi/10.1021/acs.jcim.6c00652)。阅读：preprint_full_text；bioRxiv preprint v5, 2026-06-23; final metadata verified separately。
+来源：[10.1021/acs.jcim.6c00652](https://pubs.acs.org/doi/10.1021/acs.jcim.6c00652)。阅读：preprint_full_text_and_final_supplement；bioRxiv preprint v5, 2026-06-23, plus final journal Supporting Information v1, 2026-07-14; final main article Methods not fully verified。
 
 | 字段 | 抽取内容 |
 |---|---|
 | 任务定义 | 治疗肽通透性、半衰期及相关功能预测。 |
-| 数据集与标签 | CycPeptMPDB、THPep、CellPPD、AmpHGT、PepMSND；预训练含逾亿小分子与肽。 |
+| 数据集与标签 | CycPeptMPDB、THPep、CellPPD、AmpHGT、PepMSND；预训练含逾亿小分子与肽。公开 THPep 源表 609 行，class 0/1 为 433/176；609 个 SMILES 字符串不同，不代表已完成化学规范化或同源性审计。 |
 | 输入与表示 | SMILES。 |
 | 模型与预训练 | PeptideCLM-2 多个规模/预训练目标变体，约 32–337M 参数。 |
-| Loss | 预印本/作者启动示例：25% span 掩码、99 RDKit 属性、0.6 token CE+0.4 MTR MSE。代码 labels 仅忽略 padding，CE 并非仅在掩码位计算。公开分类入口 BCEWithLogitsLoss；专用通透性回归入口 MSELoss；正式版实验对应未验证。 |
-| Inference | 公开分类代码使用 LoRA（r=16、alpha=32、dropout=0.1）及预测头；回归有独立集成入口。预印本与 RDKit/Morgan 基线比较；不将代码快照配置直接等同正式论文全部实验。 |
-| Metrics | 各任务分类/回归指标不同；本轮不逐项抄录未核对的最终版数值。 |
-| 划分与泄漏控制 | 预印本 THPep 写随机 5 折/3 seeds，另称三次随机划分。代码优先使用现成 train/val/test，缺文件才 5 折 KFold；manifest 声称 cluster-aware，seed 101 运行记录指向 prepared_data、fold=null，但划分生成文件未见，协议仍未闭合。Table 2 预训练重叠不能当无泄漏证明。 |
-| 限制与可比性 | 已确认 2026-07-13 正式在线发表，实际方法仍来自 2026-06-23 预印本 v5；正式全文访问受限，版本差异核对未完成。该预印本 CC BY 许可不可直接套用于正式版。 |
-| 证据位置 | PMC12803269 v5 的 Downstream evaluation protocols/Table 2；正式元数据另见 PubMed 42443143 与 ACS DOI。 作者仓库 2026-07-23 提交 6b9708d4cb05717307d310daaf1c0f88c71ff084 的预训练、分类、回归、manifest 与运行记录；固定行链接见 code_audit.md。 |
+| Loss | 预印本/作者启动示例：25% span 掩码、99 RDKit 属性、0.6 token CE+0.4 MTR MSE。代码 labels 仅忽略 padding，CE 并非仅在掩码位计算。公开分类入口 BCEWithLogitsLoss；专用回归入口及正式补充表 S5/S6 均确认 MSE。 |
+| Inference | 正式补充 S5 分类采用 rank-16 LoRA；当前代码 r=16、alpha=32、dropout=0.1。S6 回归为内折 checkpoints 均值集成。THPep 公开预测为 logits；评估 notebook 同时有测试标签择优阈值与固定 logit 0 两条路径，正式表 S8 的阈值相关指标匹配前者。 |
+| Metrics | 正式补充 S8：MLM MCC/AUROC/F1 为 0.756±0.019/0.949±0.006/0.826±0.012；Hybrid 为 0.747±0.036/0.940±0.019/0.818±0.022；MTR 为 0.698±0.036/0.924±0.016/0.784±0.029。按测试标签最大化 MCC 阈值重算，18 个均值/样本 SD 均匹配三位小数；固定 logit 0 的 MCC 为 0.693±0.062、0.667±0.066、0.623±0.047。仅为已发布预测的计算核对，未训练模型。 |
+| 划分与泄漏控制 | 正式补充 S5：固定划分优先，否则 5 折。找回历史 prepare_thpep 脚本：两次按标签分层的 20% 随机留出，609 行重建为训练389/验证98/测试122。三个 seeds×三种模型的9份测试导出，样本、标签、行序全部匹配；THPep 函数未实施按簇分组，不能从 manifest 名称推定隔离。未取得完整训练日志，未审计 main90 上游同源性处理；不能概括为统一3×5折。 |
+| 限制与可比性 | 正式主文方法仍访问受限；现已直接读取正式补充 S5/S6/S8。THPep 表 S8 的 MCC/F1 与测试集择优阈值计算一致，不应作完全独立测试估计；AUROC 不受该阈值改变，不表示其他步骤已无泄漏。结论只限9份THPep导出，未重算基线或其他任务。预印本 CC BY 与正式补充 CC BY-NC 分别记录。 |
+| 证据位置 | PMC12803269 v5；正式 SI DOI 10.1021/acs.jcim.6c00652.s001，S5/S6/S8（PDF S5–S7）。当前作者提交6b9708d4cb05717307d310daaf1c0f88c71ff084；历史划分脚本4740c70c3f5246c4be66cc54de11d7cb3a1c8b2a。固定链接/哈希见 thpep_evidence.json，9份预测重算见 thpep_protocol_audit.md 与 thpep_audit_results.json。 |
 
 
 ## P16 · LANTERN（2026）

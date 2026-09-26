@@ -397,5 +397,15 @@
       }
     }
   ],
-  "retrieval_note": "PDFs retrieved from the same public NCBI S3 objects through canonical or regional endpoints; interrupted transfers were resumed or retrieved in byte ranges. Reassembled bytes match official MD5; no PDF content edited."
+  "retrieval_note": "PDFs retrieved from the same public NCBI S3 objects through canonical or regional endpoints; interrupted transfers were resumed or retrieved in byte ranges. Reassembled bytes match official MD5; no PDF content edited.",
+  "subsequent_formal_supplement_access": {
+    "id": "P15-SI",
+    "date": "2026-09-26",
+    "provider": "ACS Figshare",
+    "metadata_url": "https://api.figshare.com/v2/articles/32979761",
+    "status": "downloaded_and_archived_verified",
+    "manifest": "supplement_manifest.json",
+    "final_main_article": "still_access_limited",
+    "note": "Separate from the earlier NCBI cloud-service audit; not an extra paper record."
+  }
 }

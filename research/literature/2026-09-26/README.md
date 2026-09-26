@@ -24,6 +24,8 @@
 
 ## 本轮续接状态
 
-沿用 28 条记录。累计归档 **16 份原 PDF**，每份均已从 GitHub 读回核验 SHA-256；其余 12 条保留入口与具体原因。新增原件来自 NCBI 官方公开云服务，归档版本、许可和来源见 [PDF 清单](pdf_manifest.json) 与 [访问核查](access_audit.json)。P15 文件明确是 2026-06-23 预印本 v5，不能当作正式排版论文。
+沿用 **28 条文献**。归档 **16 份论文主文/预印本 + 1 份正式补充材料，共 17 个 PDF、263 页**，每份均已从 GitHub 读回核验；其余 12 条文献尚无主文 PDF。版本与许可见 [主文清单](pdf_manifest.json)、[补充材料清单](supplement_manifest.json) 和 [归档校验](archive_verification.json)。P15 主文文件是预印本 v5，新取得的文件是正式 SI，不能混写成已取得正式主文。
 
-[作者代码核查](code_audit.md) 已补齐 P12/P15 的部分 loss、阈值及推理配置：P12 公开路径存在测试标签参与阈值选择；P15 THPep 的划分生成和正式版方法对应仍未验证。详见 [质量检查](quality_check.md)、[归档校验](archive_verification.json) 和 [续接记录](CONTINUE_HERE.md)。没有启动训练或产生新的模型成绩。
+新增 [THPep 专项核查](thpep_protocol_audit.md)：找回历史划分脚本，全部 9 份公开测试集逐行匹配分层随机留出；正式 SI 表 S8 的三种模型分数与测试标签择优阈值的计算结果相符。已保存 [证据索引](thpep_evidence.json)、[逐次重算结果](thpep_audit_results.json) 和 [独立复核脚本](audit_scripts/verify_thpep_exports.py)。该结果限制阈值相关指标的可比性，不是新的模型训练成绩。
+
+[作者代码核查](code_audit.md) 继续保留 P12 的测试阈值问题及 FGM 缺口。P15 正式主文和完整训练日志仍未取得。后续见 [质量检查](quality_check.md) 与 [续接记录](CONTINUE_HERE.md)。

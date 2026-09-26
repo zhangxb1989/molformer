@@ -1,0 +1,137 @@
+{
+  "date": "2026-09-26",
+  "repository": "AaronFeller/PeptideCLM-2",
+  "prediction_commit": "6b9708d4cb05717307d310daaf1c0f88c71ff084",
+  "scope": "THPep; 3 released model variants x 3 seeds. No model training or author-code execution.",
+  "source_data": {
+    "path": "data/THPep_main90_smiles_classes.csv",
+    "local_name": "THPep_source.csv",
+    "git_blob_sha": "5502383079a13edbc949f21bea0df925c307e720",
+    "url": "https://github.com/AaronFeller/PeptideCLM-2/blob/6b9708d4cb05717307d310daaf1c0f88c71ff084/data/THPep_main90_smiles_classes.csv",
+    "raw_url": "https://raw.githubusercontent.com/AaronFeller/PeptideCLM-2/6b9708d4cb05717307d310daaf1c0f88c71ff084/data/THPep_main90_smiles_classes.csv"
+  },
+  "historical_split_script": {
+    "path": "training/prepare_benchmark_data.py",
+    "commit": "4740c70c3f5246c4be66cc54de11d7cb3a1c8b2a",
+    "git_blob_sha": "126a5549c77aebf0afb96d02c273c566d970e18e",
+    "deleted_by": "ea5cbc59c27c739c8eeab305c074f128b29e6683",
+    "url": "https://github.com/AaronFeller/PeptideCLM-2/blob/4740c70c3f5246c4be66cc54de11d7cb3a1c8b2a/training/prepare_benchmark_data.py#L20",
+    "source_data_blob_same_in_historical_commit": true
+  },
+  "evaluation_notebook": {
+    "path": "figure_generation/results/runs_LoRA_highrank/eval.ipynb",
+    "git_blob_sha": "9a1553cdb1da93d8f0047e3d704292bfc9b47bc9",
+    "url": "https://github.com/AaronFeller/PeptideCLM-2/blob/6b9708d4cb05717307d310daaf1c0f88c71ff084/figure_generation/results/runs_LoRA_highrank/eval.ipynb",
+    "cell_numbering": "zero-based; code cells in notebook JSON",
+    "test_optimized_threshold_cell": 2,
+    "fixed_zero_threshold_cell": 4,
+    "executed": false
+  },
+  "predictions": [
+    {
+      "model": "hybrid",
+      "seed": 101,
+      "path": "figure_generation/results/runs_LoRA_highrank/thpep/peptideclm-2-hybrid-large/seed_101/THPep_peptideclm-2-hybrid-large_results.csv",
+      "local_name": "THPep_hybrid_101.csv",
+      "git_blob_sha": "de3253b86d6ac763406e6e35e702008bb2247f38",
+      "url": "https://github.com/AaronFeller/PeptideCLM-2/blob/6b9708d4cb05717307d310daaf1c0f88c71ff084/figure_generation/results/runs_LoRA_highrank/thpep/peptideclm-2-hybrid-large/seed_101/THPep_peptideclm-2-hybrid-large_results.csv",
+      "raw_url": "https://raw.githubusercontent.com/AaronFeller/PeptideCLM-2/6b9708d4cb05717307d310daaf1c0f88c71ff084/figure_generation/results/runs_LoRA_highrank/thpep/peptideclm-2-hybrid-large/seed_101/THPep_peptideclm-2-hybrid-large_results.csv"
+    },
+    {
+      "model": "mlm",
+      "seed": 101,
+      "path": "figure_generation/results/runs_LoRA_highrank/thpep/peptideclm-2-mlm-large/seed_101/THPep_peptideclm-2-mlm-large_results.csv",
+      "local_name": "THPep_mlm_101.csv",
+      "git_blob_sha": "c1fe6c44e30ef4e862b3a23ebc6780c9a740b82d",
+      "url": "https://github.com/AaronFeller/PeptideCLM-2/blob/6b9708d4cb05717307d310daaf1c0f88c71ff084/figure_generation/results/runs_LoRA_highrank/thpep/peptideclm-2-mlm-large/seed_101/THPep_peptideclm-2-mlm-large_results.csv",
+      "raw_url": "https://raw.githubusercontent.com/AaronFeller/PeptideCLM-2/6b9708d4cb05717307d310daaf1c0f88c71ff084/figure_generation/results/runs_LoRA_highrank/thpep/peptideclm-2-mlm-large/seed_101/THPep_peptideclm-2-mlm-large_results.csv"
+    },
+    {
+      "model": "mtr",
+      "seed": 101,
+      "path": "figure_generation/results/runs_LoRA_highrank/thpep/peptideclm-2-mtr-large/seed_101/THPep_peptideclm-2-mtr-large_results.csv",
+      "local_name": "THPep_mtr_101.csv",
+      "git_blob_sha": "b7b9b7c8af6b41b7da2674fa877cee582831f84c",
+      "url": "https://github.com/AaronFeller/PeptideCLM-2/blob/6b9708d4cb05717307d310daaf1c0f88c71ff084/figure_generation/results/runs_LoRA_highrank/thpep/peptideclm-2-mtr-large/seed_101/THPep_peptideclm-2-mtr-large_results.csv",
+      "raw_url": "https://raw.githubusercontent.com/AaronFeller/PeptideCLM-2/6b9708d4cb05717307d310daaf1c0f88c71ff084/figure_generation/results/runs_LoRA_highrank/thpep/peptideclm-2-mtr-large/seed_101/THPep_peptideclm-2-mtr-large_results.csv"
+    },
+    {
+      "model": "hybrid",
+      "seed": 202,
+      "path": "figure_generation/results/runs_LoRA_highrank/thpep/peptideclm-2-hybrid-large/seed_202/THPep_peptideclm-2-hybrid-large_results.csv",
+      "local_name": "THPep_hybrid_202.csv",
+      "git_blob_sha": "911bac0717ba8a0ec1fd5200c53ff1b06b31c0be",
+      "url": "https://github.com/AaronFeller/PeptideCLM-2/blob/6b9708d4cb05717307d310daaf1c0f88c71ff084/figure_generation/results/runs_LoRA_highrank/thpep/peptideclm-2-hybrid-large/seed_202/THPep_peptideclm-2-hybrid-large_results.csv",
+      "raw_url": "https://raw.githubusercontent.com/AaronFeller/PeptideCLM-2/6b9708d4cb05717307d310daaf1c0f88c71ff084/figure_generation/results/runs_LoRA_highrank/thpep/peptideclm-2-hybrid-large/seed_202/THPep_peptideclm-2-hybrid-large_results.csv"
+    },
+    {
+      "model": "mlm",
+      "seed": 202,
+      "path": "figure_generation/results/runs_LoRA_highrank/thpep/peptideclm-2-mlm-large/seed_202/THPep_peptideclm-2-mlm-large_results.csv",
+      "local_name": "THPep_mlm_202.csv",
+      "git_blob_sha": "ba9a751716fa8a89aec4ceb259122d8ecb89965c",
+      "url": "https://github.com/AaronFeller/PeptideCLM-2/blob/6b9708d4cb05717307d310daaf1c0f88c71ff084/figure_generation/results/runs_LoRA_highrank/thpep/peptideclm-2-mlm-large/seed_202/THPep_peptideclm-2-mlm-large_results.csv",
+      "raw_url": "https://raw.githubusercontent.com/AaronFeller/PeptideCLM-2/6b9708d4cb05717307d310daaf1c0f88c71ff084/figure_generation/results/runs_LoRA_highrank/thpep/peptideclm-2-mlm-large/seed_202/THPep_peptideclm-2-mlm-large_results.csv"
+    },
+    {
+      "model": "mtr",
+      "seed": 202,
+      "path": "figure_generation/results/runs_LoRA_highrank/thpep/peptideclm-2-mtr-large/seed_202/THPep_peptideclm-2-mtr-large_results.csv",
+      "local_name": "THPep_mtr_202.csv",
+      "git_blob_sha": "6b510b1606f58b7ceeccaabb30931ba570c11bc9",
+      "url": "https://github.com/AaronFeller/PeptideCLM-2/blob/6b9708d4cb05717307d310daaf1c0f88c71ff084/figure_generation/results/runs_LoRA_highrank/thpep/peptideclm-2-mtr-large/seed_202/THPep_peptideclm-2-mtr-large_results.csv",
+      "raw_url": "https://raw.githubusercontent.com/AaronFeller/PeptideCLM-2/6b9708d4cb05717307d310daaf1c0f88c71ff084/figure_generation/results/runs_LoRA_highrank/thpep/peptideclm-2-mtr-large/seed_202/THPep_peptideclm-2-mtr-large_results.csv"
+    },
+    {
+      "model": "hybrid",
+      "seed": 303,
+      "path": "figure_generation/results/runs_LoRA_highrank/thpep/peptideclm-2-hybrid-large/seed_303/THPep_peptideclm-2-hybrid-large_results.csv",
+      "local_name": "THPep_hybrid_303.csv",
+      "git_blob_sha": "09385b5945203f5d52b1076055f3a090a6c4f55d",
+      "url": "https://github.com/AaronFeller/PeptideCLM-2/blob/6b9708d4cb05717307d310daaf1c0f88c71ff084/figure_generation/results/runs_LoRA_highrank/thpep/peptideclm-2-hybrid-large/seed_303/THPep_peptideclm-2-hybrid-large_results.csv",
+      "raw_url": "https://raw.githubusercontent.com/AaronFeller/PeptideCLM-2/6b9708d4cb05717307d310daaf1c0f88c71ff084/figure_generation/results/runs_LoRA_highrank/thpep/peptideclm-2-hybrid-large/seed_303/THPep_peptideclm-2-hybrid-large_results.csv"
+    },
+    {
+      "model": "mlm",
+      "seed": 303,
+      "path": "figure_generation/results/runs_LoRA_highrank/thpep/peptideclm-2-mlm-large/seed_303/THPep_peptideclm-2-mlm-large_results.csv",
+      "local_name": "THPep_mlm_303.csv",
+      "git_blob_sha": "8e0cae9afc8e3d5f24c71179b97d47923b80ae36",
+      "url": "https://github.com/AaronFeller/PeptideCLM-2/blob/6b9708d4cb05717307d310daaf1c0f88c71ff084/figure_generation/results/runs_LoRA_highrank/thpep/peptideclm-2-mlm-large/seed_303/THPep_peptideclm-2-mlm-large_results.csv",
+      "raw_url": "https://raw.githubusercontent.com/AaronFeller/PeptideCLM-2/6b9708d4cb05717307d310daaf1c0f88c71ff084/figure_generation/results/runs_LoRA_highrank/thpep/peptideclm-2-mlm-large/seed_303/THPep_peptideclm-2-mlm-large_results.csv"
+    },
+    {
+      "model": "mtr",
+      "seed": 303,
+      "path": "figure_generation/results/runs_LoRA_highrank/thpep/peptideclm-2-mtr-large/seed_303/THPep_peptideclm-2-mtr-large_results.csv",
+      "local_name": "THPep_mtr_303.csv",
+      "git_blob_sha": "12831af045b05011d8e7c4238f0a799ad5f12930",
+      "url": "https://github.com/AaronFeller/PeptideCLM-2/blob/6b9708d4cb05717307d310daaf1c0f88c71ff084/figure_generation/results/runs_LoRA_highrank/thpep/peptideclm-2-mtr-large/seed_303/THPep_peptideclm-2-mtr-large_results.csv",
+      "raw_url": "https://raw.githubusercontent.com/AaronFeller/PeptideCLM-2/6b9708d4cb05717307d310daaf1c0f88c71ff084/figure_generation/results/runs_LoRA_highrank/thpep/peptideclm-2-mtr-large/seed_303/THPep_peptideclm-2-mtr-large_results.csv"
+    }
+  ],
+  "split_algorithm_references": [
+    {
+      "url": "https://github.com/scikit-learn/scikit-learn/blob/1.7.2/sklearn/model_selection/_split.py#L2358",
+      "git_blob_sha": "640b7f6eee2f02c0f7f22d89b8d9523d36ddc27f"
+    },
+    {
+      "url": "https://github.com/scikit-learn/scikit-learn/blob/1.7.2/sklearn/utils/extmath.py#L1370",
+      "git_blob_sha": "b98a7747c28aa3452bf92fbf5efb9a9cdc026701"
+    }
+  ],
+  "algorithm_version_note": "Reconstructed the documented 1.7.2 algorithm independently in NumPy. This does not establish the exact scikit-learn version originally used by the authors; exact matches to all 9 test exports provide the empirical check.",
+  "formal_supporting": {
+    "doi": "10.1021/acs.jcim.6c00652.s001",
+    "article_id": 32979761,
+    "file_id": 66601469,
+    "url": "https://acs.figshare.com/articles/journal_contribution/Scaling_SMILES-Based_Chemical_Language_Models_for_Therapeutic_Peptide_Engineering/32979761",
+    "metadata_url": "https://api.figshare.com/v2/articles/32979761",
+    "download_url": "https://ndownloader.figshare.com/files/66601469",
+    "license": "https://creativecommons.org/licenses/by-nc/4.0/",
+    "md5": "9616e3999333167853ced97fb6e3ba8f",
+    "sha256": "9e77faa7ac39271a779bf64c9924c68e2a04d60e1fcc0d220e76bddcf84d1a86",
+    "table": "S8, p. S7",
+    "method_tables": "S5-S6, pp. S5-S6"
+  }
+}

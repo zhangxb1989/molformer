@@ -1,33 +1,40 @@
-# 续接记录：作者代码核查与官方原件补档
+# 续接记录：THPep 历史划分与正式补充表核查
 
-更新：2026-09-26。仓库 zhangxb1989/molformer，**只操作 gpt，不修改 main**。沿用 28 条文献，用户已取消的无关字段不重新添加；未启动模型训练。
+更新：2026-09-26。仓库 zhangxb1989/molformer，**只操作 gpt，不修改 main**。沿用28条文献，不恢复用户已取消的无关字段；未启动模型训练。
 
 ## 先读
 
-README.md、code_audit.md、quality_check.md、comparison_and_novelty.md、sources.json、pdf_manifest.json、access_audit.json。不要从零重查。
+README.md、thpep_protocol_audit.md、thpep_evidence.json、thpep_audit_results.json、code_audit.md、quality_check.md、comparison_and_novelty.md。提取见sources.json；主文与补充文件分别见pdf_manifest.json、supplement_manifest.json。不要从零重查。
 
 ## 本次已完成
 
-1. P12 作者代码固定提交 1f7b35ffa8b3d51a32a92a9753ddf642d1b5c9de：确认完整 BCE、初始/对抗两次等系数反传、30 模型等权概率平均；发现用 test 标签选阈值并在同批 test 计分。Accuracy 是样本平均 Jaccard。只能对可见代码路径作判断，未证明论文表格由此提交生成；FGM 源实现仍缺。
-2. P15 固定代码提交 6b9708d4cb05717307d310daaf1c0f88c71ff084：确认启动示例 25% span 掩码、0.6/0.4 目标、分类 BCE/专用回归 MSE；token CE 包含非 padding 原始 token。现成划分文件与 5 折 fallback 是不同路径，不能将所有结果写成统一 3×5 折。
-3. code_audit.md/code_evidence.json 已提交于 ae7654274e664c64d7c7ab77075e290f9d5c6fc2。全部为静态阅读，未执行作者代码、未改作者仓库。
-4. NCBI 旧 OA Web Service 已停止；新版官方入口 https://pmc.ncbi.nlm.nih.gov/tools/pmcaws/。本轮核查现有 10 条的版本元数据，新增 8 份原 PDF：P02、P04、P09、P11、P15、P16、P21、P24。PDF 提交 f4bbf7471ec32a629f7b231902288b34de73fce5，全部新增文件已从 GitHub 读回核验。累计 16 份原件，其余 12 条链接保留。
-5. 先前 8 份原 PDF 的校验仍有效；P19 当前文件与旧缓存不同，previous_download 保留旧值，不恢复旧哈希。
-6. P14/P09 的历史 AUC/F1 表头不一致、不同划分限制继续保留；P21 沿用正式版，不恢复旧预印本计数矛盾。
+1. 当前作者快照6b9708d4cb05717307d310daaf1c0f88c71ff084。找回历史prepare_benchmark_data.py：最后版本4740c70c3f5246c4be66cc54de11d7cb3a1c8b2a；删除提交ea5cbc59c27c739c8eeab305c074f128b29e6683。THPep两次按标签分层的20%随机留出，分别使用seed×45671、seed×52984。
+2. 源表609行（class 0/1为433/176），重建训练389/验证98/测试122；三个seeds101/202/303×三种large模型MLM/Hybrid/MTR的9份测试导出，样本、标签和行序全部匹配。10个CSV输入blob均与固定提交一致。THPep函数没有实施cluster分组，不能凭manifest名称认定簇隔离；没有审计main90上游构建，也没有真实训练日志。
+3. 正式SI来自ACS Figshare article32979761/file66601469，DOI10.1021/acs.jcim.6c00652.s001，v1，2026-07-14，9页，CC BY-NC4.0。直接核查S5/S6方法、S8指标；正式主文完整方法仍未取得。
+4. 作者eval.ipynb同时存在测试标签择优阈值（0起算cell2）和固定logit0（cell4）路径。独立重算后，测试MCC择优阈值的18个均值/样本SD与正式S8三位小数全部一致；固定阈值MCC/F1不匹配。具体范围见专项报告。不要推断作者意图、所有其他实验、所有基线或完整训练流程；固定阈值结果是计算诊断，不是替代论文排名。
+5. SI PDF提交e2a586368935b8a944f0c822d67b471e0743a8b9，已远端读回核验。累计16份论文主文/预印本+1份正式SI，共17个PDF、263页；文献记录仍28条，其余12条无主文PDF。
+6. 新增专项报告、证据索引、重算结果和audit_scripts/verify_thpep_exports.py。仅执行自写核查，未执行作者代码、未训练模型、未修改作者仓库。结论已同步逐篇稿、比较稿、质量记录与sources.json。
 
-## 仍未解决的证据限制
+## 保留的既有成果
 
-- P15 正式版元数据确定（2026-07-13 在线，10.1021/acs.jcim.6c00652），正式全文方法仍受访问限制；归档 PDF 是 June 23, 2026 bioRxiv v5。正式版与预印本一致性未验证。
-- P15 THPep 的 prepared_data 划分文件/生成脚本未见，manifest 的 cluster-aware 声明和随机划分文字仍不能闭合。P12 FGM 的扰动实现及论文表格对应快照未核实。
-- 未归档原文逐条见 manifest/access_audit。P08/P25 是 TDM 作者稿且云服务无 PDF；P17 转载许可未核实。本轮八份原件的传输问题均已解决，其余文献仍按各自访问与许可状态处理。
-- 原项目 128/109 化合物口径、标签证据、六个全阳性外测和实际 MolFormer checkpoint 需要原始数据核查；不能冒充已解决，也不能凭文献分析产生训练成绩。
+- P12固定提交1f7b35ffa8b3d51a32a92a9753ddf642d1b5c9de：完整BCE、初始/对抗两次等系数反传、30模型等权概率平均；公开路径用test标签择阈值再计分。Accuracy是样本平均Jaccard。FGM源实现及论文表格对应快照仍缺。
+- P15现有代码：25% span启动示例、0.6/0.4目标、分类BCE与专用回归MSE；token CE涵盖非padding原始token。固定文件和5折fallback必须区分。
+- 先前16份论文PDF均已验证；P19当前官方字节不同于旧缓存，previous_download保留旧值，不恢复旧哈希。
+- P14/P09历史指标表头及不同划分限制保留；P21使用正式版。P15预印本与正式SI不能混写成正式主文已读。
+
+## 剩余工作与下一步
+
+1. 优先处理12条未归档主文中可合法取得的官方原件/作者稿。先读manifest与access_audit；P08/P25此前只有TDM作者稿且云无PDF，P17转载许可未核实。不要重复同一已确认受限入口，不把网页打印件当论文原PDF。
+2. P15正式主文与预印本完整对照、真实训练日志、main90上游处理仍缺。已找回历史脚本并核对测试导出，不再写“生成脚本未见”。扩展到其他任务/基线时，须另查相应预测和协议，不能外推THPep结论。
+3. P12 FGM扰动实现、论文表格对应快照仍未核实。
+4. 原项目128/109化合物口径、标签证据、六个全阳性外测和实际MolFormer checkpoint需要用户当前原始数据；当前仓库树未见这些数据，不能凭文献补造或宣称已解决。
 
 ## 当前研究结论
 
-MolFormer 肽任务已有 P10/P16/P25 等先例，不能声称 first。P24 的 83 种植物化学物 TEER/Papp/ER 是最邻近端点证据。原多酚任务更适合用可追溯数据、严格分组评估和相对指纹/描述符的实际增量支持贡献。测试数据不能用于选阈值。不同端点、指标和划分不可直接横比。
+MolFormer肽任务已有P10/P16/P25等先例，不能声称first。P24植物化学物TEER/Papp/ER是邻近端点证据。原多酚任务更适合用可追溯数据、严格分组评估和相对指纹/描述符的实际增量支持贡献。阈值须在训练/验证内确定；不同端点、指标、划分和调参方式不可直接横比。
 
 ## 保存与后续操作
 
-main 基线为 3b9ac434db387fadf2cf99b99def654cbf193841。提交前读取当前 gpt HEAD，不写死旧 SHA；只通过 GitHub 连接器 update_ref(gpt, force=false)。本地 work/review/ 是工作缓存，work/source_code/ 是所读作者代码缓存，work/pmc_access/ 含完整与未完整下载；只按 manifest 的已核实路径提交。
+main基线3b9ac434db387fadf2cf99b99def654cbf193841。本轮起点gpt=f7a36a56cfd9dcb7dfe76ee57f71766f0ab46f82；提交前重新读取当前gpt HEAD，只通过GitHub连接器update_ref(gpt,force=false)。续接记录不预写未来提交号，以分支实际HEAD为准。
 
-后续优先解决需要新证据的正式版/划分问题或用户原始数据审计；不要反复把访问限制当成已完成。继续用简短中文报告实际进度。
+本地work/review/是研究缓存，work/round3/是本轮证据与输入；仅按主文/补充manifest和文本白名单提交。文本使用UTF-8/LF，避免换行转换导致blob不一致。独立复核脚本可下载固定提交的10个公开CSV并校验输入blob，命令见专项报告。不要提交完整作者源码、临时缓存或半截下载文件。
