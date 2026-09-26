@@ -57,7 +57,17 @@
       }
     },
     "quality_review_date": "2026-09-26",
-    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md",
+    "paper_note_path": "papers/F01_MoLFormer.md",
+    "quick_read": {
+      "research": "研究能否直接从大量分子的 SMILES 字符串学习通用表征，再用于分子性质分类和回归。这是本系列的基础论文，发表于2022年，单列在近三年文献之外。",
+      "models": "MoLFormer：采用线性注意力和旋转位置编码的 Transformer，通过遮盖语言建模学习分子表示，下游接性质预测头。输入是 SMILES，不需要先把分子转成自然语言描述。",
+      "data": "使用 PubChem、ZINC 的无标签分子做预训练，并在多个分子性质基准上评价。原论文最大预训练规模约11亿分子；不同公开权重版本的训练规模不同，不能混用。",
+      "results": "论文展示了从 SMILES 学到的表征可用于多种分子分类、回归任务。当前阅读记录没有逐个核实原文结果表，因此这里不填写某个统一准确率，也不把这些基准成绩视为肠屏障任务结果。",
+      "contribution": "建立了利用大规模化学字符串预训练、再迁移到性质预测的技术路线；为后续多肽和天然产物研究提供可复用的分子编码器。",
+      "limitations": "通用小分子预训练不能自动保证在多肽、特定多酚或小样本端点上有效。本文成绩取决于所用权重和下游数据。阅读限制：目前依据摘要与既有基础记录，尚未逐表整理原文。"
+    },
+    "quick_read_updated": "2026-09-26"
   },
   {
     "id": "P01",
@@ -115,7 +125,17 @@
       }
     },
     "quality_review_date": "2026-09-26",
-    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md",
+    "paper_note_path": "papers/P01_Representation_limits_comment.md",
+    "quick_read": {
+      "research": "讨论分子性质预测中，复杂的表征学习方法为什么未必稳定优于指纹、描述符等传统表示，强调正确理解数据条件与评估结果。文章属于评论。",
+      "models": "没有提出或训练新的预测模型；讨论传统分子表示与神经网络学习表示的优劣和适用范围。",
+      "data": "没有新增独立实验数据集，主要围绕已有分子预测研究展开讨论，与本库P23系统比较论文相关。",
+      "results": "产出是方法学判断，而非新的准确率或排行榜。其核心意思是：不能仅凭模型更复杂，就推定分子预测一定更好，结论要依赖具体数据和合理比较。",
+      "contribution": "提供了理解表征学习局限的视角，帮助读者区分模型宣传、数据条件与真实实验支持。适合作为研究动机和讨论部分的参考。",
+      "limitations": "评论不提供新的独立验证，不能和P23算作两项互相复现的实验；也不能据此得出所有深度学习模型都无效的结论。"
+    },
+    "quick_read_updated": "2026-09-26"
   },
   {
     "id": "P02",
@@ -183,7 +203,17 @@
       }
     },
     "quality_review_date": "2026-09-26",
-    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md",
+    "paper_note_path": "papers/P02_PeptideBERT.md",
+    "quick_read": {
+      "research": "分别预测肽是否溶血、是否可溶、是否具有nonfouling性质（减少非特异性附着）。三个任务各自训练二分类模型，并非一个统一的多标签活性模型。",
+      "models": "以预训练蛋白语言模型ProtBERT编码氨基酸序列，再加分类头微调；用二元交叉熵训练，输出概率。",
+      "data": "溶血：DBAASP v3，9,316条，阳性约19.6%；溶解性：PROSO II，18,453条；nonfouling：3,600阳性、13,585阴性。采用随机81%/9%/10%训练、验证、测试划分。",
+      "results": "论文报告accuracy：溶血86.051%；溶解性在增强设置下70.018%；nonfouling 88.365%。三个数字对应不同任务，不能据此比较哪种性质更有应用价值。",
+      "contribution": "将蛋白语言模型迁移到肽的开发性质评价，展示了同一预训练编码器可分别服务多个肽分类任务，减少手工设计特征的需求。",
+      "limitations": "溶血数据存在相同序列的重复或冲突测量，随机划分可能受到相近样本影响；类别不平衡时accuracy也不足以概括筛选能力。对未见家族或化学修饰肽的外推仍需额外证据。"
+    },
+    "quick_read_updated": "2026-09-26"
   },
   {
     "id": "P03",
@@ -220,7 +250,7 @@
       "model_and_pretraining": "ActFound：跨 assay 元学习及成对活性差学习；不能因为 foundation model 就称其为语言模型。",
       "loss": "成对学习目标；完整公式本轮未核实，NR。",
       "inference": "用支持化合物适应 assay，再预测查询化合物。",
-      "metrics": "以定量回归表现为主；各基准指标与数值未逐项核实，NR。",
+      "metrics": "作者摘要报告了域内预测及跨assay、跨骨架泛化能力；少量样本微调后，在所评估FEP基准上达到与FEP+(OPLS4)相近的表现。这里保留作者定性结论，未核对的逐基准数值不补写。",
       "split_and_leakage_control": "assay 内/跨 assay 协议需据全文或代码进一步确认。",
       "limitations_and_comparability": "只读出版社摘要及官方项目说明；不能作为现有二分类的分数对手。",
       "evidence_location": "出版社摘要；BFeng14/ActFound 官方 README。"
@@ -248,7 +278,23 @@
       }
     },
     "quality_review_date": "2026-09-26",
-    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md",
+    "paper_reading_update": {
+      "date": "2026-09-26",
+      "scope": "paper-level summary/result reading only; no author-code audit",
+      "source": "https://www.nature.com/articles/s42256-024-00876-w",
+      "location": "abstract or visible publisher sections"
+    },
+    "paper_note_path": "papers/P03_ActFound.md",
+    "quick_read": {
+      "research": "针对每个实验只有少量化合物、不同实验测量尺度又不一致的问题，学习同一实验内两个化合物的相对活性差，再利用其他实验的信息辅助新任务。",
+      "models": "ActFound将成对活性学习与跨assay元学习结合；在目标assay中用少量已测化合物适应模型，再预测待测化合物。名称中的foundation model不代表它就是语言模型。",
+      "data": "预训练约160万条实验活性记录、35,644个ChEMBL assays；论文在六组真实活性数据上评价，并包含跨实验类型、分子骨架和FEP相关比较。",
+      "results": "作者摘要报告了域内预测及跨assay、跨骨架泛化能力；少量样本微调后，在所评估FEP基准上达到与FEP+(OPLS4)相近的表现。这里保留作者定性结论，未核对的逐基准数值不补写。",
+      "contribution": "用实验内部的相对活性关系缓解不同assay测量不兼容，并用元学习处理少样本问题，重点是如何组织监督信息。",
+      "limitations": "需要目标assay的支持样本，不能直接当作不需要新标签的通用预测器；定量活性与单一二分类标签也不等价。阅读限制：本笔记主要依据正式摘要及数据说明，尚缺完整结果表。"
+    },
+    "quick_read_updated": "2026-09-26"
   },
   {
     "id": "P04",
@@ -280,7 +326,7 @@
       "model_and_pretraining": "RF、LightGBM、KNN 调参并集成。",
       "loss": "算法各自训练目标；模型选择最大化交叉验证 MCC，无统一神经 loss。",
       "inference": "3 类模型×10 折共 30 模型概率均值，阈值 >0.5。",
-      "metrics": "MCC 为核心，3 次重复；不把不同任务分数合成用户项目结论。",
+      "metrics": "论文发现，不控制同源性会高估泛化表现；蛋白预训练特征整体优于简单编码，但所比较预训练模型之间并非越大越好。优化后的传统模型集成可与复杂网络竞争。各任务以MCC评价，没有一个适用于全库的统一准确率。",
       "split_and_leakage_control": "对比 Original/NegSearch/NegSearch+HP；CCPart 30% 局部序列相似性约束，20% 测试，训练内 10 折。",
       "limitations_and_comparability": "排除相关活性的负池与长度匹配有参考价值；缺失功能标签仍不等于真阴性。",
       "evidence_location": "Methods: datasets、negative sampling、homology partition、AutoPeptideML；IBM/AutoPeptideML。"
@@ -316,7 +362,23 @@
       }
     },
     "quality_review_date": "2026-09-26",
-    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md",
+    "paper_reading_update": {
+      "date": "2026-09-26",
+      "scope": "paper-level summary/result reading only; no author-code audit",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11438549/",
+      "location": "摘要；Methods/Results"
+    },
+    "paper_note_path": "papers/P04_AutoPeptideML.md",
+    "quick_read": {
+      "research": "研究肽活性预测的整个建模流程：阴性样本怎么选、训练测试怎么分、预训练特征是否有用，以及传统模型能否达到复杂网络的效果。",
+      "models": "提取蛋白语言模型表征或one-hot特征，优化随机森林、LightGBM、KNN，再将交叉验证模型的预测概率平均。",
+      "data": "18个肽二分类任务，单任务约200—20,000条；用于选负例的APML-Peptipedia候选池含92,092条肽、128类活性。比较原划分、改进负例、再加同源性隔离等设置。",
+      "results": "论文发现，不控制同源性会高估泛化表现；蛋白预训练特征整体优于简单编码，但所比较预训练模型之间并非越大越好。优化后的传统模型集成可与复杂网络竞争。各任务以MCC评价，没有一个适用于全库的统一准确率。",
+      "contribution": "把负例构建、相似性隔离和自动建模整理成完整流程，使评价更贴近新序列应用，也降低了建立任务模型的门槛。",
+      "limitations": "从其他活性肽中挑出的负例仍可能只是没有目标活性记录，未必被实验确认无活性。结论依赖这18个任务，不能推定对所有修饰肽或所有实验体系同样成立。"
+    },
+    "quick_read_updated": "2026-09-26"
   },
   {
     "id": "P05",
@@ -373,7 +435,17 @@
       }
     },
     "quality_review_date": "2026-09-26",
-    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md",
+    "paper_note_path": "papers/P05_PepNet.md",
+    "quick_read": {
+      "research": "分别预测抗炎肽和抗菌肽，尝试同时利用预训练语义、序列局部模式和理化性质，并辅助解释哪些位置与活性相关。",
+      "models": "融合ProtT5表征、one-hot编码和14种理化特征，经残差膨胀CNN、Transformer、池化及MLP输出类别；序列按固定长度40处理。",
+      "data": "按数据准备节记录：抗炎4,194条，训练/验证/测试为2,516/629/1,049；抗菌8,346条，对应5,340/1,336/1,670。数据来自IEDB、APD3/DADP等来源。",
+      "results": "抗菌任务报告F1=0.951、MCC=0.901。论文同时开展抗炎预测和解释分析；这里不把抗菌成绩当作抗炎成绩。",
+      "contribution": "将预训练蛋白特征与可解释的理化特征融合，结合局部卷积和序列注意力，覆盖两类生物活性筛选任务。",
+      "limitations": "固定长度处理可能损失长序列信息；已有划分不能直接证明远距离序列外推。正文后部与数据准备节存在抗炎/抗菌数据名对调，本笔记采用数据准备节口径；不据此猜测未核实的实验设置。"
+    },
+    "quick_read_updated": "2026-09-26"
   },
   {
     "id": "P06",
@@ -402,7 +474,7 @@
       "model_and_pretraining": "DeepAIP，结合上下文自注意力和多尺度卷积。",
       "loss": "NR：摘要不足以确认。",
       "inference": "输出 AIP 预测；阈值 NR。",
-      "metrics": "摘要报告 ACC/MCC 改善；未核对完整表，不搬用增幅作为统一指标。",
+      "metrics": "摘要报告，相对次优比较方法，MCC和accuracy分别提高16.35%和6.91%；另将17条阳性肽全部识别为抗炎肽。这些是作者报告的增幅和阳性识别结果，不是可直接代换的绝对MCC/accuracy。",
       "split_and_leakage_control": "训练测试与同源性约束 NR。",
       "limitations_and_comparability": "仅摘要/官方代码入口；17 个全阳性外部样本不能估计特异度。",
       "evidence_location": "PubMed 39357724 摘要；YangQingGuoCCZU/DeepAIP。"
@@ -428,7 +500,23 @@
       }
     },
     "quality_review_date": "2026-09-26",
-    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md",
+    "paper_reading_update": {
+      "date": "2026-09-26",
+      "scope": "paper-level summary/result reading only; no author-code audit",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/39357724/",
+      "location": "abstract or visible publisher sections"
+    },
+    "paper_note_path": "papers/P06_DeepAIP.md",
+    "quick_read": {
+      "research": "利用预训练蛋白语言模型从序列提取信息，预测肽是否具有抗炎活性，并比较不同预训练特征的效果。",
+      "models": "DeepAIP使用ProtT5嵌入，结合上下文自注意力和多尺度卷积；作者比较后选择ProtT5作为特征输入。",
+      "data": "使用抗炎肽基准数据，并另外评价17条新收集的抗炎阳性序列。主数据集精确规模、负例来源与划分细节，现有摘要证据不足以确认。",
+      "results": "摘要报告，相对次优比较方法，MCC和accuracy分别提高16.35%和6.91%；另将17条阳性肽全部识别为抗炎肽。这些是作者报告的增幅和阳性识别结果，不是可直接代换的绝对MCC/accuracy。",
+      "contribution": "展示上下文注意力对预训练肽序列特征的再加工方式，并比较特征来源，而非只更换一个分类器。",
+      "limitations": "17条外部序列全部为阳性，无法评价特异度或误报率。阅读限制：未取得完整方法和结果表，增幅的计算口径、同源性控制及主测试集表现仍需全文说明。"
+    },
+    "quick_read_updated": "2026-09-26"
   },
   {
     "id": "P07",
@@ -453,12 +541,12 @@
     "selection": "include",
     "extraction": {
       "task_definition": "抗菌、抗高血压、抗氧化、抗高血糖四功能多标签。",
-      "dataset_and_labels": "数据量、每类计数和负标签定义本轮未核实。",
+      "dataset_and_labels": "出版社数据段列出UniProt、APD、AHTPDB、DFBP、BIOPEP-UWM、BGI-marine等来源，并称负例取自缺少功能信息的UniProt序列。本笔记未确认去重后的独立样本数与完整标签分布。",
       "input_representation": "序列编码、embedding 与语言 tokenizer。",
       "model_and_pretraining": "Deep2Pep：BiLSTM/注意力残差及 BERT encoder；摘要不能证明使用大规模预训练 BERT。",
       "loss": "NR。",
       "inference": "多标签输出；逐标签阈值 NR。",
-      "metrics": "指标详细定义与结果 NR。",
+      "metrics": "摘要报告subset accuracy=0.737、Macro F1=0.734、Hamming loss=0.095，并称优于所比较模型。Subset accuracy要求一条肽的标签集合全部匹配，不能当作普通二分类正确率。",
       "split_and_leakage_control": "去重、同源性、划分 NR。",
       "limitations_and_comparability": "仅摘要可得；可作多功能任务参考，不是单标签屏障活性的直接基线。",
       "evidence_location": "出版社/PubMed 38308955 摘要。"
@@ -484,7 +572,23 @@
       }
     },
     "quality_review_date": "2026-09-26",
-    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md",
+    "paper_reading_update": {
+      "date": "2026-09-26",
+      "scope": "paper-level summary/result reading only; no author-code audit",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/38308955/",
+      "location": "abstract or visible publisher sections"
+    },
+    "paper_note_path": "papers/P07_Deep2Pep.md",
+    "quick_read": {
+      "research": "允许同一条肽同时具有多种活性，联合预测抗菌、抗高血压、抗氧化和抗高血糖四个标签。",
+      "models": "结合序列编码、embedding和tokenizer，使用BiLSTM、注意力残差模块及BERT encoder。作者摘要认为BiLSTM起主要作用；仅出现BERT名称不能认定使用了大规模预训练权重。",
+      "data": "出版社数据段列出UniProt、APD、AHTPDB、DFBP、BIOPEP-UWM、BGI-marine等来源，并称负例取自缺少功能信息的UniProt序列。本笔记未确认去重后的独立样本数与完整标签分布。",
+      "results": "摘要报告subset accuracy=0.737、Macro F1=0.734、Hamming loss=0.095，并称优于所比较模型。Subset accuracy要求一条肽的标签集合全部匹配，不能当作普通二分类正确率。",
+      "contribution": "把四类肽活性组织为联合多标签任务，利用序列上下文及标签共同学习，使多功能肽不必被强制归入单一类别。",
+      "limitations": "缺少功能注释不代表真正无活性，负标签可能含未被研究的阳性肽。阅读限制：目前为摘要与出版社可见段落，去重、分割及预训练来源尚未完整确认。"
+    },
+    "quick_read_updated": "2026-09-26"
   },
   {
     "id": "P08",
@@ -553,7 +657,17 @@
       }
     },
     "quality_review_date": "2026-09-26",
-    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md",
+    "paper_note_path": "papers/P08_PeptideCLM.md",
+    "quick_read": {
+      "research": "研究将肽化学结构纳入语言模型预训练，是否有助于预测环肽通过膜的能力，尤其关注与训练数据不同的化学簇。",
+      "models": "PeptideCLM约4,400万参数，以肽和小分子SMILES预训练，下游做通透性回归；五个模型取均值，并按logPexp=-5.5派生可通透/不可通透类别。",
+      "data": "约2,300万条肽与小分子用于混合预训练；下游使用CycPeptMPDB的PAMPA子集，移除检测下限为-10的记录。总库规模不等于筛选后的训练规模。",
+      "results": "对应混合预训练设置，论文报告AUROC=0.781±0.067、AUPRC=0.738±0.161、RMSE=0.742±0.214；评价采用六簇轮流留出，分数波动也随测试簇变化。",
+      "contribution": "把小分子与肽化学表示结合，并使用留簇评价检验环肽通透性的结构外推，比只报告随机测试更贴近化学空间迁移问题。",
+      "limitations": "PAMPA是人工膜实验，不能直接等同细胞摄取或肠屏障保护。排除检测下限记录会改变目标人群；不同簇间波动较大。作者预训练数据存在后续修正版，阅读时需区分数据版本。"
+    },
+    "quick_read_updated": "2026-09-26"
   },
   {
     "id": "P09",
@@ -587,7 +701,7 @@
       "task_definition": "典型与非典型肽的穿膜、溶解性、结合等性质。",
       "dataset_and_labels": "五个主要基准：canonical CPP/Sol/Binding 与 noncanonical CPP/Binding；预训练为大规模典型肽再适应修饰肽。",
       "input_representation": "SMILES 分子图，原子/片段信息及 AdaFrag。",
-      "model_and_pretraining": "PepLand 两阶段预训练，GRU/预测头；可探针或微调。",
+      "model_and_pretraining": "PepLand：多视图异构图神经网络，两阶段预训练，结合原子/片段表示与任务预测头；可探针或微调。",
       "loss": "遮盖属性预测；具体目标和各任务 loss 本轮未完整核实，NR。",
       "inference": "表征池化后分类/回归。",
       "metrics": "主表按任务用 AUC 或 Spearman；ncCPP 0.628、ncBinding 0.768 为相应 Spearman 设置。",
@@ -629,7 +743,17 @@
       }
     },
     "quality_review_date": "2026-09-26",
-    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md",
+    "paper_note_path": "papers/P09_PepLand.md",
+    "quick_read": {
+      "research": "统一表示典型肽和包含非典型氨基酸的修饰肽，使模型能保留普通氨基酸序列难以表达的化学结构信息。",
+      "models": "PepLand把SMILES转成分子图，结合原子、片段信息及AdaFrag，通过两阶段预训练获得表示，再接任务预测头。它是图表征模型。",
+      "data": "主要包括典型肽穿膜、溶解性、结合，以及非典型肽穿膜、结合五组基准；预训练先利用大规模典型肽，再适应修饰肽。各任务规模应分别记录。",
+      "results": "原Table 1中典型CPP、溶解性对应AUC为0.838、0.662；非典型CPP、结合任务的0.628、0.768是Spearman相关系数。这些数字不能全部称为F1或准确率。",
+      "contribution": "通过原子与片段层面的联合表示，拓展了对非典型残基、化学修饰肽的建模能力，提供了与序列模型不同的路线。",
+      "limitations": "各基准的任务和指标不同，不能拼成一个统一性能排序；也未据现有记录确认所有基准都采用同源性或骨架隔离。结果支持特定数据上的表示价值，不能自动说明对任意修饰都能外推。"
+    },
+    "quick_read_updated": "2026-09-26"
   },
   {
     "id": "P10",
@@ -660,7 +784,7 @@
       "model_and_pretraining": "MolFormer、ChemBERTa-2、PeptideCLM、ESM/ProtT5 等固定表征接 SVM/LightGBM。",
       "loss": "各下游算法原生目标，无统一深度 loss。",
       "inference": "分类分数或定量结合预测。",
-      "metrics": "分类 MCC、回归 Spearman（文中 SPCC）；相似性阈值与表现也做相关分析。",
+      "metrics": "作者报告，标准肽内插时表示差别不大；修饰肽内插时化学语言模型更有优势。标准到修饰外推时性能明显下降，摘要概括约下降50%，其中化学指纹和ChemBERTa-2相对较好；该增减不是某个统一准确率。",
       "split_and_leakage_control": "相似性分割 CCPart；训练内 5 折 HPO、Optuna 最多 200 steps（含 early stopping）、5 seeds；外推用全部标准肽训练、修饰肽测试。",
       "limitations_and_comparability": "负例有“其他活性”来源，不必然真阴性；直接证明已有 MolFormer 肽任务先例。",
       "evidence_location": "Methods datasets/representations/partition；Figs 4–6；IBM/PeptideGeneralizationBenchmarks。 本轮复核原 PDF p.3 Table 1、p.4 HPO。"
@@ -688,7 +812,23 @@
       }
     },
     "quality_review_date": "2026-09-26",
-    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md",
+    "paper_reading_update": {
+      "date": "2026-09-26",
+      "scope": "paper-level summary/result reading only; no author-code audit",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12751563/",
+      "location": "摘要Scientific contribution；Table 1"
+    },
+    "paper_note_path": "papers/P10_Peptide_generalization.md",
+    "quick_read": {
+      "research": "直接研究在标准肽上训练的模型，能否预测修饰肽，并比较表示方式和相似性分割对结论的影响。",
+      "models": "比较化学指纹、MoLFormer、ChemBERTa-2、PeptideCLM、ESM、ProtT5、PepLand等表示，下游使用SVM或LightGBM；并非提出单一新大型网络。",
+      "data": "四类任务形成八个标准/修饰数据集：结合1,002/299，穿膜2,324/480，抗菌9,855/1,880，抗病毒4,754/444。以相似性约束划分，并重复多个随机种子。",
+      "results": "作者报告，标准肽内插时表示差别不大；修饰肽内插时化学语言模型更有优势。标准到修饰外推时性能明显下降，摘要概括约下降50%，其中化学指纹和ChemBERTa-2相对较好；该增减不是某个统一准确率。",
+      "contribution": "把容易混淆的内插和化学修饰外推分开评价，指出化学相似性与表示选择应按应用情境判断，并给出可比较的数据资源。",
+      "limitations": "修饰肽数据明显较少，外推结论受活性和修饰类型覆盖限制；部分负例来自其他活性来源，不一定是真阴性。四个任务上的相对优劣不能推广为某个模型总是最好。"
+    },
+    "quick_read_updated": "2026-09-26"
   },
   {
     "id": "P11",
@@ -721,7 +861,7 @@
       "model_and_pretraining": "AOP-DRL：ESM-2 加 TextCNN 和分类头。",
       "loss": "已读正文未清楚确定完整损失，NR。",
       "inference": "softmax、阈值 0.5。",
-      "metrics": "ACC、MCC、Recall、F1、AUROC；不把 ESM 单独基线的 AUROC 误报为最终模型。",
+      "metrics": "作者摘要报告，相对所比较抗氧化专用模型的平均accuracy，P60、P70、P80、P90分别提高7.26%、2.57%、2.59%、4.20%。这是四种设置的增幅，不能当成最终准确率；也不能把ESM单独基线分数当作AOP-DRL结果。",
       "split_and_leakage_control": "80/20 分层、P60/70/80/90 相似性设置与 5 折；相互嵌套关系须代码确认。",
       "limitations_and_comparability": "文本对全量训练/部分冻结及对比学习描述不完全一致，不能直接沿用全部宣传语。",
       "evidence_location": "Methods: Dataset、ESM-2/TextCNN、Evaluation；PMC12800373。"
@@ -758,7 +898,23 @@
       }
     },
     "quality_review_date": "2026-09-26",
-    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md",
+    "paper_reading_update": {
+      "date": "2026-09-26",
+      "scope": "paper-level summary/result reading only; no author-code audit",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12800373/",
+      "location": "摘要与模型/数据方法"
+    },
+    "paper_note_path": "papers/P11_AOP_DRL.md",
+    "quick_read": {
+      "research": "利用蛋白预训练表示识别抗氧化肽，同时利用卷积捕捉可能与功能相关的局部序列模式。",
+      "models": "AOP-DRL使用ESM-2 650M模型的1,280维残基表征，结合TextCNN和分类头，输出抗氧化/非抗氧化概率。",
+      "data": "来自AnOxPePred的1,404条肽：687阳性，其中456条自由基清除、231条螯合；717阴性。论文评价P60/P70/P80/P90等相似性设置，并使用分层留出及交叉验证。",
+      "results": "作者摘要报告，相对所比较抗氧化专用模型的平均accuracy，P60、P70、P80、P90分别提高7.26%、2.57%、2.59%、4.20%。这是四种设置的增幅，不能当成最终准确率；也不能把ESM单独基线分数当作AOP-DRL结果。",
+      "contribution": "将大型蛋白模型提供的序列表示与局部卷积结合，检验预训练特征用于小规模抗氧化肽筛选的可行性。",
+      "limitations": "阳性包含不同抗氧化作用类型，统一二分类不能区分具体机制与强度。正文对冻结范围和学习方式的描述不完全一致，且不同数据划分之间的关系仍需澄清；本轮只整理论文报告。"
+    },
+    "quick_read_updated": "2026-09-26"
   },
   {
     "id": "P12",
@@ -822,7 +978,17 @@
       "repository": "zhouworks/Multifunctional-peptide-classification",
       "report": "code_audit.md",
       "executed": false
-    }
+    },
+    "paper_note_path": "papers/P12_MFP_MFL.md",
+    "quick_read": {
+      "research": "预测同一条肽的抗菌、抗炎、抗高血压、抗癌、抗糖尿病五类功能，利用不同预训练表示的互补信息。",
+      "models": "融合ESM-2、ProtT5、RoBERTa特征，使用图注意力网络，并引入对抗训练和模型集成。这里按论文层面的模型设计概括。",
+      "data": "论文Table 2列出5,719条单功能肽、198条双功能肽，合计5,917条独立序列；双功能肽会在两个标签中出现，不能重复计作两个独立样本。",
+      "results": "采用原文主表：多标签accuracy=0.786、precision=0.799。这里的accuracy对应标签集合重合程度，不能理解为78.6%的样本全部预测正确，也不能与普通二分类accuracy直接比较。",
+      "contribution": "把多种预训练表示、图注意力与集成用于多功能肽识别，重点是特征融合和多标签任务建模。",
+      "limitations": "单功能与双功能样本很不均衡，少量多功能肽的表现不能仅由总体分数代表；结论段与主表有指标对调。既有记录提示阈值选择可能影响独立评价，应谨慎使用相关分数；本篇不展开代码细节，也不新增核查。"
+    },
+    "quick_read_updated": "2026-09-26"
   },
   {
     "id": "P13",
@@ -851,7 +1017,7 @@
       "model_and_pretraining": "BPFun：Transformer、BiLSTM、注意力；不能仅因 Transformer 就归为预训练大模型。",
       "loss": "主文 p.12 式 (17) 明示 MSE；网络另含 L2 正则化，不能默认写成 BCE。",
       "inference": "七个 sigmoid 输出，阈值 >0.5。",
-      "metrics": "多标签 precision/coverage/accuracy、absolute true/false、F1。",
+      "metrics": "原文摘要及Table 7报告多标签accuracy=0.6577、absolute true=0.6573；后者描述整组标签完全匹配的比例。作者在所用七功能测试集上报告优于比较方法。",
       "split_and_leakage_control": "CD-HIT 0.9 去冗余、长度≥5，再随机 80/20。",
       "limitations_and_comparability": "先去冗余后随机分割不等于相似性隔离；序列遮盖增强需限制在训练内。",
       "evidence_location": "Methods: model/loss、dataset；BMC 主文。 本轮核对原 PDF p.11 sigmoid/0.5 阈值与 p.12 式 (17) 图像。"
@@ -879,7 +1045,23 @@
       }
     },
     "quality_review_date": "2026-09-26",
-    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md",
+    "paper_reading_update": {
+      "date": "2026-09-26",
+      "scope": "paper-level summary/result reading only; no author-code audit",
+      "source": "https://link.springer.com/article/10.1186/s12859-025-06190-5",
+      "location": "摘要及Table 7（PDF第21页）"
+    },
+    "paper_note_path": "papers/P13_BPFun.md",
+    "quick_read": {
+      "research": "同时识别肽的七种活性，包括抗菌、抗癌、抗糖尿病、抗高血压、抗炎、抗血管生成和抗氧化，并处理功能标签不平衡。",
+      "models": "融合五类序列及理化特征，通过多尺度卷积、BiLSTM及注意力提取信息，配合数据增强，输出七个标签概率。使用Transformer模块不等于使用预训练大模型。",
+      "data": "标签记录数分别为2,409、646、514、868、1,678、134、318，存在154条双标签肽，不能把各标签直接相加当独立样本数。CD-HIT 0.9去冗余后随机80%/20%分割。",
+      "results": "原文摘要及Table 7报告多标签accuracy=0.6577、absolute true=0.6573；后者描述整组标签完全匹配的比例。作者在所用七功能测试集上报告优于比较方法。",
+      "contribution": "整合多种生物与理化信息，把更多肽功能放入同一多标签模型，并尝试通过增强缓解标签不平衡。",
+      "limitations": "小类别如抗血管生成只有134条标签记录，总体指标可能掩盖弱势类别。去冗余后随机分割不等于训练测试相似性隔离；数据增强的作用应与真实新样本泛化区分。"
+    },
+    "quick_read_updated": "2026-09-26"
   },
   {
     "id": "P14",
@@ -942,7 +1124,17 @@
       }
     },
     "quality_review_date": "2026-09-26",
-    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md",
+    "paper_note_path": "papers/P14_PeptiVerse.md",
+    "quick_read": {
+      "research": "为典型和化学修饰肽提供统一入口，预测溶血、溶解性、nonfouling、毒性、通透性、半衰期和亲和力等开发性质。",
+      "models": "接受氨基酸序列或SMILES，利用冻结的蛋白/化学语言模型提取表示，再接传统或深度预测器；结合任务使用交叉注意力。平台集合了多个任务模型。",
+      "data": "例如溶血6,076条；修饰肽通透性7,475条，其中PAMPA 6,869、Caco-2 606；典型穿膜肽2,324条；半衰期的序列/SMILES数据分别130/245条。",
+      "results": "作者报告在多种性质上获得有竞争力的表现，并提供网页预测平台。分类与回归使用不同指标，不能概括成一个总准确率；其Table 1历史比较含指标名称和划分不一致，不能据整表断言全面领先。",
+      "contribution": "把两类输入表示和多种开发性质整合到可用平台，强调肽候选的综合性质评价，而不仅是单一结合活性。",
+      "limitations": "部分端点样本很少，半衰期尤其明显；不同来源实验存在异质性。原表中的PepLand历史分数实际有AUC却被列入F1表头，因此跨论文排名需谨慎。输出不确定性也不等于已经完成概率校准。"
+    },
+    "quick_read_updated": "2026-09-26"
   },
   {
     "id": "P15",
@@ -1039,7 +1231,17 @@
       "test_exports_matched": 9,
       "formal_S8_values_matched": 18
     },
-    "read_supplement_url": "https://acs.figshare.com/articles/journal_contribution/Scaling_SMILES-Based_Chemical_Language_Models_for_Therapeutic_Peptide_Engineering/32979761"
+    "read_supplement_url": "https://acs.figshare.com/articles/journal_contribution/Scaling_SMILES-Based_Chemical_Language_Models_for_Therapeutic_Peptide_Engineering/32979761",
+    "paper_note_path": "papers/P15_PeptideCLM2.md",
+    "quick_read": {
+      "research": "扩展肽化学语言模型的规模与预训练目标，比较遮盖语言学习、分子描述符预测及两者混合，评价对治疗肽性质的迁移效果。",
+      "models": "PeptideCLM-2包含约3,200万—3.37亿参数的不同规模；以SMILES为输入，分类使用LoRA与预测头，通透性回归使用多模型集成。",
+      "data": "预训练包含逾亿小分子及肽；下游包括CycPeptMPDB、THPep、CellPPD、AmpHGT、PepMSND。公开THPep表为609条，阴/阳性433/176；其他任务不能套用这个规模。",
+      "results": "正式补充表S8的THPep结果：MLM的MCC/AUROC/F1为0.756/0.949/0.826；Hybrid为0.747/0.940/0.818；MTR为0.698/0.924/0.784，均为三个随机种子的均值。这一任务上MLM较好，不代表混合目标在所有任务都更优。",
+      "contribution": "系统比较模型规模与预训练目标，拓展SMILES肽模型在多种治疗相关性质上的使用，并报告分类、回归等不同下游路径。",
+      "limitations": "THPep阈值相关成绩受测试标签参与选择的已知限制，不能直接作为完全独立测试估计；具体历史核查另存，不在本篇展开。阅读范围为预印本v5及正式补充S5/S6/S8，正式主文尚未完整取得。"
+    },
+    "quick_read_updated": "2026-09-26"
   },
   {
     "id": "P16",
@@ -1101,7 +1303,17 @@
       }
     },
     "quality_review_date": "2026-09-26",
-    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md",
+    "paper_note_path": "papers/P16_LANTERN.md",
+    "quick_read": {
+      "research": "预测T细胞受体TCR与肽是否结合，重点评价对训练中未见肽及少样本情境的泛化。",
+      "models": "使用ESM编码TCR氨基酸序列，MoLFormer编码肽的SMILES，多头交叉注意力融合两侧表示，再经MLP预测结合概率。",
+      "data": "TCHard基准，包括NA、RN、GenNA、GenRN等设置，约16万TCR和1,341种独立肽。配对记录数不等于独立肽数量；评价区分参考负例和随机负例。",
+      "results": "论文报告在TCHard上有竞争力的AUROC表现，尤其在随机对照负例及未见表位设置下；使用5折、3个随机种子。当前笔记保留按情境的定性结论，不将多组实验合为一个准确率。",
+      "contribution": "融合蛋白序列与肽化学表示，通过交叉注意力建模配对信息，是MoLFormer进入多肽相关任务的明确应用。",
+      "limitations": "阴性配对的构建方式会影响任务难度。文中的zero-shot指未见肽测试，不是整个模型无需任务训练；TCR—肽结合成绩也不能外推为其他肽活性或完整免疫反应的预测能力。"
+    },
+    "quick_read_updated": "2026-09-26"
   },
   {
     "id": "P17",
@@ -1144,7 +1356,17 @@
       "https://arxiv.org/abs/2604.10531"
     ],
     "quality_review_date": "2026-09-26",
-    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md",
+    "paper_note_path": "papers/P17_PepBenchmark.md",
+    "quick_read": {
+      "research": "针对不同肽研究的数据清洗、负例构建、划分和指标不统一问题，建立共同的数据集、处理流程和评价体系。",
+      "models": "没有提出一个单一的新预测网络，而是统一比较指纹、图神经网络、蛋白语言模型和SMILES模型四类方法，形成公共基线与排行榜。",
+      "data": "35个数据集：29个典型肽、6个非典型肽；27个分类、8个回归，覆盖7组用途。按任务提供一致的清洗、表示和划分流程。",
+      "results": "主要成果是PepBenchData、PepBenchPipeline、PepBenchLeaderboard三部分及统一基线。分类按AUROC、回归按MAE评价，并汇总多个划分；不能以一个跨任务总分代替具体任务结果。",
+      "contribution": "使模型可以在共同数据和规则下比较，降低每项研究重新整理数据的成本，也为判断改进是否来自模型本身提供条件。",
+      "limitations": "统一流程不能自动消除原始标签质量和负例语义问题；典型与非典型肽采用不同相似性处理，仍需按具体任务解释外推难度。正式状态为ICLR 2026会议论文。"
+    },
+    "quick_read_updated": "2026-09-26"
   },
   {
     "id": "P18",
@@ -1163,20 +1385,20 @@
     "accessed": "2026-09-26",
     "status": "published",
     "reading_status": "abstract_or_partial",
-    "read_url": "https://www.sciencedirect.com/science/article/abs/pii/S2210271X24003219",
-    "read_version": "published metadata/abstract and limited source excerpts; full methods not verified",
+    "read_url": "https://researchers.unab.cl/en/publications/accurate-amp-simple-open-sourced-no-code-machine-learning-and-cdf/",
+    "read_version": "published abstract reproduced by author institution; full methods not verified",
     "selection": "include",
     "extraction": {
       "task_definition": "酚类 DPPH 抗氧化分类。",
-      "dataset_and_labels": "酚类定量/分类资料；精确清洗后数量与标签界值 NR。",
+      "dataset_and_labels": "作者机构保存的论文摘要明确为202种酚类化合物的抗DPPH数据。精确类别阈值、各集合数量和数据清洗后的分布，本笔记尚未取得。",
       "input_representation": "量子 CDFT 与分子描述符。",
       "model_and_pretraining": "J48、RandomTree、JCHAID 等树模型及特征选择。",
       "loss": "各树模型目标；精确设置 NR。",
       "inference": "抗氧化类别预测；阈值 NR。",
-      "metrics": "摘要及页面片段不足以完整核对结果，NR。",
+      "metrics": "摘要报告决策树在内部与外部验证中accuracy均超过85%。这里的“外部”沿用作者称谓，尚不能确认它是独立来源还是原数据池的留出集合，也未取得各模型完整结果表。",
       "split_and_leakage_control": "训练测试划分、嵌套特征筛选 NR。",
       "limitations_and_comparability": "化学对象接近，DPPH 不等于肠屏障作用；仅摘要/页面片段，不能视作全文阅读。",
-      "evidence_location": "DOI 10.1016/j.comptc.2024.114782 出版社摘要。"
+      "evidence_location": "DOI 10.1016/j.comptc.2024.114782 出版社摘要。 本次补读作者机构Universidad Andrés Bello收录的论文摘要，明确202种酚类及内部/外部验证accuracy>85%；未取得完整方法。"
     },
     "window": "2023-09-26_to_2026-09-26",
     "bibliographic_source": "https://api.crossref.org/works/10.1016/j.comptc.2024.114782",
@@ -1199,7 +1421,23 @@
       }
     },
     "quality_review_date": "2026-09-26",
-    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md",
+    "paper_reading_update": {
+      "date": "2026-09-26",
+      "scope": "paper-level summary/result reading only; no author-code audit",
+      "source": "https://researchers.unab.cl/en/publications/accurate-amp-simple-open-sourced-no-code-machine-learning-and-cdf/",
+      "location": "abstract or visible publisher sections"
+    },
+    "paper_note_path": "papers/P18_Phenols_CDFT.md",
+    "quick_read": {
+      "research": "用酚类分子的电子反应性与结构特征预测DPPH抗氧化活性，强调无需编程的建模流程和可解释规则。",
+      "models": "在GFN1-xTB、GFN2-xTB层面计算概念密度泛函理论（CDFT）描述符；结合PCA、InfoGain等筛选方法，训练J48、RandomTree、JCHAID等树模型。",
+      "data": "作者机构保存的论文摘要明确为202种酚类化合物的抗DPPH数据。精确类别阈值、各集合数量和数据清洗后的分布，本笔记尚未取得。",
+      "results": "摘要报告决策树在内部与外部验证中accuracy均超过85%。这里的“外部”沿用作者称谓，尚不能确认它是独立来源还是原数据池的留出集合，也未取得各模型完整结果表。",
+      "contribution": "将电子反应性描述符与容易阅读的决策树规则连接，为酚类抗氧化结构—活性关系提供简单且可解释的建模路线。",
+      "limitations": "样本规模较小，标签阈值与划分会明显影响结果；DPPH化学清除活性不等同细胞抗氧化或肠屏障保护。阅读限制：主要依据作者机构摘要，尚未完成全文分析。"
+    },
+    "quick_read_updated": "2026-09-26"
   },
   {
     "id": "P19",
@@ -1257,7 +1495,17 @@
       }
     },
     "quality_review_date": "2026-09-26",
-    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md",
+    "paper_note_path": "papers/P19_Antioxidant_QSAR.md",
+    "quick_read": {
+      "research": "预测小分子抗氧化强度的连续数值，而不只是活性/无活性标签；围绕DPPH实验整理数据并比较回归模型。",
+      "models": "从规范SMILES计算Mordred描述符，使用F-test、互信息筛选特征，比较11种回归器；以ExtraTrees、Gradient Boosting、XGBoost等构成集成。",
+      "data": "AODB清理后1,911种独立化合物，采用30分钟DPPH测量并转为pIC50；按InChI去重和过滤冲突。随机80%/20%训练测试，训练内10折。",
+      "results": "测试集集成R²约0.78；最佳单模型ExtraTrees的R²约0.77、RMSE约0.45。集成改善幅度有限，说明经过整理的数据和传统描述符已有较强预测能力。",
+      "contribution": "构建测量条件相对统一的小分子抗氧化回归资料，并给出传统机器学习基线与连续活性预测流程。",
+      "limitations": "所谓external测试来自同一数据池的随机留出，不是前瞻性新来源验证。结构相近化合物及特征选择步骤可能影响结果；DPPH终点也不能直接代表肠屏障功能。"
+    },
+    "quick_read_updated": "2026-09-26"
   },
   {
     "id": "P20",
@@ -1327,7 +1575,17 @@
       }
     },
     "quality_review_date": "2026-09-26",
-    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md",
+    "paper_note_path": "papers/P20_Barrier_metabolomics.md",
+    "quick_read": {
+      "research": "从生物样本的代谢组特征预测连续肠屏障功能指数，并寻找与屏障功能障碍相关的关键代谢物。",
+      "models": "将生物学信息融入特征选择，再比较五类回归模型。输入是样本中的代谢物测量，不是单个候选分子的SMILES。",
+      "data": "小鼠相关表型与代谢组资料，最终筛出10个核心代谢物。当前摘要未提供足够信息确认独立样本量、分组分布和完整实验条件。",
+      "results": "摘要报告R²=0.604—0.654、MAE=0.319—0.352，描述的是屏障指数预测。MAE依赖指数的定义和量纲，不能直接与其他回归端点的误差比较。",
+      "contribution": "把屏障表型与代谢信息联系起来，用较少的代谢物特征形成可解释的预测思路，为机制研究提供候选线索。",
+      "limitations": "代谢物与屏障指数的预测关联不证明因果或干预作用。阅读限制：目前仅摘要，完整划分和混杂因素处理未确认；该任务不直接回答某个新化合物能否保护肠屏障。"
+    },
+    "quick_read_updated": "2026-09-26"
   },
   {
     "id": "P21",
@@ -1358,7 +1616,7 @@
       "model_and_pretraining": "HELM-BERT；对比 MolFormer-XL/PeptideCLM；PPI 加冻结 ESM-2。",
       "loss": "通透性 MSE；PPI BCE，阳性权重 4。",
       "inference": "全微调、仅头微调和线性探针分别评估。",
-      "metrics": "回归 R²/r/RMSE/MAE；PPI AUROC 等。",
+      "metrics": "正式版摘要报告，随机划分通透性R²=0.668，在Murcko骨架划分下也保持最佳平均表现；同架构SMILES对照在全微调时缩小差距，而冻结表示时HELM优势更清楚。",
       "split_and_leakage_control": "最终版加入随机/10 折 Murcko 分组；PPI 5 折配对/蛋白分组，1:4 阴性采样。",
       "limitations_and_comparability": "以 2026 正式版为准：不能把旧预印本的样本比矛盾或缺少 scaffold 检验套用最终版；检查预训练重叠消融。",
       "evidence_location": "PMC13417886 Methods: downstream tasks、ChEMBL benchmark、overlap ablation。 本轮用正式版 ACS/PMC 已索引方法再次核对计数、1:4 采样与 BCE 阳性权重 4。"
@@ -1398,7 +1656,23 @@
       }
     },
     "quality_review_date": "2026-09-26",
-    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md",
+    "paper_reading_update": {
+      "date": "2026-09-26",
+      "scope": "paper-level summary/result reading only; no author-code audit",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13417886/",
+      "location": "正式版摘要与Methods"
+    },
+    "paper_note_path": "papers/P21_HELM_BERT.md",
+    "quick_read": {
+      "research": "研究显式写出单体、化学修饰和共价连接的HELM表示，能否比普通氨基酸序列或原子级SMILES更好地表达修饰肽及环肽。",
+      "models": "直接在HELM字符串上预训练编码器式Transformer；比较全微调、仅预测头训练及线性探针。肽—蛋白任务结合冻结的ESM-2蛋白表示。",
+      "data": "预训练39,079条独立肽；通透性7,715条；Propedia配对分组含20,057个阳性配对，蛋白簇分组筛选后20,055；另使用ChEMBL相互作用基准。",
+      "results": "正式版摘要报告，随机划分通透性R²=0.668，在Murcko骨架划分下也保持最佳平均表现；同架构SMILES对照在全微调时缩小差距，而冻结表示时HELM优势更清楚。",
+      "contribution": "让分子表示本身显式保留修饰和连接拓扑，并通过架构匹配对照区分表示格式与模型架构的影响。",
+      "limitations": "HELM输入依赖正确的单体与连接注释；结果仍受数据覆盖和预训练重叠影响。相互作用负例采用构造方式，不等同全部实验确认无结合。采用2026正式版结论，不能把早期预印本缺口继续套用。"
+    },
+    "quick_read_updated": "2026-09-26"
   },
   {
     "id": "P22",
@@ -1426,12 +1700,12 @@
     "selection": "background",
     "extraction": {
       "task_definition": "分子生成及条件优化，非直接活性识别。",
-      "dataset_and_labels": "大规模小分子 SMILES；规模随模型版本。",
+      "dataset_and_labels": "正式论文摘要报告训练语料超过11亿条化学SMILES；下游是生成及优化任务，不是一个活性二分类数据集。",
       "input_representation": "SMILES 自回归序列。",
-      "model_and_pretraining": "GP-MoLFormer 生成式化学语言模型。",
+      "model_and_pretraining": "GP-MoLFormer为约4,680万参数的自回归Transformer解码器，使用线性注意力和旋转位置编码；性质优化采用按性质排序的分子对进行pair-tuning。",
       "loss": "语言建模目标；本轮未逐项核实各适应目标。",
       "inference": "采样/条件生成分子。",
-      "metrics": "生成有效性、独特性、新颖性及优化任务指标。",
+      "metrics": "作者报告三类任务表现优于或接近所比基线，并产生较高多样性的分子；同时发现明显的训练数据记忆，训练重复会降低生成新颖性。此处保留任务层面的结论，不换算成活性准确率。",
       "split_and_leakage_control": "生成训练语料与条件任务协议不可直接转为活性二分类划分。",
       "limitations_and_comparability": "背景项；正式发表 2025，2024 预印本归并；非本项目直接预测基线。",
       "evidence_location": "Digital Discovery DOI 10.1039/D5DD00122F；作者预印本摘要。"
@@ -1458,7 +1732,23 @@
       }
     },
     "quality_review_date": "2026-09-26",
-    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md",
+    "paper_reading_update": {
+      "date": "2026-09-26",
+      "scope": "paper-level summary/result reading only; no author-code audit",
+      "source": "https://pubs.rsc.org/en-gb/content/articlelanding/2025/dd/d5dd00122f",
+      "location": "abstract or visible publisher sections"
+    },
+    "paper_note_path": "papers/P22_GP_MoLFormer.md",
+    "quick_read": {
+      "research": "把化学语言预训练用于生成分子，覆盖从头生成、限定骨架的分子修饰，以及按目标性质优化三类任务。",
+      "models": "GP-MoLFormer为约4,680万参数的自回归Transformer解码器，使用线性注意力和旋转位置编码；性质优化采用按性质排序的分子对进行pair-tuning。",
+      "data": "正式论文摘要报告训练语料超过11亿条化学SMILES；下游是生成及优化任务，不是一个活性二分类数据集。",
+      "results": "作者报告三类任务表现优于或接近所比基线，并产生较高多样性的分子；同时发现明显的训练数据记忆，训练重复会降低生成新颖性。此处保留任务层面的结论，不换算成活性准确率。",
+      "contribution": "将通用化学语言模型扩展为多种生成任务的基础，并提出pair-tuning；另外把训练记忆、新颖性与生成规模之间的关系纳入分析。",
+      "limitations": "有效SMILES和新骨架不代表可合成、无毒或有真实生物活性；生成可能重复训练数据。阅读限制：本篇以2025正式摘要为依据，尚未逐项整理生成基准数值。"
+    },
+    "quick_read_updated": "2026-09-26"
   },
   {
     "id": "P23",
@@ -1518,7 +1808,17 @@
       }
     },
     "quality_review_date": "2026-09-26",
-    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md",
+    "paper_note_path": "papers/P23_Systematic_molecular_benchmark.md",
+    "quick_read": {
+      "research": "系统比较分子性质预测中的表示方式和模型，检验数据规模、噪声、分布以及活性悬崖等因素如何改变模型表现。",
+      "models": "比较描述符/指纹上的RF、XGBoost、SVM，与GRU、MolBERT、图神经网络等学习表示模型。",
+      "data": "包括MoleculeNet、阿片类相关数据及其他活性数据，并构造不同规模的实验。总计训练62,820个模型实例：这是模型数量，不是分子样本量。",
+      "results": "在所测试的多数数据条件下，学习表示没有稳定表现出相对传统表示的优势；活性悬崖显著影响预测，足够数据规模是学习表示发挥优势的重要条件。没有一个跨所有数据集的统一准确率。",
+      "contribution": "以大量受控比较把讨论从“哪个网络更新”转向表示、数据和评价条件，为设置有竞争力的传统基线提供实验依据。",
+      "limitations": "结论受当时所选模型、数据及训练方案限制，不能推导为后来所有预训练模型都无效。P01是对相关问题的评论，不能视为另一项独立复现实验。"
+    },
+    "quick_read_updated": "2026-09-26"
   },
   {
     "id": "P24",
@@ -1539,9 +1839,9 @@
     "publication_date": "2026-05-08",
     "accessed": "2026-09-26",
     "status": "published",
-    "reading_status": "publisher_methods_and_partial_results",
+    "reading_status": "full_text_key_sections",
     "read_url": "https://scijournals.onlinelibrary.wiley.com/doi/10.1002/jsfa.70701",
-    "read_version": "Wiley published HTML",
+    "read_version": "published PDF; Abstract, Methods and Table 2 key sections, not a complete page-by-page review",
     "selection": "include",
     "extraction": {
       "task_definition": "植物化学物的 Caco-2 Papp、TEER、ER 回归。",
@@ -1550,10 +1850,10 @@
       "model_and_pretraining": "十类回归器；CatBoost/LightGBM/GB 加线性元模型的 stacking。",
       "loss": "各回归器目标不同；精确 loss 未列全，NR。",
       "inference": "输出三类连续指标。",
-      "metrics": "NRMSE、R²；TEER 表现波动较大，不挪用 Papp 成绩说明屏障效果。",
+      "metrics": "原Table 2的Stacking测试R²：Papp 0.9550±0.0399；TEER 0.5435±0.4556；ER 0.9289±0.0602。对应NRMSE为0.0312、0.0781、0.0593（均值）。Papp和ER较好，TEER明显更不稳定。",
       "split_and_leakage_control": "重复 5 折×6；标准化只拟合训练集；有相关筛选/RFECV。",
       "limitations_and_comparability": "三重复是否按化合物分组未明确；相关筛选范围与按 test 选模型表述需审计。249 行不等于 249 独立化合物；方法称 polyphenols，但列出混合类别，按 phytochemicals 记录。",
-      "evidence_location": "Wiley 正文 Materials and Methods；2026-05-08 在线 DOI 10.1002/jsfa.70701。 本轮重新核对 Wiley 方法中的 249 个测量样本与结果中的 5,003 描述符；83 才是独立化合物数。"
+      "evidence_location": "Wiley 正文 Materials and Methods；2026-05-08 在线 DOI 10.1002/jsfa.70701。 本轮重新核对 Wiley 方法中的 249 个测量样本与结果中的 5,003 描述符；83 才是独立化合物数。 本次补读原PDF第8页Table 2，并渲染核对Stacking测试R²/NRMSE。"
     },
     "window": "2023-09-26_to_2026-09-26",
     "bibliographic_source": "https://api.crossref.org/works/10.1002/jsfa.70701",
@@ -1591,7 +1891,23 @@
     "alternate_urls": [
       "https://pubmed.ncbi.nlm.nih.gov/42101206/",
       "https://pmc.ncbi.nlm.nih.gov/articles/PMC13341053/"
-    ]
+    ],
+    "paper_reading_update": {
+      "date": "2026-09-26",
+      "scope": "paper-level summary/result reading only; no author-code audit",
+      "source": "https://scijournals.onlinelibrary.wiley.com/doi/10.1002/jsfa.70701",
+      "location": "摘要、Methods、Table 2（PDF第8页）"
+    },
+    "paper_note_path": "papers/P24_Phytochemical_QSPR.md",
+    "quick_read": {
+      "research": "从分子结构预测Caco-2实验中的表观通透系数Papp、跨上皮电阻TEER、外排比ER，探索植物化学物的结构与生物利用度相关指标的关系。",
+      "models": "用PaDEL/alvaDesc计算描述符，经过特征筛选比较十类回归器；Stacking以CatBoost、LightGBM、Gradient Boosting为基础模型，线性回归为元模型，并用SHAP解释特征。",
+      "data": "83种独立植物化学物，三重复形成249行测量，初始5,003个描述符；采用重复5折×6。249行不能当作249种化合物，重复测量是否按化合物分组是重要限制。",
+      "results": "原Table 2的Stacking测试R²：Papp 0.9550±0.0399；TEER 0.5435±0.4556；ER 0.9289±0.0602。对应NRMSE为0.0312、0.0781、0.0593（均值）。Papp和ER较好，TEER明显更不稳定。",
+      "contribution": "在同一批植物化学物上组织三个通透/屏障相关端点，并将结构描述符建模与特征解释结合，是与多酚肠屏障课题相邻的实验—建模研究。",
+      "limitations": "独立化合物仅83种，重复测量可能影响划分独立性；TEER标准差很大，不能用Papp的高分替代屏障表现。SHAP解释关联而非机制证明，三种端点也不等于紧密连接蛋白表达或屏障保护二分类。"
+    },
+    "quick_read_updated": "2026-09-26"
   },
   {
     "id": "P25",
@@ -1620,7 +1936,7 @@
       "model_and_pretraining": "TIDE：ESM + MolFormer、交叉注意力和分类头。",
       "loss": "BCE + λ 对齐正则。",
       "inference": "配对结合概率，冻结/微调配置分实验。",
-      "metrics": "AUROC 为主及分类指标。",
+      "metrics": "作者机构保存的摘要报告，在TCHard的未见肽及少样本设置下，TIDE相对ChemBERTa、TITAN、NetTCR等基线取得更好的预测表现和稳健性。具体各组AUROC尚未逐表整理，因此保留作者定性结论，不补写提升幅度。",
       "split_and_leakage_control": "训练验证与独立测试，zero/few-shot 设定须按未见肽理解。",
       "limitations_and_comparability": "与 LANTERN 同作者/同类数据和架构，不能作为两个独立数据来源的复现证据；作为另一正式文献条目保留。",
       "evidence_location": "PMC13159490 Methods/Experiments；BIBM 2025 proceedings，在线元数据 2026-01-29。"
@@ -1649,7 +1965,23 @@
       }
     },
     "quality_review_date": "2026-09-26",
-    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md",
+    "paper_reading_update": {
+      "date": "2026-09-26",
+      "scope": "paper-level summary/result reading only; no author-code audit",
+      "source": "https://researchwith.njit.edu/en/publications/modeling-tcr-pmhc-binding-with-dual-encoders-and-cross-attention-/",
+      "location": "abstract or visible publisher sections"
+    },
+    "paper_note_path": "papers/P25_TIDE.md",
+    "quick_read": {
+      "research": "用蛋白和分子两侧信息预测TCR与肽的结合，关注数据不足及未见肽情境。虽然题目提到pMHC，现有模型记录不包含MHC的直接输入。",
+      "models": "TIDE采用ESM编码TCR序列，MoLFormer编码肽SMILES，以交叉注意力融合，再输出结合概率；训练结合分类目标与表示对齐。",
+      "data": "使用TCHard基准，涉及参考/随机阴性以及未见肽测试；配对记录不能当作独立肽数量。会议为BIBM 2025，在线元数据日期为2026-01-29。",
+      "results": "作者机构保存的摘要报告，在TCHard的未见肽及少样本设置下，TIDE相对ChemBERTa、TITAN、NetTCR等基线取得更好的预测表现和稳健性。具体各组AUROC尚未逐表整理，因此保留作者定性结论，不补写提升幅度。",
+      "contribution": "将蛋白序列和肽化学表示结合，通过跨注意力与对齐学习组织配对信息，为受体—肽识别提供另一种融合方案。",
+      "limitations": "与LANTERN存在作者、数据及架构重合，不能当作两个独立数据来源的重复验证；未显式输入MHC也限制了对完整TCR—pMHC机制的解释。当前笔记仍缺逐表结果摘要。"
+    },
+    "quick_read_updated": "2026-09-26"
   },
   {
     "id": "P26",
@@ -1679,14 +2011,30 @@
       "model_and_pretraining": "NPCLM：Mamba/Mamba-2/GPT；对比 MolFormer-XL-both-10pct 与 ChemBERTa-2，含领域适应。",
       "loss": "预训练 CE；味觉加权 CE，肽/抗癌 BCEWithLogitsLoss。",
       "inference": "换分类头；生成用自回归采样，两个任务单独评价。",
-      "metrics": "分类 MCC/AUROC；生成有效性/独特性/新颖性。",
+      "metrics": "作者摘要报告：随机划分下Mamba系列比GPT高约0.02—0.04 MCC，骨架划分下表现接近；Mamba生成的有效性/独特性较好，GPT生成的新颖性略高。领域预训练可在所测任务上接近更大通用语料模型。",
       "split_and_leakage_control": "随机与 Murcko 划分、重复 5×5 折；作者报告移除预训练和下游重叠分子。",
       "limitations_and_comparability": "本轮仅确认 2026 arXiv v1，不能写已接收；提供天然产物领域适应已有先例。",
       "evidence_location": "arXiv2602.13958v1 Methods 3.1–3.4；作者 rozariwang/CLMs-for-NPs。"
     },
     "window": "2023-09-26_to_2026-09-26",
     "quality_review_date": "2026-09-26",
-    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md",
+    "paper_reading_update": {
+      "date": "2026-09-26",
+      "scope": "paper-level summary/result reading only; no author-code audit",
+      "source": "https://arxiv.org/html/2602.13958v1",
+      "location": "abstract or visible publisher sections"
+    },
+    "paper_note_path": "papers/P26_NPCLM.md",
+    "quick_read": {
+      "research": "研究面向天然产物预训练的模型，比较状态空间模型与Transformer，以及不同tokenizer对生成和性质预测的影响。",
+      "models": "从头训练Mamba、Mamba-2和GPT，比较八种tokenizer；另以MoLFormer-XL、ChemBERTa-2等作对照，并考察领域适应。生成与分类分别评价。",
+      "data": "预训练1,030,273种天然产物；下游包括6,651条肽通透性数据、4,431条FourTastes味觉数据，以及约2.6万条抗癌活性数据。",
+      "results": "作者摘要报告：随机划分下Mamba系列比GPT高约0.02—0.04 MCC，骨架划分下表现接近；Mamba生成的有效性/独特性较好，GPT生成的新颖性略高。领域预训练可在所测任务上接近更大通用语料模型。",
+      "contribution": "将天然产物领域数据、架构和tokenization放在共同实验中比较，显示数据领域匹配可能比单纯增大通用预训练规模更值得研究。",
+      "limitations": "随机划分优势在骨架划分下减弱，说明泛化结论依赖评价设置；只覆盖少数性质任务。当前仅确认2026-02-15的arXiv v1，不能写成已正式接收论文。"
+    },
+    "quick_read_updated": "2026-09-26"
   },
   {
     "id": "P27",
@@ -1742,6 +2090,16 @@
       }
     },
     "quality_review_date": "2026-09-26",
-    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md",
+    "paper_note_path": "papers/P27_Food_foundation_models.md",
+    "quick_read": {
+      "research": "在三类食品相关任务中考察基础模型的迁移使用：肽运输预测、小分子味觉分类、图像质地分析。三者是不同输入和标签的任务。",
+      "models": "ESMC用于肽运输，MoLFormer用于小分子味觉，视觉模型用于图像任务；不能把论文概括成“MoLFormer预测肽运输”。",
+      "data": "分别使用肽序列、分子SMILES和图像数据。当前可见摘要不足以确认各数据集的准确样本量、来源、重复样本和划分方式。",
+      "results": "摘要报告味觉任务accuracy达到0.99。该成绩只对应味觉实验；肽运输和图像任务的完整结果尚未核对，不能把0.99套用于这些任务。",
+      "contribution": "展示了不同基础模型在食品研究中的迁移方向，帮助区分模型、输入模态与应用任务之间的对应关系。",
+      "limitations": "只有摘要与可见页面支持当前笔记，尚不能判断高准确率是否在独立化合物或外部来源上保持。三个任务并列展示，不代表已经建立统一的多模态肽活性模型。"
+    },
+    "quick_read_updated": "2026-09-26"
   }
 ]

@@ -30,7 +30,7 @@
 | P21 | 2026 | [HELM_BERT](https://pmc.ncbi.nlm.nih.gov/articles/PMC13417886/) | full_text_key_sections | include |
 | P22 | 2025 | [GP_MoLFormer](https://pubs.rsc.org/en/content/articlehtml/2025/dd/d5dd00122f) | abstract_or_partial | background |
 | P23 | 2023 | [Systematic_molecular_benchmark](https://www.nature.com/articles/s41467-023-41948-6) | full_text_key_sections | include |
-| P24 | 2026 | [Phytochemical_QSPR](https://scijournals.onlinelibrary.wiley.com/doi/10.1002/jsfa.70701) | publisher_methods_and_partial_results | include |
+| P24 | 2026 | [Phytochemical_QSPR](https://scijournals.onlinelibrary.wiley.com/doi/10.1002/jsfa.70701) | full_text_key_sections | include |
 | P25 | 2026 | [TIDE](https://pmc.ncbi.nlm.nih.gov/articles/PMC13159490/) | full_text_key_sections | include |
 | P26 | 2026 | [NPCLM](https://arxiv.org/html/2602.13958v1) | full_text_key_sections | include |
 | P27 | 2025 | [Food_foundation_models](https://www.sciencedirect.com/science/article/pii/S1466856425003315) | abstract_or_partial | include |
@@ -52,7 +52,7 @@
 
 ## 阅读与遗漏边界
 
-全文关键部分已读不等于代码复现。abstract_or_partial 项对数据量、loss、阈值或划分明确用 NR，后续获取全文再补。P24 已读方法与部分结果；P15 所读版本必须继续与正式版对照。
+全文关键部分已读不等于代码复现。abstract_or_partial 项对数据量、loss、阈值或划分明确用 NR，后续获取全文再补。P24 已读摘要、方法与原PDF Table 2关键结果；P15 所读版本必须继续与正式版对照。
 
 后续若要保留 first，须扩展全时段、多数据库与引用链；三年窗口只能支持近期定位。模型名检索也可能漏掉未在标题/摘要使用 MolFormer 的工作。
 
