@@ -1,34 +1,35 @@
-# 新窗口续接记录（2026-09-26）
+# 续接记录：归档已补齐，方法访问限制保留
 
-用户要求：继续 MolFormer 与多酚/多肽活性预测的近三年文献研究，按候选库→逐篇分析→direct comparison/novelty gap/first 三阶段。用户已明确取消误带的分析字段；不要添加该维度。用户授权持续工作，周额度大于 5% 不用等指令，但本环境未提供额度查询。
+更新：2026-09-26。仓库 `zhangxb1989/molformer`，**只写 gpt，不修改 main**。本轮沿用 28 条文献记录，没有扩大候选库或启动训练。用户已取消此前误带入的无关分析字段，不要重新添加。
 
 ## 先读
 
-README.md、comparison_and_novelty.md、structured_review.md、sources.json、screening.md、work_log.md、pdf_manifest.json。文字分析已有完整草稿，28 条记录（27 近三年 + 1 基础），不要从零重查。
+README.md、quality_check.md、comparison_and_novelty.md、structured_review.md、sources.json、screening.md、pdf_manifest.json、archive_verification.json。不要从零重查。
 
-仓库：zhangxb1989/molformer。**只写 gpt，未经特别确认不能修改 main。** 本次开始时 main 为 3b9ac434db387fadf2cf99b99def654cbf193841；此前文字检查点为 3f5de612aefc942b10a064472d81eb9abf78dd0a。读取 gpt 当前 HEAD 作为新提交父节点，不写死旧 SHA。
+## 已完成
 
-## 尚需完成
+1. 对 28 条记录做结构、版本/阅读状态、NR 与引用一致性检查；关键方法和数值的原始来源抽查范围写在 quality_check.md，不能说成全部全文重读或代码复现。
+2. 原 pending_upload 的 7 份 PDF 已补齐，加 P01 共 8 份。PDF 归档提交为 `ac3d399aadf06ce7a74e2810204ee47ee9f528c4`，全部从 GitHub 读回并核验 SHA-256/字节数/Git blob SHA。
+3. P19 当前官方原件与旧记录字节不同，manifest 保留 previous_download，当前字段对应实际归档原件。其余 7 份与旧哈希相同。不要把旧 P19 哈希覆盖回当前文件。
+4. 清理题名/期刊中的 HTML 标签、实体及换行，同步 JSON、Markdown、BibTeX、PDF 清单和本地历史命名的 inventory。
+5. P14 的 7,475 条通透数据补记 PAMPA 6,869/Caco-2 606。P14 Table 1 的历史分类指标与 P09 原表 AUC/F1 名称不一致，且划分不同；该表不可用于直接排名。
+6. P12/P13 公式页人工核对：前者仍需代码核实完整 BCE 实现，后者主文确为 MSE。P21 继续采用 2026 正式版，不能恢复旧预印本的负采样计数矛盾。
 
-1. 对完整文字草稿做一次质量检查，重点核对个别数值/方法出处、NR 标记和当前版本；源文 HTML 的数学式有时不完整，不猜 loss。
-2. 将 pdf_manifest.json 中 pending_upload 的 7 个 PDF 归档；本检查点已加入 P01 评论原 PDF。其他 7 个已下载验证，详见 SHA-256/页数；本地存在时复用，失效时由 manifest 的官方下载链接重取。不要把文本检查点说成 PDF 全部完成。
-3. 其他文章未取得可转载 PDF，已记录来源/403/非 PDF/许可情况，不绕过访问限制，不将网页打印件冒充原 PDF。P17 官方原 PDF 已下载用于阅读，但转载许可尚未确认，先保留链接。
-4. P15 PeptideCLM-2 阅读的是预印本 v5；正式 DOI 已核实，最后方法差异仍需核对。P21 HELM-BERT 已更新到 2026 正式版，不要重新套用旧预印本的负采样计数矛盾。
-5. 完成后验证 gpt 远端文件及 PDF 哈希，确认 main 未改变，再向用户汇报实际保存数量与剩余限制。不是要开展新的训练实验。
+## 仍有证据或访问限制
 
-## 当前主要结论
+- P15 PeptideCLM-2 正式版元数据已再次确认（2026-07-13 在线，DOI 10.1021/acs.jcim.6c00652），所读方法仍为 bioRxiv v5（2026-06-23）。正式全文返回 403，方法差异核对**未完成**。预印本 THPep 划分措辞也需结合代码；不要宣称已与正式版一致。
+- 其余 20 条 PDF 未归档，保留入口和原因；P17 转载许可未核实。未取得或许可不明的原件不补造、不用网页打印件替代。
+- 未核实字段继续保留 NR；first 须全时段查新才可能进一步讨论。
+- 原项目 128 与 109 的化合物口径、标签证据、六个全阳性外测、实际 checkpoint 仍需用户原始数据核查，不在本轮冒充已完成。
 
-已有 MolFormer 肽建模先例 P10/P16/P25，不能声称 first。P24（10.1002/jsfa.70701）用 83 种植物化学物预测 TEER/Papp/ER，属于最接近的端点邻近研究。原多酚课题更适合以数据与严格评估为贡献。不同活性端点不能横比数字或混合标签。
+## 当前结论
 
-原稿件 128 与 109 化合物口径待统一；旧稿 122/6 类别计数不能套用新稿。六个外部候选均实验阳性，5/6 一致不能证明特异度。公开 MolFormer checkpoint 的约 1 亿与原论文 11 亿规模需对应真实权重。这些是稿件审计事项，并非本轮已核实的最终数据事实。
+MolFormer 肽任务已有 P10/P16/P25 等先例，不能声称 first；P24 的 83 种植物化学物 TEER/Papp/ER 是端点邻近研究。原多酚任务更适合用可追溯数据、严格分组评估和相对描述符/指纹的实际增量支持贡献。不同端点、数据划分和指标不可直接横比。
 
-## 执行环境及保存注意
+## 保存与分支
 
-本地若仍在：/workspace/scratch/219f1d3ee01c/molformer/research/literature/2026-09-26/。
-临时源文缓存：/workspace/scratch/219f1d3ee01c/source_cache/；包含官方 HTML/提取文本和已下载 PDF。不可把全文缓存一并复制到公开仓库。
+本轮开始 main 为 `3b9ac434db387fadf2cf99b99def654cbf193841`，PDF 归档后再次读取仍相同。后续提交须读取 gpt 当前 HEAD 作为父节点，不写死旧 SHA；使用 GitHub 连接器提交并 `update_ref(gpt, force=false)`。
 
-命令行 git push 无认证，连接器 Git data API 可创建 blob/tree/commit 并 update_ref(gpt, force=false)。文本提交已经成功。不要反复要求用户重新授权写 gpt。
+本机工作缓存位于当前聊天的 `work/review/`，源文提取与渲染在 `work/`；这些只是本地工作缓存，不要把全文缓存整体上传。最终公开报告与 8 份许可允许的原 PDF 位于 GitHub 的 `research/literature/2026-09-26/`。
 
-大 PDF 经工具读取时单次输出会在约 1 MiB 截断，必须按 393216 字节的原始文件块（3 的整数倍）逐块 base64 编码，检查输出长度后拼接，再 create_blob(encoding=base64)。不要把 base64 打印给用户。P01 blob 已存在：e28a113263054fc9c90527ef7454c1b7979cf74c。P14 的 2356968 字符 base64 曾准备完成，但提交调用被中断，不能视作已上传。
-
-用户多次担心卡住：每分钟以内用简短中文同步实际进度；先形成可访问提交，再继续大文件。最终答复简短，附 GitHub 链接。
+用户此前多次担心中断，继续工作时每分钟内用简短中文报告实际进度。不要把保留的访问限制说成全部解决。

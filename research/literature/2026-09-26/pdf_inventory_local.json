@@ -4,55 +4,71 @@
     "path": "pdfs/P01_2023_Representation_limits_comment.pdf",
     "bytes": 348717,
     "sha256": "ba04c28d269f2bf30343685ef70ae5b114fff2c49b2670997954ac8ec96f6a4f",
-    "pages": 2
+    "pages": 2,
+    "git_blob_sha": "e28a113263054fc9c90527ef7454c1b7979cf74c",
+    "remote_verified_commit": "ac3d399aadf06ce7a74e2810204ee47ee9f528c4"
   },
   {
     "id": "P05",
     "path": "pdfs/P05_2024_PepNet.pdf",
     "bytes": 3613872,
     "sha256": "d7d5d342331aa196392b0529b64e1fa2577905d55be0da57ad8079fba9153302",
-    "pages": 13
+    "pages": 13,
+    "git_blob_sha": "beed6dfc208eb14f5c35b07c1a3eea11b075876d",
+    "remote_verified_commit": "ac3d399aadf06ce7a74e2810204ee47ee9f528c4"
   },
   {
     "id": "P10",
     "path": "pdfs/P10_2025_Peptide_generalization.pdf",
     "bytes": 3575776,
     "sha256": "c2bac22770cdde899f33fcc940fa77623ac72388d8655817b9eacdd2c5118f3f",
-    "pages": 13
+    "pages": 13,
+    "git_blob_sha": "754e73d95efa1706942dd5092f7dcb17f7d9f996",
+    "remote_verified_commit": "ac3d399aadf06ce7a74e2810204ee47ee9f528c4"
   },
   {
     "id": "P12",
     "path": "pdfs/P12_2025_MFP_MFL.pdf",
     "bytes": 10905048,
     "sha256": "489a4fb41f6b57d8eddf451d84171a0e0063426f71efbb62efbcec500bb5f0ee",
-    "pages": 22
+    "pages": 22,
+    "git_blob_sha": "6858bc72c58b1b3067779fb07b176acde404b768",
+    "remote_verified_commit": "ac3d399aadf06ce7a74e2810204ee47ee9f528c4"
   },
   {
     "id": "P13",
     "path": "pdfs/P13_2025_BPFun.pdf",
     "bytes": 4108558,
     "sha256": "41af5ea84f20e6e56c45335abfe590c2d7914d33e5acd613978bcc10b6747650",
-    "pages": 27
+    "pages": 27,
+    "git_blob_sha": "fc48301754d6dbe48bdb56195d447f2d1aebc969",
+    "remote_verified_commit": "ac3d399aadf06ce7a74e2810204ee47ee9f528c4"
   },
   {
     "id": "P14",
     "path": "pdfs/P14_2026_PeptiVerse.pdf",
     "bytes": 1767725,
     "sha256": "3ff4ad3a7e04a4989db84085559ad33341fcd82a8d1399efdd7b13e7ed5a3683",
-    "pages": 12
+    "pages": 12,
+    "git_blob_sha": "56a920545004da576080fe0ed1ec16218664f44c",
+    "remote_verified_commit": "ac3d399aadf06ce7a74e2810204ee47ee9f528c4"
   },
   {
     "id": "P19",
     "path": "pdfs/P19_2025_Antioxidant_QSAR.pdf",
-    "bytes": 1318085,
-    "sha256": "b26afcbe170c4b50c3e75f2e98eaf651535dc5a291e12724a46e5e86a82d8293",
-    "pages": 13
+    "bytes": 1317845,
+    "sha256": "1de670b0e63c61398db2affbe9232678196abebc83ec503e5547b7466899a056",
+    "pages": 13,
+    "git_blob_sha": "3ea7b381c23e75eb22c40de53e41bf0bf6339144",
+    "remote_verified_commit": "ac3d399aadf06ce7a74e2810204ee47ee9f528c4"
   },
   {
     "id": "P23",
     "path": "pdfs/P23_2023_Systematic_molecular_benchmark.pdf",
     "bytes": 7166556,
     "sha256": "ca3671eab2830724bf58ec4d661b2584e392c8fb93b306743aae6022787e02a2",
-    "pages": 20
+    "pages": 20,
+    "git_blob_sha": "9eadf0b0091ea52339347e86d38317de34a18f22",
+    "remote_verified_commit": "ac3d399aadf06ce7a74e2810204ee47ee9f528c4"
   }
 ]

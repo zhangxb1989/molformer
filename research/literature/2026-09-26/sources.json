@@ -20,7 +20,7 @@
     "status": "published",
     "reading_status": "abstract_or_partial",
     "read_url": "https://www.nature.com/articles/s42256-022-00580-7",
-    "read_version": "published full text or author manuscript",
+    "read_version": "published abstract/limited text and IBM official checkpoint documentation",
     "selection": "background",
     "extraction": {
       "task_definition": "小分子性质预测的基础表征；不在三年主窗口。",
@@ -55,7 +55,9 @@
           ]
         ]
       }
-    }
+    },
+    "quality_review_date": "2026-09-26",
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
   },
   {
     "id": "P01",
@@ -111,7 +113,9 @@
           ]
         ]
       }
-    }
+    },
+    "quality_review_date": "2026-09-26",
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
   },
   {
     "id": "P02",
@@ -177,7 +181,9 @@
           ]
         ]
       }
-    }
+    },
+    "quality_review_date": "2026-09-26",
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
   },
   {
     "id": "P03",
@@ -205,7 +211,7 @@
     "status": "published",
     "reading_status": "abstract_or_partial",
     "read_url": "https://www.nature.com/articles/s42256-024-00876-w",
-    "read_version": "published full text or author manuscript",
+    "read_version": "published metadata/abstract and limited source excerpts; full methods not verified",
     "selection": "include",
     "extraction": {
       "task_definition": "少样本 assay 内定量生物活性回归。",
@@ -240,7 +246,9 @@
           ]
         ]
       }
-    }
+    },
+    "quality_review_date": "2026-09-26",
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
   },
   {
     "id": "P04",
@@ -306,7 +314,9 @@
           ]
         ]
       }
-    }
+    },
+    "quality_review_date": "2026-09-26",
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
   },
   {
     "id": "P05",
@@ -338,7 +348,7 @@
       "metrics": "ACC、P/R、F1、MCC；AMP F1 0.951、MCC 0.901。",
       "split_and_leakage_control": "训练/验证/测试预划分，未建立严格结构外推证据。",
       "limitations_and_comparability": "后面的 Statistics 节把 AIP/AMP 数据名对调；此处按数据准备节记录，复现须核对实际文件。",
-      "evidence_location": "Methods: Data preparation、architecture；Results/Table；Statistics and reproducibility。"
+      "evidence_location": "Methods: Data preparation、architecture；Results/Table；Statistics and reproducibility。 本轮复核原 PDF p.3–4 性能、p.10 数据准备与 p.11 Statistics。"
     },
     "window": "2023-09-26_to_2026-09-26",
     "bibliographic_source": "https://api.crossref.org/works/10.1038/s42003-024-06911-1",
@@ -361,7 +371,9 @@
           ]
         ]
       }
-    }
+    },
+    "quality_review_date": "2026-09-26",
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
   },
   {
     "id": "P06",
@@ -381,7 +393,7 @@
     "status": "published",
     "reading_status": "abstract_or_partial",
     "read_url": "https://pubmed.ncbi.nlm.nih.gov/39357724/",
-    "read_version": "published full text or author manuscript",
+    "read_version": "published metadata/abstract and limited source excerpts; full methods not verified",
     "selection": "include",
     "extraction": {
       "task_definition": "抗炎肽二分类。",
@@ -414,7 +426,9 @@
           ]
         ]
       }
-    }
+    },
+    "quality_review_date": "2026-09-26",
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
   },
   {
     "id": "P07",
@@ -435,7 +449,7 @@
     "status": "published",
     "reading_status": "abstract_or_partial",
     "read_url": "https://www.sciencedirect.com/science/article/pii/S1476927124000094",
-    "read_version": "published full text or author manuscript",
+    "read_version": "published metadata/abstract and limited source excerpts; full methods not verified",
     "selection": "include",
     "extraction": {
       "task_definition": "抗菌、抗高血压、抗氧化、抗高血糖四功能多标签。",
@@ -468,7 +482,9 @@
           ]
         ]
       }
-    }
+    },
+    "quality_review_date": "2026-09-26",
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
   },
   {
     "id": "P08",
@@ -535,7 +551,9 @@
           ]
         ]
       }
-    }
+    },
+    "quality_review_date": "2026-09-26",
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
   },
   {
     "id": "P09",
@@ -609,7 +627,9 @@
           ]
         ]
       }
-    }
+    },
+    "quality_review_date": "2026-09-26",
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
   },
   {
     "id": "P10",
@@ -641,9 +661,9 @@
       "loss": "各下游算法原生目标，无统一深度 loss。",
       "inference": "分类分数或定量结合预测。",
       "metrics": "分类 MCC、回归 Spearman（文中 SPCC）；相似性阈值与表现也做相关分析。",
-      "split_and_leakage_control": "相似性分割 CCPart；5 折、200 Optuna trials、5 seeds；外推用全部标准肽训练、修饰肽测试。",
+      "split_and_leakage_control": "相似性分割 CCPart；训练内 5 折 HPO、Optuna 最多 200 steps（含 early stopping）、5 seeds；外推用全部标准肽训练、修饰肽测试。",
       "limitations_and_comparability": "负例有“其他活性”来源，不必然真阴性；直接证明已有 MolFormer 肽任务先例。",
-      "evidence_location": "Methods datasets/representations/partition；Figs 4–6；IBM/PeptideGeneralizationBenchmarks。"
+      "evidence_location": "Methods datasets/representations/partition；Figs 4–6；IBM/PeptideGeneralizationBenchmarks。 本轮复核原 PDF p.3 Table 1、p.4 HPO。"
     },
     "window": "2023-09-26_to_2026-09-26",
     "bibliographic_source": "https://api.crossref.org/works/10.1186/s13321-025-01115-z",
@@ -666,7 +686,9 @@
           ]
         ]
       }
-    }
+    },
+    "quality_review_date": "2026-09-26",
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
   },
   {
     "id": "P11",
@@ -734,7 +756,9 @@
           ]
         ]
       }
-    }
+    },
+    "quality_review_date": "2026-09-26",
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
   },
   {
     "id": "P12",
@@ -762,12 +786,12 @@
       "dataset_and_labels": "表 2：单功能 5,719，双功能 198；据此为 5,917 独立序列，标签条目不能当独立样本。",
       "input_representation": "ESM-2、ProtT5、RoBERTa 多特征融合。",
       "model_and_pretraining": "MFP-MFL：GAT、FGM 对抗训练、加权集成。",
-      "loss": "Linit+Ladv；印刷公式仅列 y log p 项，完整 BCE 的负类项须检查代码。",
+      "loss": "同时最小化 Linit 与 Ladv；原 PDF p.19 式 (10)–(11) 仅印有 y log p 项。是否实现完整 BCE 及两项权重须查代码，NR。",
       "inference": "每功能 sigmoid，集成输出；阈值未核实。",
       "metrics": "多标签 precision、coverage、accuracy、exact match、absolute false；主表 accuracy 0.786、precision 0.799。",
       "split_and_leakage_control": "文中训练/验证流程须结合数据文件确认；未认定严格同源外推。",
       "limitations_and_comparability": "结论部分交换部分指标对应关系，采用主表；不能把多标签 accuracy 与二分类 accuracy 等同。",
-      "evidence_location": "Methods/Data preparation、Loss；Tables 1–2；PMC11818429。"
+      "evidence_location": "原 PDF p.5 特征集成结果表、p.14–15 数据计数、p.19 式 (10)–(11) 与结论；已核对公式页图像。"
     },
     "window": "2023-09-26_to_2026-09-26",
     "bibliographic_source": "https://api.crossref.org/works/10.3390/ijms26031317",
@@ -790,7 +814,9 @@
           ]
         ]
       }
-    }
+    },
+    "quality_review_date": "2026-09-26",
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
   },
   {
     "id": "P13",
@@ -817,12 +843,12 @@
       "dataset_and_labels": "各标签计数可重叠：AMP 2409、ACP 646、ADP 514、AHP 868、AIP 1678、AAP 134、AOP 318；154 个双标签。",
       "input_representation": "序列及丰富内在特征。",
       "model_and_pretraining": "BPFun：Transformer、BiLSTM、注意力；不能仅因 Transformer 就归为预训练大模型。",
-      "loss": "主文明示 MSE，而非假定 BCE。",
+      "loss": "主文 p.12 式 (17) 明示 MSE；网络另含 L2 正则化，不能默认写成 BCE。",
       "inference": "七个 sigmoid 输出，阈值 >0.5。",
       "metrics": "多标签 precision/coverage/accuracy、absolute true/false、F1。",
       "split_and_leakage_control": "CD-HIT 0.9 去冗余、长度≥5，再随机 80/20。",
       "limitations_and_comparability": "先去冗余后随机分割不等于相似性隔离；序列遮盖增强需限制在训练内。",
-      "evidence_location": "Methods: model/loss、dataset；BMC 主文。"
+      "evidence_location": "Methods: model/loss、dataset；BMC 主文。 本轮核对原 PDF p.11 sigmoid/0.5 阈值与 p.12 式 (17) 图像。"
     },
     "window": "2023-09-26_to_2026-09-26",
     "bibliographic_source": "https://api.crossref.org/works/10.1186/s12859-025-06190-5",
@@ -845,7 +871,9 @@
           ]
         ]
       }
-    }
+    },
+    "quality_review_date": "2026-09-26",
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
   },
   {
     "id": "P14",
@@ -872,15 +900,15 @@
     "selection": "include",
     "extraction": {
       "task_definition": "七类治疗肽性质：溶血、溶解性、nonfouling、毒性、通透性、半衰期、亲和力。",
-      "dataset_and_labels": "例：溶血 6,076；修饰肽通透性 7,475；典型 CPP 2,324；半衰期按 AA/SMILES 为 130/245。",
+      "dataset_and_labels": "例：溶血 6,076；修饰肽通透性合计 7,475，其中 PAMPA 6,869、Caco-2 606；典型 CPP 2,324；半衰期按 AA/SMILES 为 130/245。各通透端点需分清。",
       "input_representation": "AA 与 SMILES 两类输入。",
       "model_and_pretraining": "冻结 ESM-2、PeptideCLM、ChemBERTa，加传统或深度预测器；结合任务用交叉注意力。",
       "loss": "各算法不同；回归包括 MSE/Huber 等设置，不能写一个统一 loss。",
       "inference": "单性质预测；可用集成和熵估计不确定性，不代表已证明概率校准。",
-      "metrics": "分类 F1/AUROC；回归 r、rho、R²、RMSE/MAE；深度模型重复 seeds。",
+      "metrics": "自有实验分类 F1/AUROC；回归 r、rho、R²、RMSE/MAE。Table 1 移用的 PepLand 分类分数与原论文指标名不一致，不能将整列都作为同指标 F1 排名。",
       "split_and_leakage_control": "序列/SMILES 聚类 80/20；结合按亲和力分布匹配，不能称严格冷靶点；半衰期 5 折。",
-      "limitations_and_comparability": "正式版 2026-07-16；早期预印本归并；小样本冻结特征流程值得复用。",
-      "evidence_location": "Methods: data splitting、model training、evaluation；PMC13388690 正式版。"
+      "limitations_and_comparability": "正式版 2026-07-16。p.5 Table 1 将 PepLand 的 c-CPP 0.838、c-Sol 0.662 列在 Best F1 下，但 P09 原 Table 1 标为 AUC；且历史分数来自不同划分。该表不能证明同协议、同指标的优势。冻结特征流程可参考。",
+      "evidence_location": "原 PDF p.5 Table 1、p.7–8 数据/训练方法；另与 PepLand 原 Table 1 对照：https://academic.oup.com/view-large/527864395 。"
     },
     "window": "2023-09-26_to_2026-09-26",
     "related_versions": [
@@ -906,12 +934,14 @@
           ]
         ]
       }
-    }
+    },
+    "quality_review_date": "2026-09-26",
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
   },
   {
     "id": "P15",
     "short_name": "PeptideCLM2",
-    "title": "Scaling SMILES-Based\nChemical Language Models for\nTherapeutic Peptide Engineering",
+    "title": "Scaling SMILES-Based Chemical Language Models for Therapeutic Peptide Engineering",
     "year": 2026,
     "doi": "10.1021/acs.jcim.6c00652",
     "url": "https://pubs.acs.org/doi/10.1021/acs.jcim.6c00652",
@@ -922,8 +952,8 @@
       "Claus O. Wilke",
       "Kristine Deibler"
     ],
-    "journal": "Journal of Chemical Information\nand Modeling",
-    "publication_date": "2026 Jun 23",
+    "journal": "Journal of Chemical Information and Modeling",
+    "publication_date": "2026-07-13 (online); 2026-07-27 (issue)",
     "accessed": "2026-09-26",
     "status": "published",
     "reading_status": "preprint_full_text",
@@ -938,9 +968,9 @@
       "loss": "所读预印本：MLM 掩码 25%、99 个 RDKit 属性 MTR、混合 0.6MLM+0.4MTR；下游精确 loss NR。",
       "inference": "更换预测头后微调；与 RDKit/Morgan 集成基线比较。",
       "metrics": "各任务分类/回归指标不同；本轮不逐项抄录未核对的最终版数值。",
-      "split_and_leakage_control": "使用基准划分；THPep 随机 5 折；3 seeds；文中有预训练重叠审计。",
-      "limitations_and_comparability": "正式版 DOI 已核实，但方法阅读的是 2026-06-23 预印本 v5，不能声称所有细节已与正式版一致。",
-      "evidence_location": "PMC12803269 预印本 Methods/Table 2；正式 DOI 10.1021/acs.jcim.6c00652。"
+      "split_and_leakage_control": "预印本微调节写 THPep 随机 5 折、3 seeds；基线节又称 triplicate random splits，具体嵌套需核对代码，NR。Table 2 报告预训练重叠，不能据此声称无泄漏。",
+      "limitations_and_comparability": "已确认 2026-07-13 正式在线发表，实际方法仍来自 2026-06-23 预印本 v5；正式全文访问受限，版本差异核对未完成。该预印本 CC BY 许可不可直接套用于正式版。",
+      "evidence_location": "PMC12803269 v5 的 Downstream evaluation protocols/Table 2；正式元数据另见 PubMed 42443143 与 ACS DOI。"
     },
     "window": "2023-09-26_to_2026-09-26",
     "related_versions": [
@@ -975,12 +1005,24 @@
           ]
         ]
       }
+    },
+    "quality_review_date": "2026-09-26",
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md",
+    "version_audit": {
+      "date": "2026-09-26",
+      "final_metadata_source": "https://pubmed.ncbi.nlm.nih.gov/42443143/",
+      "final_doi": "10.1021/acs.jcim.6c00652",
+      "read_preprint_doi": "10.64898/2026.01.06.697994",
+      "read_preprint_version": "v5, 2026-06-23",
+      "read_preprint_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12803269/",
+      "final_full_methods_status": "not_verified_access_limited",
+      "reason": "ACS full article fetch returned HTTP 403; indexed publisher page and PubMed establish final metadata/abstract but do not establish full methods equivalence."
     }
   },
   {
     "id": "P16",
     "short_name": "LANTERN",
-    "title": "LANTERN: TCR-peptide binding prediction\n                    <i>via</i>\n                    large language model representations",
+    "title": "LANTERN: TCR-peptide binding prediction via large language model representations",
     "year": 2026,
     "doi": "10.7717/peerj.20980",
     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13045841/",
@@ -1035,7 +1077,9 @@
           ]
         ]
       }
-    }
+    },
+    "quality_review_date": "2026-09-26",
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
   },
   {
     "id": "P17",
@@ -1076,12 +1120,14 @@
     "window": "2023-09-26_to_2026-09-26",
     "related_versions": [
       "https://arxiv.org/abs/2604.10531"
-    ]
+    ],
+    "quality_review_date": "2026-09-26",
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
   },
   {
     "id": "P18",
     "short_name": "Phenols_CDFT",
-    "title": "Accurate &amp; simple open-sourced no-code machine learning and CDFT predictive models for the antioxidant activity of phenols",
+    "title": "Accurate & simple open-sourced no-code machine learning and CDFT predictive models for the antioxidant activity of phenols",
     "year": 2024,
     "doi": "10.1016/j.comptc.2024.114782",
     "url": "https://www.sciencedirect.com/science/article/abs/pii/S2210271X24003219",
@@ -1096,7 +1142,7 @@
     "status": "published",
     "reading_status": "abstract_or_partial",
     "read_url": "https://www.sciencedirect.com/science/article/abs/pii/S2210271X24003219",
-    "read_version": "published full text or author manuscript",
+    "read_version": "published metadata/abstract and limited source excerpts; full methods not verified",
     "selection": "include",
     "extraction": {
       "task_definition": "酚类 DPPH 抗氧化分类。",
@@ -1129,7 +1175,9 @@
           ]
         ]
       }
-    }
+    },
+    "quality_review_date": "2026-09-26",
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
   },
   {
     "id": "P19",
@@ -1162,7 +1210,7 @@
       "metrics": "测试集集成 R² 约 0.78；最佳单模型 ExtraTrees R² 约 0.77、RMSE 约 0.45。",
       "split_and_leakage_control": "随机 80/20、训练内 10 折；按 InChI 去重和冲突过滤。",
       "limitations_and_comparability": "文中 external 指同一数据池随机留出，不是前瞻外部集；筛特征是否每折拟合需审查。",
-      "evidence_location": "Methods: data preparation/modeling；Results tables；PMC12194667。"
+      "evidence_location": "Methods: data preparation/modeling；Results tables；PMC12194667。 本轮复核官方原 PDF p.1、p.4、p.7–9；归档字节版本差异见 manifest。"
     },
     "window": "2023-09-26_to_2026-09-26",
     "bibliographic_source": "https://api.crossref.org/works/10.3390/jox15030080",
@@ -1185,7 +1233,9 @@
           ]
         ]
       }
-    }
+    },
+    "quality_review_date": "2026-09-26",
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
   },
   {
     "id": "P20",
@@ -1209,7 +1259,7 @@
     "status": "published",
     "reading_status": "abstract_or_partial",
     "read_url": "https://pubmed.ncbi.nlm.nih.gov/41854110/",
-    "read_version": "published full text or author manuscript",
+    "read_version": "published metadata/abstract and limited source excerpts; full methods not verified",
     "selection": "include",
     "extraction": {
       "task_definition": "从代谢组预测连续肠屏障功能指数。",
@@ -1253,12 +1303,14 @@
           ]
         ]
       }
-    }
+    },
+    "quality_review_date": "2026-09-26",
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
   },
   {
     "id": "P21",
     "short_name": "HELM_BERT",
-    "title": "HELM-BERT: Topology-Aware\nRepresentations for Chemically\nModified Peptides",
+    "title": "HELM-BERT: Topology-Aware Representations for Chemically Modified Peptides",
     "year": 2026,
     "doi": "10.1021/acs.jcim.6c00451",
     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13417886/",
@@ -1269,7 +1321,7 @@
       "Shigeyuki Matsumoto",
       "Yasushi Okuno"
     ],
-    "journal": "Journal of Chemical Information\nand Modeling",
+    "journal": "Journal of Chemical Information and Modeling",
     "publication_date": "2026 Jul 15",
     "accessed": "2026-09-26",
     "status": "published",
@@ -1279,7 +1331,7 @@
     "selection": "include",
     "extraction": {
       "task_definition": "修饰肽通透性回归、肽–蛋白相互作用分类。",
-      "dataset_and_labels": "预训练 39,079 肽；通透性 7,715；Propedia 20,057 正配对；另有 ChEMBL PPI。",
+      "dataset_and_labels": "预训练 39,079 独立肽；通透性 7,715；Propedia 配对分组 20,057 正配对，蛋白簇分组筛选后 20,055；另有 ChEMBL PPI。",
       "input_representation": "HELM 化学单体与连接表示。",
       "model_and_pretraining": "HELM-BERT；对比 MolFormer-XL/PeptideCLM；PPI 加冻结 ESM-2。",
       "loss": "通透性 MSE；PPI BCE，阳性权重 4。",
@@ -1287,7 +1339,7 @@
       "metrics": "回归 R²/r/RMSE/MAE；PPI AUROC 等。",
       "split_and_leakage_control": "最终版加入随机/10 折 Murcko 分组；PPI 5 折配对/蛋白分组，1:4 阴性采样。",
       "limitations_and_comparability": "以 2026 正式版为准：不能把旧预印本的样本比矛盾或缺少 scaffold 检验套用最终版；检查预训练重叠消融。",
-      "evidence_location": "PMC13417886 Methods: downstream tasks、ChEMBL benchmark、overlap ablation。"
+      "evidence_location": "PMC13417886 Methods: downstream tasks、ChEMBL benchmark、overlap ablation。 本轮用正式版 ACS/PMC 已索引方法再次核对计数、1:4 采样与 BCE 阳性权重 4。"
     },
     "window": "2023-09-26_to_2026-09-26",
     "related_versions": [
@@ -1322,7 +1374,9 @@
           ]
         ]
       }
-    }
+    },
+    "quality_review_date": "2026-09-26",
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
   },
   {
     "id": "P22",
@@ -1346,7 +1400,7 @@
     "status": "published",
     "reading_status": "abstract_or_partial",
     "read_url": "https://pubs.rsc.org/en/content/articlehtml/2025/dd/d5dd00122f",
-    "read_version": "published full text or author manuscript",
+    "read_version": "published metadata/abstract and limited source excerpts; full methods not verified",
     "selection": "background",
     "extraction": {
       "task_definition": "分子生成及条件优化，非直接活性识别。",
@@ -1380,12 +1434,14 @@
           ]
         ]
       }
-    }
+    },
+    "quality_review_date": "2026-09-26",
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
   },
   {
     "id": "P23",
     "short_name": "Systematic_molecular_benchmark",
-    "title": "A systematic study of key elements underlying molecular property prediction",
+    "title": "A systematic study of key elements underlying molecular property prediction",
     "year": 2023,
     "doi": "10.1038/s41467-023-41948-6",
     "url": "https://www.nature.com/articles/s41467-023-41948-6",
@@ -1438,12 +1494,14 @@
           ]
         ]
       }
-    }
+    },
+    "quality_review_date": "2026-09-26",
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
   },
   {
     "id": "P24",
     "short_name": "Phytochemical_QSPR",
-    "title": "Molecular descriptor driven\n                    <scp>QSPR</scp>\n                    modeling of Papp,\n                    <scp>TEER</scp>\n                    and Efflux Ratio from Caco‐2 cells using machine learning for various phytochemicals",
+    "title": "Molecular descriptor driven QSPR modeling of Papp, TEER and Efflux Ratio from Caco‐2 cells using machine learning for various phytochemicals",
     "year": 2026,
     "doi": "10.1002/jsfa.70701",
     "url": "https://scijournals.onlinelibrary.wiley.com/doi/10.1002/jsfa.70701",
@@ -1473,7 +1531,7 @@
       "metrics": "NRMSE、R²；TEER 表现波动较大，不挪用 Papp 成绩说明屏障效果。",
       "split_and_leakage_control": "重复 5 折×6；标准化只拟合训练集；有相关筛选/RFECV。",
       "limitations_and_comparability": "三重复是否按化合物分组未明确；相关筛选范围与按 test 选模型表述需审计。249 行不等于 249 独立化合物；方法称 polyphenols，但列出混合类别，按 phytochemicals 记录。",
-      "evidence_location": "Wiley 正文 Materials and Methods；2026-05-08 在线 DOI 10.1002/jsfa.70701。"
+      "evidence_location": "Wiley 正文 Materials and Methods；2026-05-08 在线 DOI 10.1002/jsfa.70701。 本轮重新核对 Wiley 方法中的 249 个测量样本与结果中的 5,003 描述符；83 才是独立化合物数。"
     },
     "window": "2023-09-26_to_2026-09-26",
     "bibliographic_source": "https://api.crossref.org/works/10.1002/jsfa.70701",
@@ -1505,7 +1563,13 @@
           ]
         ]
       }
-    }
+    },
+    "quality_review_date": "2026-09-26",
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md",
+    "alternate_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/42101206/",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13341053/"
+    ]
   },
   {
     "id": "P25",
@@ -1561,7 +1625,9 @@
           ]
         ]
       }
-    }
+    },
+    "quality_review_date": "2026-09-26",
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
   },
   {
     "id": "P26",
@@ -1596,7 +1662,9 @@
       "limitations_and_comparability": "本轮仅确认 2026 arXiv v1，不能写已接收；提供天然产物领域适应已有先例。",
       "evidence_location": "arXiv2602.13958v1 Methods 3.1–3.4；作者 rozariwang/CLMs-for-NPs。"
     },
-    "window": "2023-09-26_to_2026-09-26"
+    "window": "2023-09-26_to_2026-09-26",
+    "quality_review_date": "2026-09-26",
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
   },
   {
     "id": "P27",
@@ -1611,13 +1679,13 @@
       "Kasper Hettinga",
       "Vincenzo Fogliano"
     ],
-    "journal": "Innovative Food Science &amp; Emerging Technologies",
+    "journal": "Innovative Food Science & Emerging Technologies",
     "publication_date": "",
     "accessed": "2026-09-26",
     "status": "published",
     "reading_status": "abstract_or_partial",
     "read_url": "https://www.sciencedirect.com/science/article/pii/S1466856425003315",
-    "read_version": "published full text or author manuscript",
+    "read_version": "published metadata/abstract and limited source excerpts; full methods not verified",
     "selection": "include",
     "extraction": {
       "task_definition": "食品任务：肽运输、分子味觉及图像质地。",
@@ -1650,6 +1718,8 @@
           ]
         ]
       }
-    }
+    },
+    "quality_review_date": "2026-09-26",
+    "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md"
   }
 ]

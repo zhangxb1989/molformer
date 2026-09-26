@@ -18,6 +18,8 @@
 | P20 | 代谢组预测屏障指数 | 输入是样本代谢组，不是候选分子的 SMILES |
 | P22 | MolFormer 相关分子生成 | 生成指标不能用于分类排名 |
 
+补充核查：P14 PeptiVerse 的 Table 1 将历史 PepLand c-CPP/c-Sol 分数 0.838/0.662 列在 Best F1 下，但 [P09 原 Table 1](https://academic.oup.com/view-large/527864395) 标为 AUC；[P14 正式 PDF](pdfs/P14_2026_PeptiVerse.pdf) p.5 还明确历史研究与本研究划分不同。因此该表不能作为同指标、同划分的优越性证据。
+
 多标签论文仅作为另一任务设定的参考；原课题只有一个标签时，无须为追随文献改任务。
 
 ## First 声明审查

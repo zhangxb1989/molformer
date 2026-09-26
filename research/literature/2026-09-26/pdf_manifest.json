@@ -62,7 +62,9 @@
     "github_blob_sha": "e28a113263054fc9c90527ef7454c1b7979cf74c",
     "git_blob_sha": "e28a113263054fc9c90527ef7454c1b7979cf74c",
     "verified_date": "2026-09-26",
-    "archive_download_url": "https://www.nature.com/articles/s41467-023-41967-3.pdf"
+    "archive_download_url": "https://www.nature.com/articles/s41467-023-41967-3.pdf",
+    "remote_sha256_verified": true,
+    "remote_verified_commit": "ac3d399aadf06ce7a74e2810204ee47ee9f528c4"
   },
   {
     "id": "P02",
@@ -183,7 +185,9 @@
     "github_archive_status": "archived_verified",
     "git_blob_sha": "beed6dfc208eb14f5c35b07c1a3eea11b075876d",
     "verified_date": "2026-09-26",
-    "archive_download_url": "https://www.nature.com/articles/s42003-024-06911-1.pdf"
+    "archive_download_url": "https://www.nature.com/articles/s42003-024-06911-1.pdf",
+    "remote_sha256_verified": true,
+    "remote_verified_commit": "ac3d399aadf06ce7a74e2810204ee47ee9f528c4"
   },
   {
     "id": "P06",
@@ -316,7 +320,9 @@
     "github_archive_status": "archived_verified",
     "git_blob_sha": "754e73d95efa1706942dd5092f7dcb17f7d9f996",
     "verified_date": "2026-09-26",
-    "archive_download_url": "https://link.springer.com/content/pdf/10.1186/s13321-025-01115-z.pdf"
+    "archive_download_url": "https://link.springer.com/content/pdf/10.1186/s13321-025-01115-z.pdf",
+    "remote_sha256_verified": true,
+    "remote_verified_commit": "ac3d399aadf06ce7a74e2810204ee47ee9f528c4"
   },
   {
     "id": "P11",
@@ -382,7 +388,9 @@
     "github_archive_status": "archived_verified",
     "git_blob_sha": "6858bc72c58b1b3067779fb07b176acde404b768",
     "verified_date": "2026-09-26",
-    "archive_download_url": "https://mdpi-res.com/d_attachment/ijms/ijms-26-01317/article_deploy/ijms-26-01317-v2.pdf?version=1739160909"
+    "archive_download_url": "https://mdpi-res.com/d_attachment/ijms/ijms-26-01317/article_deploy/ijms-26-01317-v2.pdf?version=1739160909",
+    "remote_sha256_verified": true,
+    "remote_verified_commit": "ac3d399aadf06ce7a74e2810204ee47ee9f528c4"
   },
   {
     "id": "P13",
@@ -418,7 +426,9 @@
     "github_archive_status": "archived_verified",
     "git_blob_sha": "fc48301754d6dbe48bdb56195d447f2d1aebc969",
     "verified_date": "2026-09-26",
-    "archive_download_url": "https://link.springer.com/content/pdf/10.1186/s12859-025-06190-5.pdf"
+    "archive_download_url": "https://link.springer.com/content/pdf/10.1186/s12859-025-06190-5.pdf",
+    "remote_sha256_verified": true,
+    "remote_verified_commit": "ac3d399aadf06ce7a74e2810204ee47ee9f528c4"
   },
   {
     "id": "P14",
@@ -464,11 +474,13 @@
     "github_archive_status": "archived_verified",
     "git_blob_sha": "56a920545004da576080fe0ed1ec16218664f44c",
     "verified_date": "2026-09-26",
-    "archive_download_url": "https://www.nature.com/articles/s41467-026-74167-w.pdf"
+    "archive_download_url": "https://www.nature.com/articles/s41467-026-74167-w.pdf",
+    "remote_sha256_verified": true,
+    "remote_verified_commit": "ac3d399aadf06ce7a74e2810204ee47ee9f528c4"
   },
   {
     "id": "P15",
-    "title": "Scaling SMILES-Based\nChemical Language Models for\nTherapeutic Peptide Engineering",
+    "title": "Scaling SMILES-Based Chemical Language Models for Therapeutic Peptide Engineering",
     "authors": [
       "Aaron L. Feller",
       "Maxim Secor",
@@ -484,13 +496,22 @@
     "license": [
       "https://creativecommons.org/licenses/by/4.0/"
     ],
-    "attempts": [],
+    "attempts": [
+      {
+        "date": "2026-09-26",
+        "url": "https://pubs.acs.org/doi/10.1021/acs.jcim.6c00652",
+        "status": "http_403",
+        "purpose": "final-method comparison"
+      }
+    ],
     "download_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12803269/pdf/nihpp-2026.01.06.697994v5.pdf",
-    "reason": "Publisher/PMC download blocked or non-PDF response; link retained"
+    "reason": "Publisher/PMC download blocked or non-PDF response; link retained",
+    "license_scope": "bioRxiv preprint v5 only; journal-version redistribution permission not verified",
+    "download_version": "bioRxiv v5, 2026-06-23; not the final journal PDF"
   },
   {
     "id": "P16",
-    "title": "LANTERN: TCR-peptide binding prediction\n                    <i>via</i>\n                    large language model representations",
+    "title": "LANTERN: TCR-peptide binding prediction via large language model representations",
     "authors": [
       "Cong Qi",
       "Hanzhang Fang",
@@ -549,7 +570,7 @@
   },
   {
     "id": "P18",
-    "title": "Accurate &amp; simple open-sourced no-code machine learning and CDFT predictive models for the antioxidant activity of phenols",
+    "title": "Accurate & simple open-sourced no-code machine learning and CDFT predictive models for the antioxidant activity of phenols",
     "authors": [
       "Andrés Halabi Diaz",
       "Franco Galdames",
@@ -614,7 +635,9 @@
     "version_note": "2026-09-26 从 MDPI 官方文件服务器重新获取；题名、DOI、作者、页数与正文关键结果已核验，但字节哈希与旧记录不同。旧文件未保留，不能判断差异仅为元数据，也不宣称字节相同。当前哈希对应实际归档原件。",
     "git_blob_sha": "3ea7b381c23e75eb22c40de53e41bf0bf6339144",
     "verified_date": "2026-09-26",
-    "archive_download_url": "https://mdpi-res.com/d_attachment/jox/jox-15-00080/article_deploy/jox-15-00080.pdf"
+    "archive_download_url": "https://mdpi-res.com/d_attachment/jox/jox-15-00080/article_deploy/jox-15-00080.pdf",
+    "remote_sha256_verified": true,
+    "remote_verified_commit": "ac3d399aadf06ce7a74e2810204ee47ee9f528c4"
   },
   {
     "id": "P20",
@@ -640,7 +663,7 @@
   },
   {
     "id": "P21",
-    "title": "HELM-BERT: Topology-Aware\nRepresentations for Chemically\nModified Peptides",
+    "title": "HELM-BERT: Topology-Aware Representations for Chemically Modified Peptides",
     "authors": [
       "Seungeon Lee",
       "Takuto Koyama",
@@ -689,7 +712,7 @@
   },
   {
     "id": "P23",
-    "title": "A systematic study of key elements underlying molecular property prediction",
+    "title": "A systematic study of key elements underlying molecular property prediction",
     "authors": [
       "Jianyuan Deng",
       "Zhibo Yang",
@@ -724,11 +747,13 @@
     "github_archive_status": "archived_verified",
     "git_blob_sha": "9eadf0b0091ea52339347e86d38317de34a18f22",
     "verified_date": "2026-09-26",
-    "archive_download_url": "https://www.nature.com/articles/s41467-023-41948-6.pdf"
+    "archive_download_url": "https://www.nature.com/articles/s41467-023-41948-6.pdf",
+    "remote_sha256_verified": true,
+    "remote_verified_commit": "ac3d399aadf06ce7a74e2810204ee47ee9f528c4"
   },
   {
     "id": "P24",
-    "title": "Molecular descriptor driven\n                    <scp>QSPR</scp>\n                    modeling of Papp,\n                    <scp>TEER</scp>\n                    and Efflux Ratio from Caco‐2 cells using machine learning for various phytochemicals",
+    "title": "Molecular descriptor driven QSPR modeling of Papp, TEER and Efflux Ratio from Caco‐2 cells using machine learning for various phytochemicals",
     "authors": [
       "Jin‐Woo Kim",
       "Rixing Cong",

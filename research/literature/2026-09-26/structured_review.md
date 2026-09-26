@@ -4,11 +4,13 @@ NR = 本轮未取得足够证据，不等于原文没有报告。全文关键部
 
 术语：AA=氨基酸序列；SMILES=分子线性表示；AIP=抗炎肽；AMP=抗菌肽；PAMPA=人工膜通透性实验。
 
+质量复核及保留限制见 [quality_check.md](quality_check.md)。
+
 ## F01 · MoLFormer（2022）
 
 Large-scale chemical language representations capture molecular structure and properties
 
-来源：[10.1038/s42256-022-00580-7](https://www.nature.com/articles/s42256-022-00580-7)。阅读：abstract_or_partial；published full text or author manuscript。
+来源：[10.1038/s42256-022-00580-7](https://www.nature.com/articles/s42256-022-00580-7)。阅读：abstract_or_partial；published abstract/limited text and IBM official checkpoint documentation。
 
 | 字段 | 抽取内容 |
 |---|---|
@@ -68,7 +70,7 @@ PeptideBERT: A Language Model Based on Transformers for Peptide Property Predict
 
 A bioactivity foundation model using pairwise meta-learning
 
-来源：[10.1038/s42256-024-00876-w](https://www.nature.com/articles/s42256-024-00876-w)。阅读：abstract_or_partial；published full text or author manuscript。
+来源：[10.1038/s42256-024-00876-w](https://www.nature.com/articles/s42256-024-00876-w)。阅读：abstract_or_partial；published metadata/abstract and limited source excerpts; full methods not verified。
 
 | 字段 | 抽取内容 |
 |---|---|
@@ -121,14 +123,14 @@ PepNet: an interpretable neural network for anti-inflammatory and antimicrobial 
 | Metrics | ACC、P/R、F1、MCC；AMP F1 0.951、MCC 0.901。 |
 | 划分与泄漏控制 | 训练/验证/测试预划分，未建立严格结构外推证据。 |
 | 限制与可比性 | 后面的 Statistics 节把 AIP/AMP 数据名对调；此处按数据准备节记录，复现须核对实际文件。 |
-| 证据位置 | Methods: Data preparation、architecture；Results/Table；Statistics and reproducibility。 |
+| 证据位置 | Methods: Data preparation、architecture；Results/Table；Statistics and reproducibility。 本轮复核原 PDF p.3–4 性能、p.10 数据准备与 p.11 Statistics。 |
 
 
 ## P06 · DeepAIP（2024）
 
 DeepAIP: Deep learning for anti-inflammatory peptide prediction using pre-trained protein language model features based on contextual self-attention network
 
-来源：[10.1016/j.ijbiomac.2024.136172](https://pubmed.ncbi.nlm.nih.gov/39357724/)。阅读：abstract_or_partial；published full text or author manuscript。
+来源：[10.1016/j.ijbiomac.2024.136172](https://pubmed.ncbi.nlm.nih.gov/39357724/)。阅读：abstract_or_partial；published metadata/abstract and limited source excerpts; full methods not verified。
 
 | 字段 | 抽取内容 |
 |---|---|
@@ -148,7 +150,7 @@ DeepAIP: Deep learning for anti-inflammatory peptide prediction using pre-traine
 
 Deep2Pep: A deep learning method in multi-label classification of bioactive peptide
 
-来源：[10.1016/j.compbiolchem.2024.108021](https://www.sciencedirect.com/science/article/pii/S1476927124000094)。阅读：abstract_or_partial；published full text or author manuscript。
+来源：[10.1016/j.compbiolchem.2024.108021](https://www.sciencedirect.com/science/article/pii/S1476927124000094)。阅读：abstract_or_partial；published metadata/abstract and limited source excerpts; full methods not verified。
 
 | 字段 | 抽取内容 |
 |---|---|
@@ -219,9 +221,9 @@ How to build machine learning models able to extrapolate from standard to modifi
 | Loss | 各下游算法原生目标，无统一深度 loss。 |
 | Inference | 分类分数或定量结合预测。 |
 | Metrics | 分类 MCC、回归 Spearman（文中 SPCC）；相似性阈值与表现也做相关分析。 |
-| 划分与泄漏控制 | 相似性分割 CCPart；5 折、200 Optuna trials、5 seeds；外推用全部标准肽训练、修饰肽测试。 |
+| 划分与泄漏控制 | 相似性分割 CCPart；训练内 5 折 HPO、Optuna 最多 200 steps（含 early stopping）、5 seeds；外推用全部标准肽训练、修饰肽测试。 |
 | 限制与可比性 | 负例有“其他活性”来源，不必然真阴性；直接证明已有 MolFormer 肽任务先例。 |
-| 证据位置 | Methods datasets/representations/partition；Figs 4–6；IBM/PeptideGeneralizationBenchmarks。 |
+| 证据位置 | Methods datasets/representations/partition；Figs 4–6；IBM/PeptideGeneralizationBenchmarks。 本轮复核原 PDF p.3 Table 1、p.4 HPO。 |
 
 
 ## P11 · AOP_DRL（2025）
@@ -256,12 +258,12 @@ MFP-MFL: Leveraging Graph Attention and Multi-Feature Integration for Superior M
 | 数据集与标签 | 表 2：单功能 5,719，双功能 198；据此为 5,917 独立序列，标签条目不能当独立样本。 |
 | 输入与表示 | ESM-2、ProtT5、RoBERTa 多特征融合。 |
 | 模型与预训练 | MFP-MFL：GAT、FGM 对抗训练、加权集成。 |
-| Loss | Linit+Ladv；印刷公式仅列 y log p 项，完整 BCE 的负类项须检查代码。 |
+| Loss | 同时最小化 Linit 与 Ladv；原 PDF p.19 式 (10)–(11) 仅印有 y log p 项。是否实现完整 BCE 及两项权重须查代码，NR。 |
 | Inference | 每功能 sigmoid，集成输出；阈值未核实。 |
 | Metrics | 多标签 precision、coverage、accuracy、exact match、absolute false；主表 accuracy 0.786、precision 0.799。 |
 | 划分与泄漏控制 | 文中训练/验证流程须结合数据文件确认；未认定严格同源外推。 |
 | 限制与可比性 | 结论部分交换部分指标对应关系，采用主表；不能把多标签 accuracy 与二分类 accuracy 等同。 |
-| 证据位置 | Methods/Data preparation、Loss；Tables 1–2；PMC11818429。 |
+| 证据位置 | 原 PDF p.5 特征集成结果表、p.14–15 数据计数、p.19 式 (10)–(11) 与结论；已核对公式页图像。 |
 
 
 ## P13 · BPFun（2025）
@@ -276,12 +278,12 @@ BPFun: a deep learning framework for bioactive peptide function prediction using
 | 数据集与标签 | 各标签计数可重叠：AMP 2409、ACP 646、ADP 514、AHP 868、AIP 1678、AAP 134、AOP 318；154 个双标签。 |
 | 输入与表示 | 序列及丰富内在特征。 |
 | 模型与预训练 | BPFun：Transformer、BiLSTM、注意力；不能仅因 Transformer 就归为预训练大模型。 |
-| Loss | 主文明示 MSE，而非假定 BCE。 |
+| Loss | 主文 p.12 式 (17) 明示 MSE；网络另含 L2 正则化，不能默认写成 BCE。 |
 | Inference | 七个 sigmoid 输出，阈值 >0.5。 |
 | Metrics | 多标签 precision/coverage/accuracy、absolute true/false、F1。 |
 | 划分与泄漏控制 | CD-HIT 0.9 去冗余、长度≥5，再随机 80/20。 |
 | 限制与可比性 | 先去冗余后随机分割不等于相似性隔离；序列遮盖增强需限制在训练内。 |
-| 证据位置 | Methods: model/loss、dataset；BMC 主文。 |
+| 证据位置 | Methods: model/loss、dataset；BMC 主文。 本轮核对原 PDF p.11 sigmoid/0.5 阈值与 p.12 式 (17) 图像。 |
 
 
 ## P14 · PeptiVerse（2026）
@@ -293,22 +295,20 @@ PeptiVerse: A unified platform for therapeutic peptide property prediction
 | 字段 | 抽取内容 |
 |---|---|
 | 任务定义 | 七类治疗肽性质：溶血、溶解性、nonfouling、毒性、通透性、半衰期、亲和力。 |
-| 数据集与标签 | 例：溶血 6,076；修饰肽通透性 7,475；典型 CPP 2,324；半衰期按 AA/SMILES 为 130/245。 |
+| 数据集与标签 | 例：溶血 6,076；修饰肽通透性合计 7,475，其中 PAMPA 6,869、Caco-2 606；典型 CPP 2,324；半衰期按 AA/SMILES 为 130/245。各通透端点需分清。 |
 | 输入与表示 | AA 与 SMILES 两类输入。 |
 | 模型与预训练 | 冻结 ESM-2、PeptideCLM、ChemBERTa，加传统或深度预测器；结合任务用交叉注意力。 |
 | Loss | 各算法不同；回归包括 MSE/Huber 等设置，不能写一个统一 loss。 |
 | Inference | 单性质预测；可用集成和熵估计不确定性，不代表已证明概率校准。 |
-| Metrics | 分类 F1/AUROC；回归 r、rho、R²、RMSE/MAE；深度模型重复 seeds。 |
+| Metrics | 自有实验分类 F1/AUROC；回归 r、rho、R²、RMSE/MAE。Table 1 移用的 PepLand 分类分数与原论文指标名不一致，不能将整列都作为同指标 F1 排名。 |
 | 划分与泄漏控制 | 序列/SMILES 聚类 80/20；结合按亲和力分布匹配，不能称严格冷靶点；半衰期 5 折。 |
-| 限制与可比性 | 正式版 2026-07-16；早期预印本归并；小样本冻结特征流程值得复用。 |
-| 证据位置 | Methods: data splitting、model training、evaluation；PMC13388690 正式版。 |
+| 限制与可比性 | 正式版 2026-07-16。p.5 Table 1 将 PepLand 的 c-CPP 0.838、c-Sol 0.662 列在 Best F1 下，但 P09 原 Table 1 标为 AUC；且历史分数来自不同划分。该表不能证明同协议、同指标的优势。冻结特征流程可参考。 |
+| 证据位置 | 原 PDF p.5 Table 1、p.7–8 数据/训练方法；另与 PepLand 原 Table 1 对照：https://academic.oup.com/view-large/527864395 。 |
 
 
 ## P15 · PeptideCLM2（2026）
 
-Scaling SMILES-Based
-Chemical Language Models for
-Therapeutic Peptide Engineering
+Scaling SMILES-Based Chemical Language Models for Therapeutic Peptide Engineering
 
 来源：[10.1021/acs.jcim.6c00652](https://pubs.acs.org/doi/10.1021/acs.jcim.6c00652)。阅读：preprint_full_text；bioRxiv preprint v5, 2026-06-23; final metadata verified separately。
 
@@ -321,16 +321,14 @@ Therapeutic Peptide Engineering
 | Loss | 所读预印本：MLM 掩码 25%、99 个 RDKit 属性 MTR、混合 0.6MLM+0.4MTR；下游精确 loss NR。 |
 | Inference | 更换预测头后微调；与 RDKit/Morgan 集成基线比较。 |
 | Metrics | 各任务分类/回归指标不同；本轮不逐项抄录未核对的最终版数值。 |
-| 划分与泄漏控制 | 使用基准划分；THPep 随机 5 折；3 seeds；文中有预训练重叠审计。 |
-| 限制与可比性 | 正式版 DOI 已核实，但方法阅读的是 2026-06-23 预印本 v5，不能声称所有细节已与正式版一致。 |
-| 证据位置 | PMC12803269 预印本 Methods/Table 2；正式 DOI 10.1021/acs.jcim.6c00652。 |
+| 划分与泄漏控制 | 预印本微调节写 THPep 随机 5 折、3 seeds；基线节又称 triplicate random splits，具体嵌套需核对代码，NR。Table 2 报告预训练重叠，不能据此声称无泄漏。 |
+| 限制与可比性 | 已确认 2026-07-13 正式在线发表，实际方法仍来自 2026-06-23 预印本 v5；正式全文访问受限，版本差异核对未完成。该预印本 CC BY 许可不可直接套用于正式版。 |
+| 证据位置 | PMC12803269 v5 的 Downstream evaluation protocols/Table 2；正式元数据另见 PubMed 42443143 与 ACS DOI。 |
 
 
 ## P16 · LANTERN（2026）
 
-LANTERN: TCR-peptide binding prediction
-                    <i>via</i>
-                    large language model representations
+LANTERN: TCR-peptide binding prediction via large language model representations
 
 来源：[10.7717/peerj.20980](https://pmc.ncbi.nlm.nih.gov/articles/PMC13045841/)。阅读：full_text_key_sections；published full text or author manuscript。
 
@@ -370,9 +368,9 @@ PepBenchmark: A Standardized Benchmark for Peptide Machine Learning
 
 ## P18 · Phenols_CDFT（2024）
 
-Accurate &amp; simple open-sourced no-code machine learning and CDFT predictive models for the antioxidant activity of phenols
+Accurate & simple open-sourced no-code machine learning and CDFT predictive models for the antioxidant activity of phenols
 
-来源：[10.1016/j.comptc.2024.114782](https://www.sciencedirect.com/science/article/abs/pii/S2210271X24003219)。阅读：abstract_or_partial；published full text or author manuscript。
+来源：[10.1016/j.comptc.2024.114782](https://www.sciencedirect.com/science/article/abs/pii/S2210271X24003219)。阅读：abstract_or_partial；published metadata/abstract and limited source excerpts; full methods not verified。
 
 | 字段 | 抽取内容 |
 |---|---|
@@ -405,14 +403,14 @@ QSAR Models for Predicting the Antioxidant Potential of Chemical Substances
 | Metrics | 测试集集成 R² 约 0.78；最佳单模型 ExtraTrees R² 约 0.77、RMSE 约 0.45。 |
 | 划分与泄漏控制 | 随机 80/20、训练内 10 折；按 InChI 去重和冲突过滤。 |
 | 限制与可比性 | 文中 external 指同一数据池随机留出，不是前瞻外部集；筛特征是否每折拟合需审查。 |
-| 证据位置 | Methods: data preparation/modeling；Results tables；PMC12194667。 |
+| 证据位置 | Methods: data preparation/modeling；Results tables；PMC12194667。 本轮复核官方原 PDF p.1、p.4、p.7–9；归档字节版本差异见 manifest。 |
 
 
 ## P20 · Barrier_metabolomics（2026）
 
 A Biologically Informed Machine Learning Pipeline Uncovers Metabolic Features of Intestinal Barrier Dysfunction
 
-来源：[10.1021/acs.analchem.6c00178](https://pubmed.ncbi.nlm.nih.gov/41854110/)。阅读：abstract_or_partial；published full text or author manuscript。
+来源：[10.1021/acs.analchem.6c00178](https://pubmed.ncbi.nlm.nih.gov/41854110/)。阅读：abstract_or_partial；published metadata/abstract and limited source excerpts; full methods not verified。
 
 | 字段 | 抽取内容 |
 |---|---|
@@ -430,16 +428,14 @@ A Biologically Informed Machine Learning Pipeline Uncovers Metabolic Features of
 
 ## P21 · HELM_BERT（2026）
 
-HELM-BERT: Topology-Aware
-Representations for Chemically
-Modified Peptides
+HELM-BERT: Topology-Aware Representations for Chemically Modified Peptides
 
 来源：[10.1021/acs.jcim.6c00451](https://pmc.ncbi.nlm.nih.gov/articles/PMC13417886/)。阅读：full_text_key_sections；2026 journal final; supersedes early preprint extraction。
 
 | 字段 | 抽取内容 |
 |---|---|
 | 任务定义 | 修饰肽通透性回归、肽–蛋白相互作用分类。 |
-| 数据集与标签 | 预训练 39,079 肽；通透性 7,715；Propedia 20,057 正配对；另有 ChEMBL PPI。 |
+| 数据集与标签 | 预训练 39,079 独立肽；通透性 7,715；Propedia 配对分组 20,057 正配对，蛋白簇分组筛选后 20,055；另有 ChEMBL PPI。 |
 | 输入与表示 | HELM 化学单体与连接表示。 |
 | 模型与预训练 | HELM-BERT；对比 MolFormer-XL/PeptideCLM；PPI 加冻结 ESM-2。 |
 | Loss | 通透性 MSE；PPI BCE，阳性权重 4。 |
@@ -447,14 +443,14 @@ Modified Peptides
 | Metrics | 回归 R²/r/RMSE/MAE；PPI AUROC 等。 |
 | 划分与泄漏控制 | 最终版加入随机/10 折 Murcko 分组；PPI 5 折配对/蛋白分组，1:4 阴性采样。 |
 | 限制与可比性 | 以 2026 正式版为准：不能把旧预印本的样本比矛盾或缺少 scaffold 检验套用最终版；检查预训练重叠消融。 |
-| 证据位置 | PMC13417886 Methods: downstream tasks、ChEMBL benchmark、overlap ablation。 |
+| 证据位置 | PMC13417886 Methods: downstream tasks、ChEMBL benchmark、overlap ablation。 本轮用正式版 ACS/PMC 已索引方法再次核对计数、1:4 采样与 BCE 阳性权重 4。 |
 
 
 ## P22 · GP_MoLFormer（2025）
 
 GP-MoLFormer: a foundation model for molecular generation
 
-来源：[10.1039/D5DD00122F](https://pubs.rsc.org/en/content/articlehtml/2025/dd/d5dd00122f)。阅读：abstract_or_partial；published full text or author manuscript。
+来源：[10.1039/D5DD00122F](https://pubs.rsc.org/en/content/articlehtml/2025/dd/d5dd00122f)。阅读：abstract_or_partial；published metadata/abstract and limited source excerpts; full methods not verified。
 
 | 字段 | 抽取内容 |
 |---|---|
@@ -472,7 +468,7 @@ GP-MoLFormer: a foundation model for molecular generation
 
 ## P23 · Systematic_molecular_benchmark（2023）
 
-A systematic study of key elements underlying molecular property prediction
+A systematic study of key elements underlying molecular property prediction
 
 来源：[10.1038/s41467-023-41948-6](https://www.nature.com/articles/s41467-023-41948-6)。阅读：full_text_key_sections；published full text or author manuscript。
 
@@ -492,11 +488,7 @@ A systematic study of key elements underlying molecular property prediction
 
 ## P24 · Phytochemical_QSPR（2026）
 
-Molecular descriptor driven
-                    <scp>QSPR</scp>
-                    modeling of Papp,
-                    <scp>TEER</scp>
-                    and Efflux Ratio from Caco‐2 cells using machine learning for various phytochemicals
+Molecular descriptor driven QSPR modeling of Papp, TEER and Efflux Ratio from Caco‐2 cells using machine learning for various phytochemicals
 
 来源：[10.1002/jsfa.70701](https://scijournals.onlinelibrary.wiley.com/doi/10.1002/jsfa.70701)。阅读：publisher_methods_and_partial_results；Wiley published HTML。
 
@@ -511,7 +503,7 @@ Molecular descriptor driven
 | Metrics | NRMSE、R²；TEER 表现波动较大，不挪用 Papp 成绩说明屏障效果。 |
 | 划分与泄漏控制 | 重复 5 折×6；标准化只拟合训练集；有相关筛选/RFECV。 |
 | 限制与可比性 | 三重复是否按化合物分组未明确；相关筛选范围与按 test 选模型表述需审计。249 行不等于 249 独立化合物；方法称 polyphenols，但列出混合类别，按 phytochemicals 记录。 |
-| 证据位置 | Wiley 正文 Materials and Methods；2026-05-08 在线 DOI 10.1002/jsfa.70701。 |
+| 证据位置 | Wiley 正文 Materials and Methods；2026-05-08 在线 DOI 10.1002/jsfa.70701。 本轮重新核对 Wiley 方法中的 249 个测量样本与结果中的 5,003 描述符；83 才是独立化合物数。 |
 
 
 ## P25 · TIDE（2026）
@@ -558,7 +550,7 @@ Chemical Language Models for Natural Products: A State-Space Model Approach
 
 Leveraging foundation models and transfer learning for peptide transport prediction, molecular taste classification, and visual texture analysis
 
-来源：[10.1016/j.ifset.2025.104247](https://www.sciencedirect.com/science/article/pii/S1466856425003315)。阅读：abstract_or_partial；published full text or author manuscript。
+来源：[10.1016/j.ifset.2025.104247](https://www.sciencedirect.com/science/article/pii/S1466856425003315)。阅读：abstract_or_partial；published metadata/abstract and limited source excerpts; full methods not verified。
 
 | 字段 | 抽取内容 |
 |---|---|
@@ -572,4 +564,3 @@ Leveraging foundation models and transfer learning for peptide transport predict
 | 划分与泄漏控制 | 去重、划分与外推协议 NR。 |
 | 限制与可比性 | 2025 正式论文，作为应用边界对照；不把三个任务合并成一个多模态肽活性模型。 |
 | 证据位置 | 出版社摘要/Highlights，DOI 10.1016/j.ifset.2025.104247。 |
-
