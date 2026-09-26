@@ -1,0 +1,723 @@
+[
+  {
+    "id": "F01",
+    "title": "Large-scale chemical language representations capture molecular structure and properties",
+    "authors": [
+      "Jerret Ross",
+      "Brian Belgodere",
+      "Vijil Chenthamarakshan",
+      "Inkit Padhi",
+      "Youssef Mroueh",
+      "Payel Das"
+    ],
+    "year": 2022,
+    "doi": "10.1038/s42256-022-00580-7",
+    "source_url": "https://www.nature.com/articles/s42256-022-00580-7",
+    "accessed": "2026-09-26",
+    "status": "link_only",
+    "license": [],
+    "attempts": [],
+    "download_url": "",
+    "reason": "No verified redistributable PDF in this run; link retained"
+  },
+  {
+    "id": "P01",
+    "title": "Limitations of representation learning in small molecule property prediction",
+    "authors": [
+      "Ana Laura Dias",
+      "Latimah Bustillo",
+      "Tiago Rodrigues"
+    ],
+    "year": 2023,
+    "doi": "10.1038/s41467-023-41967-3",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10575963/",
+    "accessed": "2026-09-26",
+    "status": "downloaded_verified",
+    "license": [
+      "https://creativecommons.org/licenses/by/4.0/"
+    ],
+    "attempts": [
+      {
+        "id": "P01",
+        "url": "https://www.nature.com/articles/s41467-023-41967-3.pdf",
+        "final_url": "https://www.nature.com/articles/s41467-023-41967-3.pdf?error=cookies_not_supported&code=bc8c505f-5c71-4c39-adfe-7720d61fce28",
+        "status": "saved",
+        "bytes": 348717
+      }
+    ],
+    "path": "pdfs/P01_2023_Representation_limits_comment.pdf",
+    "bytes": 348717,
+    "sha256": "ba04c28d269f2bf30343685ef70ae5b114fff2c49b2670997954ac8ec96f6a4f",
+    "pages": 2,
+    "modified": false,
+    "download_url": "https://www.nature.com/articles/s41467-023-41967-3.pdf",
+    "github_archive_status": "included_in_this_checkpoint",
+    "github_blob_sha": "e28a113263054fc9c90527ef7454c1b7979cf74c"
+  },
+  {
+    "id": "P02",
+    "title": "PeptideBERT: A Language Model Based on Transformers for Peptide Property Prediction",
+    "authors": [
+      "Chakradhar Guntuboina",
+      "Adrita Das",
+      "Parisa Mollaei",
+      "Seongwon Kim",
+      "Amir Barati Farimani"
+    ],
+    "year": 2023,
+    "doi": "10.1021/acs.jpclett.3c02398",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10683064/",
+    "accessed": "2026-09-26",
+    "status": "link_only",
+    "license": [
+      "https://creativecommons.org/licenses/by/4.0/"
+    ],
+    "attempts": [
+      {
+        "id": "P02",
+        "url": "https://pubs.acs.org/doi/pdf/10.1021/acs.jpclett.3c02398",
+        "status": "error",
+        "error": "HTTP Error 403: Forbidden"
+      }
+    ],
+    "download_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10683064/pdf/jz3c02398.pdf",
+    "reason": "Publisher/PMC download blocked or non-PDF response; link retained"
+  },
+  {
+    "id": "P03",
+    "title": "A bioactivity foundation model using pairwise meta-learning",
+    "authors": [
+      "Bin Feng",
+      "Zequn Liu",
+      "Nanlan Huang",
+      "Zhiping Xiao",
+      "Haomiao Zhang",
+      "Srbuhi Mirzoyan",
+      "Hanwen Xu",
+      "Jiaran Hao",
+      "Yinghui Xu",
+      "Ming Zhang",
+      "Sheng Wang"
+    ],
+    "year": 2024,
+    "doi": "10.1038/s42256-024-00876-w",
+    "source_url": "https://www.nature.com/articles/s42256-024-00876-w",
+    "accessed": "2026-09-26",
+    "status": "link_only",
+    "license": [],
+    "attempts": [],
+    "download_url": "",
+    "reason": "No verified redistributable PDF in this run; link retained"
+  },
+  {
+    "id": "P04",
+    "title": "AutoPeptideML: a study on how to build more trustworthy peptide bioactivity predictors",
+    "authors": [
+      "Raúl Fernández-Díaz",
+      "Rodrigo Cossio-Pérez",
+      "Clement Agoni",
+      "Hoang Thanh Lam",
+      "Vanessa Lopez",
+      "Denis C Shields"
+    ],
+    "year": 2024,
+    "doi": "10.1093/bioinformatics/btae555",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11438549/",
+    "accessed": "2026-09-26",
+    "status": "link_only",
+    "license": [
+      "https://creativecommons.org/licenses/by/4.0/"
+    ],
+    "attempts": [
+      {
+        "id": "P04",
+        "url": "https://academic.oup.com/bioinformatics/article-pdf/40/9/btae555/59423926/btae555.pdf",
+        "status": "error",
+        "error": "HTTP Error 403: Forbidden"
+      }
+    ],
+    "download_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11438549/pdf/btae555.pdf",
+    "reason": "Publisher/PMC download blocked or non-PDF response; link retained"
+  },
+  {
+    "id": "P05",
+    "title": "PepNet: an interpretable neural network for anti-inflammatory and antimicrobial peptides prediction using a pre-trained protein language model",
+    "authors": [
+      "Jiyun Han",
+      "Tongxin Kong",
+      "Juntao Liu"
+    ],
+    "year": 2024,
+    "doi": "10.1038/s42003-024-06911-1",
+    "source_url": "https://www.nature.com/articles/s42003-024-06911-1",
+    "accessed": "2026-09-26",
+    "status": "downloaded_verified",
+    "license": [
+      "http://creativecommons.org/licenses/by-nc-nd/4.0/"
+    ],
+    "attempts": [],
+    "path": "pdfs/P05_2024_PepNet.pdf",
+    "bytes": 3613872,
+    "sha256": "d7d5d342331aa196392b0529b64e1fa2577905d55be0da57ad8079fba9153302",
+    "pages": 13,
+    "modified": false,
+    "download_url": "https://www.nature.com/articles/s42003-024-06911-1.pdf",
+    "github_archive_status": "pending_upload"
+  },
+  {
+    "id": "P06",
+    "title": "DeepAIP: Deep learning for anti-inflammatory peptide prediction using pre-trained protein language model features based on contextual self-attention network",
+    "authors": [
+      "Lun Zhu",
+      "Qingguo Yang",
+      "Sen Yang"
+    ],
+    "year": 2024,
+    "doi": "10.1016/j.ijbiomac.2024.136172",
+    "source_url": "https://pubmed.ncbi.nlm.nih.gov/39357724/",
+    "accessed": "2026-09-26",
+    "status": "link_only",
+    "license": [],
+    "attempts": [],
+    "download_url": "",
+    "reason": "No verified redistributable PDF in this run; link retained"
+  },
+  {
+    "id": "P07",
+    "title": "Deep2Pep: A deep learning method in multi-label classification of bioactive peptide",
+    "authors": [
+      "Lihua Chen",
+      "Zhenkang Hu",
+      "Yuzhi Rong",
+      "Bao Lou"
+    ],
+    "year": 2024,
+    "doi": "10.1016/j.compbiolchem.2024.108021",
+    "source_url": "https://www.sciencedirect.com/science/article/pii/S1476927124000094",
+    "accessed": "2026-09-26",
+    "status": "link_only",
+    "license": [],
+    "attempts": [],
+    "download_url": "",
+    "reason": "No verified redistributable PDF in this run; link retained"
+  },
+  {
+    "id": "P08",
+    "title": "Peptide-Aware Chemical Language Model Successfully Predicts Membrane Diffusion of Cyclic Peptides",
+    "authors": [
+      "Aaron L. Feller",
+      "Claus O. Wilke"
+    ],
+    "year": 2025,
+    "doi": "10.1021/acs.jcim.4c01441",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11971985/",
+    "accessed": "2026-09-26",
+    "status": "link_only",
+    "license": [],
+    "attempts": [],
+    "download_url": "",
+    "reason": "No verified redistributable PDF in this run; link retained"
+  },
+  {
+    "id": "P09",
+    "title": "PepLand: a large-scale pre-trained peptide representation model for a comprehensive landscape of both canonical and non-canonical amino acids",
+    "authors": [
+      "Ruochi Zhang",
+      "Haoran Wu",
+      "Chang Liu",
+      "Qian Yang",
+      "Yuting Xiu",
+      "Kewei Li",
+      "Ningning Chen",
+      "Yu Wang",
+      "Yan Wang",
+      "Xin Gao",
+      "Fengfeng Zhou"
+    ],
+    "year": 2025,
+    "doi": "10.1093/bib/bbaf367",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12315545/",
+    "accessed": "2026-09-26",
+    "status": "link_only",
+    "license": [
+      "https://creativecommons.org/licenses/by/4.0/"
+    ],
+    "attempts": [
+      {
+        "id": "P09",
+        "url": "https://repository.kaust.edu.sa/server/api/core/bitstreams/1d141159-a56e-430f-b8aa-775f9565d298/content",
+        "status": "not_pdf"
+      }
+    ],
+    "download_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12315545/pdf/bbaf367.pdf",
+    "reason": "Publisher/PMC download blocked or non-PDF response; link retained"
+  },
+  {
+    "id": "P10",
+    "title": "How to build machine learning models able to extrapolate from standard to modified peptides",
+    "authors": [
+      "Raúl Fernández-Díaz",
+      "Rodrigo Ochoa",
+      "Thanh Lam Hoang",
+      "Vanessa Lopez",
+      "Denis C. Shields"
+    ],
+    "year": 2025,
+    "doi": "10.1186/s13321-025-01115-z",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12751563/",
+    "accessed": "2026-09-26",
+    "status": "downloaded_verified",
+    "license": [
+      "https://creativecommons.org/licenses/by/4.0/"
+    ],
+    "attempts": [
+      {
+        "id": "P10",
+        "url": "https://link.springer.com/content/pdf/10.1186/s13321-025-01115-z.pdf",
+        "final_url": "https://link.springer.com/content/pdf/10.1186/s13321-025-01115-z.pdf?error=cookies_not_supported&code=d248cd90-69e4-4112-bad6-d4d702eff142",
+        "status": "saved",
+        "bytes": 3575776
+      }
+    ],
+    "path": "pdfs/P10_2025_Peptide_generalization.pdf",
+    "bytes": 3575776,
+    "sha256": "c2bac22770cdde899f33fcc940fa77623ac72388d8655817b9eacdd2c5118f3f",
+    "pages": 13,
+    "modified": false,
+    "download_url": "https://link.springer.com/content/pdf/10.1186/s13321-025-01115-z.pdf",
+    "github_archive_status": "pending_upload"
+  },
+  {
+    "id": "P11",
+    "title": "AOP-DRL: A deep representation learning framework for the computational prediction of antioxidant peptides",
+    "authors": [
+      "Yongzhu Zhou",
+      "Wanlin Liu",
+      "Qiao Liu",
+      "Jie Liu",
+      "Xing Yu",
+      "Jie Ma",
+      "Yunping Zhu"
+    ],
+    "year": 2025,
+    "doi": "10.1016/j.csbj.2025.08.014",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12800373/",
+    "accessed": "2026-09-26",
+    "status": "link_only",
+    "license": [],
+    "attempts": [],
+    "download_url": "",
+    "reason": "No verified redistributable PDF in this run; link retained"
+  },
+  {
+    "id": "P12",
+    "title": "MFP-MFL: Leveraging Graph Attention and Multi-Feature Integration for Superior Multifunctional Bioactive Peptide Prediction",
+    "authors": [
+      "Fang Ge",
+      "Jianren Zhou",
+      "Ming Zhang",
+      "Dong-Jun Yu"
+    ],
+    "year": 2025,
+    "doi": "10.3390/ijms26031317",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11818429/",
+    "accessed": "2026-09-26",
+    "status": "downloaded_verified",
+    "license": [
+      "https://creativecommons.org/licenses/by/4.0/"
+    ],
+    "attempts": [
+      {
+        "id": "P12",
+        "url": "https://www.mdpi.com/1422-0067/26/3/1317/pdf",
+        "final_url": "https://mdpi-res.com/d_attachment/ijms/ijms-26-01317/article_deploy/ijms-26-01317-v2.pdf?version=1739160909",
+        "status": "saved",
+        "bytes": 10905048
+      }
+    ],
+    "path": "pdfs/P12_2025_MFP_MFL.pdf",
+    "bytes": 10905048,
+    "sha256": "489a4fb41f6b57d8eddf451d84171a0e0063426f71efbb62efbcec500bb5f0ee",
+    "pages": 22,
+    "modified": false,
+    "download_url": "https://www.mdpi.com/1422-0067/26/3/1317/pdf",
+    "github_archive_status": "pending_upload"
+  },
+  {
+    "id": "P13",
+    "title": "BPFun: a deep learning framework for bioactive peptide function prediction using multi-label strategy by transformer-driven and sequence rich intrinsic information",
+    "authors": [
+      "Lun Zhu",
+      "Hao Sun",
+      "Sen Yang"
+    ],
+    "year": 2025,
+    "doi": "10.1186/s12859-025-06190-5",
+    "source_url": "https://link.springer.com/article/10.1186/s12859-025-06190-5",
+    "accessed": "2026-09-26",
+    "status": "downloaded_verified",
+    "license": [
+      "http://creativecommons.org/licenses/by-nc-nd/4.0/"
+    ],
+    "attempts": [],
+    "path": "pdfs/P13_2025_BPFun.pdf",
+    "bytes": 4108558,
+    "sha256": "41af5ea84f20e6e56c45335abfe590c2d7914d33e5acd613978bcc10b6747650",
+    "pages": 27,
+    "modified": false,
+    "download_url": "https://link.springer.com/content/pdf/10.1186/s12859-025-06190-5.pdf",
+    "github_archive_status": "pending_upload"
+  },
+  {
+    "id": "P14",
+    "title": "PeptiVerse: A unified platform for therapeutic peptide property prediction",
+    "authors": [
+      "Yinuo Zhang",
+      "Sophia Tang",
+      "Tong Chen",
+      "Elizabeth Mahood",
+      "Sophia Vincoff",
+      "Pranam Chatterjee"
+    ],
+    "year": 2026,
+    "doi": "10.1038/s41467-026-74167-w",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13388690/",
+    "accessed": "2026-09-26",
+    "status": "downloaded_verified",
+    "license": [
+      "https://creativecommons.org/licenses/by-nc-nd/4.0/"
+    ],
+    "attempts": [
+      {
+        "id": "P14",
+        "url": "https://www.nature.com/articles/s41467-026-74167-w.pdf",
+        "final_url": "https://www.nature.com/articles/s41467-026-74167-w.pdf?error=cookies_not_supported&code=022db673-0e80-4212-9df4-26c03ce452b4",
+        "status": "saved",
+        "bytes": 1767725
+      }
+    ],
+    "path": "pdfs/P14_2026_PeptiVerse.pdf",
+    "bytes": 1767725,
+    "sha256": "3ff4ad3a7e04a4989db84085559ad33341fcd82a8d1399efdd7b13e7ed5a3683",
+    "pages": 12,
+    "modified": false,
+    "download_url": "https://www.nature.com/articles/s41467-026-74167-w.pdf",
+    "github_archive_status": "pending_upload"
+  },
+  {
+    "id": "P15",
+    "title": "Scaling SMILES-Based\nChemical Language Models for\nTherapeutic Peptide Engineering",
+    "authors": [
+      "Aaron L. Feller",
+      "Maxim Secor",
+      "Sebastian Swanson",
+      "Claus O. Wilke",
+      "Kristine Deibler"
+    ],
+    "year": 2026,
+    "doi": "10.1021/acs.jcim.6c00652",
+    "source_url": "https://pubs.acs.org/doi/10.1021/acs.jcim.6c00652",
+    "accessed": "2026-09-26",
+    "status": "link_only",
+    "license": [
+      "https://creativecommons.org/licenses/by/4.0/"
+    ],
+    "attempts": [],
+    "download_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12803269/pdf/nihpp-2026.01.06.697994v5.pdf",
+    "reason": "Publisher/PMC download blocked or non-PDF response; link retained"
+  },
+  {
+    "id": "P16",
+    "title": "LANTERN: TCR-peptide binding prediction\n                    <i>via</i>\n                    large language model representations",
+    "authors": [
+      "Cong Qi",
+      "Hanzhang Fang",
+      "Siqi Jiang",
+      "Tianxing Hu",
+      "Zhi Wei"
+    ],
+    "year": 2026,
+    "doi": "10.7717/peerj.20980",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13045841/",
+    "accessed": "2026-09-26",
+    "status": "link_only",
+    "license": [
+      "https://creativecommons.org/licenses/by/4.0/"
+    ],
+    "attempts": [
+      {
+        "id": "P16",
+        "url": "https://peerj.com/articles/20980.pdf",
+        "status": "error",
+        "error": "HTTP Error 403: Forbidden"
+      }
+    ],
+    "download_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13045841/pdf/peerj-14-20980.pdf",
+    "reason": "Publisher/PMC download blocked or non-PDF response; link retained"
+  },
+  {
+    "id": "P17",
+    "title": "PepBenchmark: A Standardized Benchmark for Peptide Machine Learning",
+    "authors": [
+      "Jiahui Zhang",
+      "Rouyi Wang",
+      "Kuangqi Zhou",
+      "Tianshu Xiao",
+      "Lingyan Zhu",
+      "Yaosen Min",
+      "Yang Wang"
+    ],
+    "year": 2026,
+    "doi": "",
+    "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/56a225639da77e8f7c0409f6d5ba996b-Abstract-Conference.html",
+    "accessed": "2026-09-26",
+    "status": "link_only",
+    "license": [],
+    "attempts": [
+      {
+        "id": "P17",
+        "url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/56a225639da77e8f7c0409f6d5ba996b-Paper-Conference.pdf",
+        "final_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/56a225639da77e8f7c0409f6d5ba996b-Paper-Conference.pdf",
+        "status": "saved",
+        "bytes": 18943281
+      }
+    ],
+    "download_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/56a225639da77e8f7c0409f6d5ba996b-Paper-Conference.pdf",
+    "reason": "Accessible PDF downloaded for reading, but repository redistribution license not verified; official link retained"
+  },
+  {
+    "id": "P18",
+    "title": "Accurate &amp; simple open-sourced no-code machine learning and CDFT predictive models for the antioxidant activity of phenols",
+    "authors": [
+      "Andrés Halabi Diaz",
+      "Franco Galdames",
+      "Patricia Velásquez"
+    ],
+    "year": 2024,
+    "doi": "10.1016/j.comptc.2024.114782",
+    "source_url": "https://www.sciencedirect.com/science/article/abs/pii/S2210271X24003219",
+    "accessed": "2026-09-26",
+    "status": "link_only",
+    "license": [],
+    "attempts": [],
+    "download_url": "",
+    "reason": "No verified redistributable PDF in this run; link retained"
+  },
+  {
+    "id": "P19",
+    "title": "QSAR Models for Predicting the Antioxidant Potential of Chemical Substances",
+    "authors": [
+      "Sofia Ghironi",
+      "Edoardo Luca Viganò",
+      "Gianluca Selvestrel",
+      "Emilio Benfenati"
+    ],
+    "year": 2025,
+    "doi": "10.3390/jox15030080",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12194667/",
+    "accessed": "2026-09-26",
+    "status": "downloaded_verified",
+    "license": [
+      "https://creativecommons.org/licenses/by/4.0/"
+    ],
+    "attempts": [
+      {
+        "id": "P19",
+        "url": "https://www.mdpi.com/2039-4713/15/3/80/pdf",
+        "final_url": "https://www.mdpi.com/2039-4713/15/3/80/pdf",
+        "status": "saved",
+        "bytes": 1318085
+      }
+    ],
+    "path": "pdfs/P19_2025_Antioxidant_QSAR.pdf",
+    "bytes": 1318085,
+    "sha256": "b26afcbe170c4b50c3e75f2e98eaf651535dc5a291e12724a46e5e86a82d8293",
+    "pages": 13,
+    "modified": false,
+    "download_url": "https://www.mdpi.com/2039-4713/15/3/80/pdf",
+    "github_archive_status": "pending_upload"
+  },
+  {
+    "id": "P20",
+    "title": "A Biologically Informed Machine Learning Pipeline Uncovers Metabolic Features of Intestinal Barrier Dysfunction",
+    "authors": [
+      "Ke-Xin Liu",
+      "Ze-Yuan Liang",
+      "Tong Li",
+      "Lian-Zhi Cui",
+      "Jing Wang",
+      "Zi-Qi Shi",
+      "Gui-Zhong Xin"
+    ],
+    "year": 2026,
+    "doi": "10.1021/acs.analchem.6c00178",
+    "source_url": "https://pubmed.ncbi.nlm.nih.gov/41854110/",
+    "accessed": "2026-09-26",
+    "status": "link_only",
+    "license": [],
+    "attempts": [],
+    "download_url": "",
+    "reason": "No verified redistributable PDF in this run; link retained"
+  },
+  {
+    "id": "P21",
+    "title": "HELM-BERT: Topology-Aware\nRepresentations for Chemically\nModified Peptides",
+    "authors": [
+      "Seungeon Lee",
+      "Takuto Koyama",
+      "Itsuki Maeda",
+      "Shigeyuki Matsumoto",
+      "Yasushi Okuno"
+    ],
+    "year": 2026,
+    "doi": "10.1021/acs.jcim.6c00451",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13417886/",
+    "accessed": "2026-09-26",
+    "status": "link_only",
+    "license": [],
+    "attempts": [
+      {
+        "id": "P21_final",
+        "url": "https://pubs.acs.org/doi/pdf/10.1021/acs.jcim.6c00451",
+        "status": "error",
+        "error": "HTTP Error 403: Forbidden"
+      }
+    ],
+    "download_url": "",
+    "reason": "No verified redistributable PDF in this run; link retained"
+  },
+  {
+    "id": "P22",
+    "title": "GP-MoLFormer: a foundation model for molecular generation",
+    "authors": [
+      "Jerret Ross",
+      "Brian Belgodere",
+      "Samuel C. Hoffman",
+      "Vijil Chenthamarakshan",
+      "Jiri Navratil",
+      "Youssef Mroueh",
+      "Payel Das"
+    ],
+    "year": 2025,
+    "doi": "10.1039/D5DD00122F",
+    "source_url": "https://pubs.rsc.org/en/content/articlehtml/2025/dd/d5dd00122f",
+    "accessed": "2026-09-26",
+    "status": "link_only",
+    "license": [],
+    "attempts": [],
+    "download_url": "",
+    "reason": "No verified redistributable PDF in this run; link retained"
+  },
+  {
+    "id": "P23",
+    "title": "A systematic study of key elements underlying molecular property prediction",
+    "authors": [
+      "Jianyuan Deng",
+      "Zhibo Yang",
+      "Hehe Wang",
+      "Iwao Ojima",
+      "Dimitris Samaras",
+      "Fusheng Wang"
+    ],
+    "year": 2023,
+    "doi": "10.1038/s41467-023-41948-6",
+    "source_url": "https://www.nature.com/articles/s41467-023-41948-6",
+    "accessed": "2026-09-26",
+    "status": "downloaded_verified",
+    "license": [
+      "http://creativecommons.org/licenses/by/4.0/"
+    ],
+    "attempts": [],
+    "path": "pdfs/P23_2023_Systematic_molecular_benchmark.pdf",
+    "bytes": 7166556,
+    "sha256": "ca3671eab2830724bf58ec4d661b2584e392c8fb93b306743aae6022787e02a2",
+    "pages": 20,
+    "modified": false,
+    "download_url": "https://www.nature.com/articles/s41467-023-41948-6.pdf",
+    "github_archive_status": "pending_upload"
+  },
+  {
+    "id": "P24",
+    "title": "Molecular descriptor driven\n                    <scp>QSPR</scp>\n                    modeling of Papp,\n                    <scp>TEER</scp>\n                    and Efflux Ratio from Caco‐2 cells using machine learning for various phytochemicals",
+    "authors": [
+      "Jin‐Woo Kim",
+      "Rixing Cong",
+      "Jin‐Soo Park",
+      "Keunwan Park",
+      "Kyungsu Kang",
+      "Soon‐Mi Shim"
+    ],
+    "year": 2026,
+    "doi": "10.1002/jsfa.70701",
+    "source_url": "https://scijournals.onlinelibrary.wiley.com/doi/10.1002/jsfa.70701",
+    "accessed": "2026-09-26",
+    "status": "link_only",
+    "license": [],
+    "attempts": [
+      {
+        "id": "P24",
+        "url": "https://scijournals.onlinelibrary.wiley.com/doi/pdfdirect/10.1002/jsfa.70701",
+        "status": "error",
+        "error": "HTTP Error 403: Forbidden"
+      }
+    ],
+    "download_url": "",
+    "reason": "No verified redistributable PDF in this run; link retained"
+  },
+  {
+    "id": "P25",
+    "title": "Modeling TCR-pMHC Binding with Dual Encoders and Cross-Attention Fusion",
+    "authors": [
+      "Wenbo Wang",
+      "Cong Qi",
+      "Zhi Wei"
+    ],
+    "year": 2026,
+    "doi": "10.1109/bibm66473.2025.11356540",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13159490/",
+    "accessed": "2026-09-26",
+    "status": "link_only",
+    "license": [],
+    "attempts": [],
+    "download_url": "",
+    "reason": "No verified redistributable PDF in this run; link retained"
+  },
+  {
+    "id": "P26",
+    "title": "Chemical Language Models for Natural Products: A State-Space Model Approach",
+    "authors": [
+      "Ho-Hsuan Wang",
+      "Afnan Sultan",
+      "Andrea Volkamer",
+      "Dietrich Klakow"
+    ],
+    "year": 2026,
+    "doi": "10.48550/arXiv.2602.13958",
+    "source_url": "https://arxiv.org/html/2602.13958v1",
+    "accessed": "2026-09-26",
+    "status": "link_only",
+    "license": [],
+    "attempts": [],
+    "download_url": "",
+    "reason": "No verified redistributable PDF in this run; link retained"
+  },
+  {
+    "id": "P27",
+    "title": "Leveraging foundation models and transfer learning for peptide transport prediction, molecular taste classification, and visual texture analysis",
+    "authors": [
+      "Yizhou Ma",
+      "Qing Ren",
+      "Kasper Hettinga",
+      "Vincenzo Fogliano"
+    ],
+    "year": 2025,
+    "doi": "10.1016/j.ifset.2025.104247",
+    "source_url": "https://www.sciencedirect.com/science/article/pii/S1466856425003315",
+    "accessed": "2026-09-26",
+    "status": "link_only",
+    "license": [],
+    "attempts": [],
+    "download_url": "",
+    "reason": "No verified redistributable PDF in this run; link retained"
+  }
+]
