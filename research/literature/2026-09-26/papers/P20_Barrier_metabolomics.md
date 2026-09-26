@@ -4,34 +4,34 @@ A Biologically Informed Machine Learning Pipeline Uncovers Metabolic Features of
 
 Ke-Xin Liu、Ze-Yuan Liang、Tong Li 等；2026；Analytical Chemistry。
 
-[论文入口](https://pubmed.ncbi.nlm.nih.gov/41854110/)
+[论文入口](https://pubmed.ncbi.nlm.nih.gov/41854110/) · [本次补读原文/材料](https://acs.figshare.com/articles/journal_contribution/A_Biologically_Informed_Machine_Learning_Pipeline_Uncovers_Metabolic_Features_of_Intestinal_Barrier_Dysfunction/31812620)
 
-**阅读范围：摘要／部分内容。** 更新：2026-09-26。 未取得的细节会明确留空，不代表原文没有报告。
+**阅读范围：正式摘要＋正式补充材料s001；主文仍未完整取得。** 更新：2026-09-26。
 
 ## 1. 做了什么研究
 
-从生物样本的代谢组特征预测连续肠屏障功能指数，并寻找与屏障功能障碍相关的关键代谢物。
+从代谢组特征预测连续肠屏障指数，并结合网络生物学与临床/体外验证筛选功能相关代谢物。
 
 ## 2. 用了什么模型
 
-将生物学信息融入特征选择，再比较五类回归模型。输入是样本中的代谢物测量，不是单个候选分子的SMILES。
+LASSO、XGBoost和随机森林用于集成特征筛选；最终五种回归器为线性回归、Bayesian Ridge、ElasticNet、PLS和SVR，辅以SHAP解释。
 
 ## 3. 用了什么数据集
 
-小鼠相关表型与代谢组资料，最终筛出10个核心代谢物。当前摘要未提供足够信息确认独立样本量、分组分布和完整实验条件。
+小鼠实验S1报告七组、每组10只，最终清洗后建模数未确认；筛出10个功能相关代谢物。临床Table S7列健康/AP/IBD样本数：队列1为41/50/56，队列2为10/10/20；分别采血与采粪，用途不同，不当作同一回归测试集。 [来源](https://acs.figshare.com/articles/journal_contribution/A_Biologically_Informed_Machine_Learning_Pipeline_Uncovers_Metabolic_Features_of_Intestinal_Barrier_Dysfunction/31812620)
 
 ## 4. 最后结果怎么样
 
-摘要报告R²=0.604—0.654、MAE=0.319—0.352，描述的是屏障指数预测。MAE依赖指数的定义和量纲，不能直接与其他回归端点的误差比较。 [依据：论文来源](https://pubmed.ncbi.nlm.nih.gov/41854110/)
+正式SI Table S6中，10特征方案测试R²/MAE分别为：ElasticNet 0.620/0.350、Bayesian Ridge 0.642/0.329、线性回归0.604/0.352、PLS 0.654/0.319、SVR 0.643/0.329。这是同一方案跨回归器的表现，不能写成临床诊断准确率。 [来源](https://acs.figshare.com/articles/journal_contribution/A_Biologically_Informed_Machine_Learning_Pipeline_Uncovers_Metabolic_Features_of_Intestinal_Barrier_Dysfunction/31812620)
 
 ## 5. 贡献是什么（阅读归纳）
 
-把屏障表型与代谢信息联系起来，用较少的代谢物特征形成可解释的预测思路，为机制研究提供候选线索。
+把生物学知识用于筛选和解释代谢特征，并通过不同回归器、临床样本及体外转化实验检验候选线索。
 
 ## 6. 缺陷与局限是什么（阅读判断）
 
-代谢物与屏障指数的预测关联不证明因果或干预作用。阅读限制：目前仅摘要，完整划分和混杂因素处理未确认；该任务不直接回答某个新化合物能否保护肠屏障。
+主文缺口仍影响对屏障指数定义、最终建模样本与训练/测试划分的判断；SI调参采用重复5折，但未据此确认所有预处理/筛选均在折内。临床组间存在BMI或年龄差异；代谢关联与体外转化不能单独证明体内保护因果。
 
-证据位置：既有逐篇提取中的相应方法、数据与结果；仅部分阅读者以摘要为限。数值为论文报告；贡献与局限为阅读归纳。
+证据位置：ACS正式SI（DOI 10.1021/acs.analchem.6c00178.s001）：S1/S4/S6；S24页Table S6、S25页Table S7。数值表已视觉确认。 数值为作者报告；贡献和局限为阅读归纳。
 
 [← 上一篇 P19](P19_Antioxidant_QSAR.md) · [返回逐篇索引](README.md) · [下一篇 P21 →](P21_HELM_BERT.md)

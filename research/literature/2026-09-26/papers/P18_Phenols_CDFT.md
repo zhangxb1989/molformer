@@ -4,9 +4,9 @@ Accurate & simple open-sourced no-code machine learning and CDFT predictive mode
 
 Andrés Halabi Diaz、Franco Galdames、Patricia Velásquez；2024；Computational and Theoretical Chemistry。
 
-[论文入口](https://researchers.unab.cl/en/publications/accurate-amp-simple-open-sourced-no-code-machine-learning-and-cdf/) · [作者机构收录的论文摘要](https://researchers.unab.cl/en/publications/accurate-amp-simple-open-sourced-no-code-machine-learning-and-cdf/)
+[论文入口](https://researchers.unab.cl/en/publications/accurate-amp-simple-open-sourced-no-code-machine-learning-and-cdf/) · [作者机构收录的论文摘要](https://researchers.unab.cl/en/publications/accurate-amp-simple-open-sourced-no-code-machine-learning-and-cdf/) · [本次补读原文/材料](https://www.sciencedirect.com/science/article/abs/pii/S2210271X24003219)
 
-**阅读范围：摘要／部分内容。** 更新：2026-09-26。 未取得的细节会明确留空，不代表原文没有报告。
+**阅读范围：正式摘要、Highlights和可见结论段落；尚缺完整方法与结果表。** 更新：2026-09-26。
 
 ## 1. 做了什么研究
 
@@ -18,11 +18,11 @@ Andrés Halabi Diaz、Franco Galdames、Patricia Velásquez；2024；Computation
 
 ## 3. 用了什么数据集
 
-作者机构保存的论文摘要明确为202种酚类化合物的抗DPPH数据。精确类别阈值、各集合数量和数据清洗后的分布，本笔记尚未取得。
+202种酚类化合物的抗DPPH数据。出版社结论段落提到留一交叉验证（LOOCV）与90%/10%划分；具体类别阈值、各类数量及筛选流程仍未取得。 [来源](https://www.sciencedirect.com/science/article/abs/pii/S2210271X24003219)
 
 ## 4. 最后结果怎么样
 
-摘要报告决策树在内部与外部验证中accuracy均超过85%。这里的“外部”沿用作者称谓，尚不能确认它是独立来源还是原数据池的留出集合，也未取得各模型完整结果表。 [依据：作者机构收录的论文摘要](https://researchers.unab.cl/en/publications/accurate-amp-simple-open-sourced-no-code-machine-learning-and-cdf/)
+摘要报告各决策树在内部与外部验证中accuracy超过85%；可见结论提到LOOCV与90/10划分。“外部”不宜直接理解为另一个独立来源队列，逐模型分数仍未取得。 [来源](https://www.sciencedirect.com/science/article/abs/pii/S2210271X24003219)
 
 ## 5. 贡献是什么（阅读归纳）
 
@@ -30,8 +30,8 @@ Andrés Halabi Diaz、Franco Galdames、Patricia Velásquez；2024；Computation
 
 ## 6. 缺陷与局限是什么（阅读判断）
 
-样本规模较小，标签阈值与划分会明显影响结果；DPPH化学清除活性不等同细胞抗氧化或肠屏障保护。阅读限制：主要依据作者机构摘要，尚未完成全文分析。
+202个样本规模有限；可见材料不足以确认特征筛选是否在验证折内完成。DPPH清除能力不等同细胞抗氧化或肠屏障保护，当前也不能确认对新骨架的泛化。
 
-证据位置：既有逐篇提取中的相应方法、数据与结果；仅部分阅读者以摘要为限。数值为论文报告；贡献与局限为阅读归纳。
+证据位置：ScienceDirect摘要、Highlights、Conclusion；Universidad Andrés Bello作者机构摘要。 数值为作者报告；贡献和局限为阅读归纳。
 
 [← 上一篇 P17](P17_PepBenchmark.md) · [返回逐篇索引](README.md) · [下一篇 P19 →](P19_Antioxidant_QSAR.md)

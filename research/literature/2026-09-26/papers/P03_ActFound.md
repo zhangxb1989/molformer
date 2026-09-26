@@ -4,34 +4,34 @@ A bioactivity foundation model using pairwise meta-learning
 
 Bin Feng、Zequn Liu、Nanlan Huang 等；2024；Nature Machine Intelligence。
 
-[论文入口](https://www.nature.com/articles/s42256-024-00876-w) · [正式摘要与数据说明](https://www.nature.com/articles/s42256-024-00876-w)
+[论文入口](https://www.nature.com/articles/s42256-024-00876-w) · [正式摘要与数据说明](https://www.nature.com/articles/s42256-024-00876-w) · [本次补读原文/材料](https://www.researchgate.net/publication/383120443_A_bioactivity_foundation_model_using_pairwise_meta-learning)
 
-**阅读范围：摘要／部分内容。** 更新：2026-09-26。 未取得的细节会明确留空，不代表原文没有报告。
+**阅读范围：作者公开稿的正文关键部分；版式稿仍有上线日期占位符，不冒充已核对的最终排版版。** 更新：2026-09-26。
 
 ## 1. 做了什么研究
 
-针对每个实验只有少量化合物、不同实验测量尺度又不一致的问题，学习同一实验内两个化合物的相对活性差，再利用其他实验的信息辅助新任务。
+面向每个实验仅有少量已测化合物的活性回归，学习同一assay内的活性差，缓解跨实验测量尺度不一致的问题。
 
 ## 2. 用了什么模型
 
-ActFound将成对活性学习与跨assay元学习结合；在目标assay中用少量已测化合物适应模型，再预测待测化合物。名称中的foundation model不代表它就是语言模型。
+2048维Morgan指纹输入共享的两层感知机，再接线性层构成孪生网络；结合成对学习、元学习和相邻assay辅助微调。它没有使用分子语言模型作编码器。
 
 ## 3. 用了什么数据集
 
-预训练约160万条实验活性记录、35,644个ChEMBL assays；论文在六组真实活性数据上评价，并包含跨实验类型、分子骨架和FEP相关比较。
+ChEMBL含35,644个assays；正式摘要写约160万活性记录，作者公开稿Methods写约140万、70万独立化合物，两种口径保留。评估包括ChEMBL、BindingDB、FS-Mol、pQSAR-ChEMBL、KIBA、Davis，另有FEP与GDSC实验。 [来源](https://www.researchgate.net/publication/383120443_A_bioactivity_foundation_model_using_pairwise_meta-learning)
 
 ## 4. 最后结果怎么样
 
-作者摘要报告了域内预测及跨assay、跨骨架泛化能力；少量样本微调后，在所评估FEP基准上达到与FEP+(OPLS4)相近的表现。这里保留作者定性结论，未核对的逐基准数值不补写。 [依据：正式摘要与数据说明](https://www.nature.com/articles/s42256-024-00876-w)
+ChEMBL/BindingDB的16-shot实验中，作者报告r²和RMSE均优于所比方法；每个assay用16个已测化合物微调。FEP实验中使用40%实测数据、平均约12个化合物微调后，作者报告超过FEP+(OPLS4)。这里的r²定义为max(Pearson相关系数,0)²，不是通常的回归决定系数。 [来源](https://www.researchgate.net/publication/383120443_A_bioactivity_foundation_model_using_pairwise_meta-learning)
 
 ## 5. 贡献是什么（阅读归纳）
 
-用实验内部的相对活性关系缓解不同assay测量不兼容，并用元学习处理少样本问题，重点是如何组织监督信息。
+把同一实验内可比较的活性差与跨实验元学习结合，使大量零散实验标签能够支持新assay的少样本建模。
 
 ## 6. 缺陷与局限是什么（阅读判断）
 
-需要目标assay的支持样本，不能直接当作不需要新标签的通用预测器；定量活性与单一二分类标签也不等价。阅读限制：本笔记主要依据正式摘要及数据说明，尚缺完整结果表。
+作者指出未使用靶蛋白序列或实验文字描述，输入仍为简单分子指纹。FEP结果依赖目标assay支持标签，不能理解为无标签替代物理计算；数据量的摘要/正文差异尚未解决。
 
-证据位置：既有逐篇提取中的相应方法、数据与结果；仅部分阅读者以摘要为限。数值为论文报告；贡献与局限为阅读归纳。
+证据位置：作者公开稿：Fig. 1—4；Methods的Problem setting、Pairwise learning、Training data curation、Implementation details；Discussion。 数值为作者报告；贡献和局限为阅读归纳。
 
 [← 上一篇 P02](P02_PeptideBERT.md) · [返回逐篇索引](README.md) · [下一篇 P04 →](P04_AutoPeptideML.md)

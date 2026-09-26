@@ -18,7 +18,17 @@
     "license": [],
     "attempts": [],
     "download_url": "",
-    "reason": "No verified redistributable PDF in this run; link retained"
+    "reason": "Public reading copy obtained and linked in paper note; no repository PDF added in this reading-focused batch. Version: arXiv v3, 2022-12-14",
+    "reading_access_update": {
+      "date": "2026-09-26",
+      "url": "https://arxiv.org/pdf/2106.09553v3",
+      "scope": "预印本v3的正文关键部分；保留2022年正式发表信息，未逐项比对正式版",
+      "github_pdf_added": false,
+      "public_pdf_url": "https://arxiv.org/pdf/2106.09553v3",
+      "pages": 29,
+      "version": "arXiv v3, 2022-12-14",
+      "downloaded_for_reading": true
+    }
   },
   {
     "id": "P01",
@@ -147,7 +157,13 @@
     "license": [],
     "attempts": [],
     "download_url": "",
-    "reason": "No verified redistributable PDF in this run; link retained"
+    "reason": "Author-posted full-text manuscript read on ResearchGate; no PDF archived; version caveat in paper note.",
+    "reading_access_update": {
+      "date": "2026-09-26",
+      "url": "https://www.researchgate.net/publication/383120443_A_bioactivity_foundation_model_using_pairwise_meta-learning",
+      "scope": "作者公开稿的正文关键部分；版式稿仍有上线日期占位符，不冒充已核对的最终排版版",
+      "github_pdf_added": false
+    }
   },
   {
     "id": "P04",
@@ -261,7 +277,13 @@
     "license": [],
     "attempts": [],
     "download_url": "",
-    "reason": "No verified redistributable PDF in this run; link retained"
+    "reason": "No verified redistributable PDF in this run; link retained",
+    "reading_access_update": {
+      "date": "2026-09-26",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0141813024069812",
+      "scope": "正式摘要及出版社可见流程段落；尚缺完整结果表",
+      "github_pdf_added": false
+    }
   },
   {
     "id": "P07",
@@ -280,7 +302,13 @@
     "license": [],
     "attempts": [],
     "download_url": "",
-    "reason": "No verified redistributable PDF in this run; link retained"
+    "reason": "No verified redistributable PDF in this run; link retained",
+    "reading_access_update": {
+      "date": "2026-09-26",
+      "url": "https://www.sciencedirect.com/science/article/pii/S1476927124000094",
+      "scope": "正式摘要及出版社数据/序列分析片段；尚未完整阅读正文",
+      "github_pdf_added": false
+    }
   },
   {
     "id": "P08",
@@ -758,7 +786,13 @@
     "license": [],
     "attempts": [],
     "download_url": "",
-    "reason": "No verified redistributable PDF in this run; link retained"
+    "reason": "No verified redistributable PDF in this run; link retained",
+    "reading_access_update": {
+      "date": "2026-09-26",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S2210271X24003219",
+      "scope": "正式摘要、Highlights和可见结论段落；尚缺完整方法与结果表",
+      "github_pdf_added": false
+    }
   },
   {
     "id": "P19",
@@ -833,7 +867,17 @@
     "license": [],
     "attempts": [],
     "download_url": "",
-    "reason": "No verified redistributable PDF in this run; link retained"
+    "reason": "Main article remains access-limited; formal SI s001 obtained for reading only and linked in paper note; no repository PDF added.",
+    "reading_access_update": {
+      "date": "2026-09-26",
+      "url": "https://acs.figshare.com/articles/journal_contribution/A_Biologically_Informed_Machine_Learning_Pipeline_Uncovers_Metabolic_Features_of_Intestinal_Barrier_Dysfunction/31812620",
+      "scope": "正式摘要＋正式补充材料s001；主文仍未完整取得",
+      "github_pdf_added": false,
+      "public_supplement_pdf_url": "https://ndownloader.figshare.com/files/62951396",
+      "pages": 29,
+      "supplement_doi": "10.1021/acs.analchem.6c00178.s001",
+      "downloaded_for_reading": true
+    }
   },
   {
     "id": "P21",
@@ -912,7 +956,17 @@
     "license": [],
     "attempts": [],
     "download_url": "",
-    "reason": "No verified redistributable PDF in this run; link retained"
+    "reason": "Public reading copy obtained and linked in paper note; no repository PDF added in this reading-focused batch. Version: arXiv v2, 2025-03-31",
+    "reading_access_update": {
+      "date": "2026-09-26",
+      "url": "https://arxiv.org/html/2405.04912v2",
+      "scope": "预印本v2的正文关键部分；2025正式发表信息保留，正式主文尚未逐表对照",
+      "github_pdf_added": false,
+      "public_pdf_url": "https://arxiv.org/pdf/2405.04912v2",
+      "pages": 23,
+      "version": "arXiv v2, 2025-03-31",
+      "downloaded_for_reading": true
+    }
   },
   {
     "id": "P23",
@@ -1067,6 +1121,16 @@
     "license": [],
     "attempts": [],
     "download_url": "",
-    "reason": "No verified redistributable PDF in this run; link retained"
+    "reason": "Public reading copy obtained and linked in paper note; no repository PDF added in this reading-focused batch. Version: Wageningen repository, published article",
+    "reading_access_update": {
+      "date": "2026-09-26",
+      "url": "https://edepot.wur.nl/702069",
+      "scope": "Wageningen机构公开正式论文的正文关键部分",
+      "github_pdf_added": false,
+      "public_pdf_url": "https://edepot.wur.nl/702069",
+      "pages": 8,
+      "version": "Wageningen repository, published article",
+      "downloaded_for_reading": true
+    }
   }
 ]

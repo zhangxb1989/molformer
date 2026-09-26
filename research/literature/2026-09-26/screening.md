@@ -6,10 +6,10 @@
 
 | ID | 年份 | 文献 | 阅读状态 | 角色 |
 |---|---|---|---|---|
-| F01 | 2022 | [MoLFormer](https://www.nature.com/articles/s42256-022-00580-7) | abstract_or_partial | background |
+| F01 | 2022 | [MoLFormer](https://www.nature.com/articles/s42256-022-00580-7) | full_text_key_sections | background |
 | P01 | 2023 | [Representation_limits_comment](https://pmc.ncbi.nlm.nih.gov/articles/PMC10575963/) | full_text_key_sections | background |
 | P02 | 2023 | [PeptideBERT](https://pmc.ncbi.nlm.nih.gov/articles/PMC10683064/) | full_text_key_sections | include |
-| P03 | 2024 | [ActFound](https://www.nature.com/articles/s42256-024-00876-w) | abstract_or_partial | include |
+| P03 | 2024 | [ActFound](https://www.nature.com/articles/s42256-024-00876-w) | full_text_key_sections | include |
 | P04 | 2024 | [AutoPeptideML](https://pmc.ncbi.nlm.nih.gov/articles/PMC11438549/) | full_text_key_sections | include |
 | P05 | 2024 | [PepNet](https://www.nature.com/articles/s42003-024-06911-1) | full_text_key_sections | include |
 | P06 | 2024 | [DeepAIP](https://pubmed.ncbi.nlm.nih.gov/39357724/) | abstract_or_partial | include |
@@ -26,14 +26,14 @@
 | P17 | 2026 | [PepBenchmark](https://proceedings.iclr.cc/paper_files/paper/2026/hash/56a225639da77e8f7c0409f6d5ba996b-Abstract-Conference.html) | full_text_key_sections | include |
 | P18 | 2024 | [Phenols_CDFT](https://www.sciencedirect.com/science/article/abs/pii/S2210271X24003219) | abstract_or_partial | include |
 | P19 | 2025 | [Antioxidant_QSAR](https://pmc.ncbi.nlm.nih.gov/articles/PMC12194667/) | full_text_key_sections | include |
-| P20 | 2026 | [Barrier_metabolomics](https://pubmed.ncbi.nlm.nih.gov/41854110/) | abstract_or_partial | include |
+| P20 | 2026 | [Barrier_metabolomics](https://pubmed.ncbi.nlm.nih.gov/41854110/) | abstract_and_final_supplement | include |
 | P21 | 2026 | [HELM_BERT](https://pmc.ncbi.nlm.nih.gov/articles/PMC13417886/) | full_text_key_sections | include |
-| P22 | 2025 | [GP_MoLFormer](https://pubs.rsc.org/en/content/articlehtml/2025/dd/d5dd00122f) | abstract_or_partial | background |
+| P22 | 2025 | [GP_MoLFormer](https://pubs.rsc.org/en/content/articlehtml/2025/dd/d5dd00122f) | full_text_key_sections | background |
 | P23 | 2023 | [Systematic_molecular_benchmark](https://www.nature.com/articles/s41467-023-41948-6) | full_text_key_sections | include |
 | P24 | 2026 | [Phytochemical_QSPR](https://scijournals.onlinelibrary.wiley.com/doi/10.1002/jsfa.70701) | full_text_key_sections | include |
 | P25 | 2026 | [TIDE](https://pmc.ncbi.nlm.nih.gov/articles/PMC13159490/) | full_text_key_sections | include |
 | P26 | 2026 | [NPCLM](https://arxiv.org/html/2602.13958v1) | full_text_key_sections | include |
-| P27 | 2025 | [Food_foundation_models](https://www.sciencedirect.com/science/article/pii/S1466856425003315) | abstract_or_partial | include |
+| P27 | 2025 | [Food_foundation_models](https://www.sciencedirect.com/science/article/pii/S1466856425003315) | full_text_key_sections | include |
 
 ## 去重与版本规则
 
@@ -59,3 +59,7 @@
 ## 续接复核说明
 
 2026-09-26 完成记录一致性检查及关键证据抽查，未重新扩大候选库。P15 正式版元数据由 PubMed 42443143 再次核验，已补读正式 SI 并核查 THPep 公开预测，正式主文方法对照仍不完整；P21 继续使用正式版。详细纠正及未解决项见 [quality_check.md](quality_check.md)。
+
+## 本次逐篇补读状态
+
+2026-09-26：F01读取arXiv v3，P03读取作者公开版式稿，P22读取arXiv v2，P27读取Wageningen机构公开正式论文；均已补到相关方法/结果。P20读取正式摘要与正式SI s001（主文仍缺）；P06/P07/P18依据出版社公开片段进一步补充。没有增加文献条目，不把预印本或SI重复计数，也未继续代码核查。

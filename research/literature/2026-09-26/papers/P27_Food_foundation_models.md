@@ -4,34 +4,34 @@ Leveraging foundation models and transfer learning for peptide transport predict
 
 Yizhou Ma、Qing Ren、Kasper Hettinga 等；2025；Innovative Food Science & Emerging Technologies。
 
-[论文入口](https://www.sciencedirect.com/science/article/pii/S1466856425003315)
+[论文入口](https://www.sciencedirect.com/science/article/pii/S1466856425003315) · [本次补读原文/材料](https://edepot.wur.nl/702069)
 
-**阅读范围：摘要／部分内容。** 更新：2026-09-26。 未取得的细节会明确留空，不代表原文没有报告。
+**阅读范围：Wageningen机构公开正式论文的正文关键部分。** 更新：2026-09-26。
 
 ## 1. 做了什么研究
 
-在三类食品相关任务中考察基础模型的迁移使用：肽运输预测、小分子味觉分类、图像质地分析。三者是不同输入和标签的任务。
+用预训练表征分别解决山羊乳肽Caco-2运输分类、分子甜/苦/鲜味分类和食品图像纤维度回归。
 
 ## 2. 用了什么模型
 
-ESMC用于肽运输，MoLFormer用于小分子味觉，视觉模型用于图像任务；不能把论文概括成“MoLFormer预测肽运输”。
+肽任务：ESMC嵌入＋MLP或BiLSTM，最好方案加入修饰位点特征；味觉：MoLFormer或ChemBERTa2嵌入＋MLP；图像：CLIP嵌入＋MLP。三个任务分别建模。
 
 ## 3. 用了什么数据集
 
-分别使用肽序列、分子SMILES和图像数据。当前可见摘要不足以确认各数据集的准确样本量、来源、重复样本和划分方式。
+5183条山羊乳肽；ChemTastesDB三种味觉子集，Methods列甜1313、苦1615、鲜220；80张肉类似物、鸡肉与豆腐图像。Methods均写80%/20%训练/测试。 [来源](https://edepot.wur.nl/702069)
 
 ## 4. 最后结果怎么样
 
-摘要报告味觉任务accuracy达到0.99。该成绩只对应味觉实验；肽运输和图像任务的完整结果尚未核对，不能把0.99套用于这些任务。 [依据：论文来源](https://www.sciencedirect.com/science/article/pii/S1466856425003315)
+肽运输：修饰增强BiLSTM准确率0.89、AUC 0.952，二肽组成基线为0.79/0.853。味觉：MoLFormer准确率0.99、ChemBERTa2为0.98；Table 2测试集为323苦＋263甜＋44鲜。图像纤维度：Fig. 6C报告R²=0.81、RMSE=8.03。 [来源](https://edepot.wur.nl/702069)
 
 ## 5. 贡献是什么（阅读归纳）
 
-展示了不同基础模型在食品研究中的迁移方向，帮助区分模型、输入模态与应用任务之间的对应关系。
+展示如何把已有食品实验标签接到不同基础模型表征上，并证明肽修饰信息在本数据上具有额外价值。
 
 ## 6. 缺陷与局限是什么（阅读判断）
 
-只有摘要与可见页面支持当前笔记，尚不能判断高准确率是否在独立化合物或外部来源上保持。三个任务并列展示，不代表已经建立统一的多模态肽活性模型。
+图像仅来自一项既有研究，样本少；文中留出测试不足以证明跨研究或新骨架泛化。原文有口径差异：甜味数量Methods为1313、Results为1331；图像Methods写80/20，但Fig. 6C写测试n=20，需保留而不自行统一。
 
-证据位置：既有逐篇提取中的相应方法、数据与结果；仅部分阅读者以摘要为限。数值为论文报告；贡献与局限为阅读归纳。
+证据位置：机构PDF第2—3页Methods；第4页Table 1、第5页Table 2、第6页Fig. 6C、第7页Discussion。表格与图注已视觉确认。 数值为作者报告；贡献和局限为阅读归纳。
 
 [← 上一篇 P26](P26_NPCLM.md) · [返回逐篇索引](README.md)

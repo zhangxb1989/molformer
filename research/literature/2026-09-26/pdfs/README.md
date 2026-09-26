@@ -24,3 +24,7 @@ PDF 按原样保存，未修改。作者署名和各论文许可保留，仓库�
 共 16 份论文主文/预印本，加1份正式补充材料，合计17个PDF、263页；主文哈希/页数见 [manifest](../pdf_manifest.json)，补充文件见 [supplement_manifest](../supplement_manifest.json)，逐份远端校验见 [archive_verification.json](../archive_verification.json)。P19 当前官方原件与旧缓存字节不同，旧哈希保留于 previous_download，不覆盖回当前字段。
 
 - P15-SI · Supporting Information: Scaling SMILES-Based Chemical Language Models for Therapeutic Peptide Engineering。Aaron L. Feller、Maxim Secor、Sebastian Swanson、Claus O. Wilke、Kristine Deibler，2026。[原样PDF](P15_2026_PeptideCLM2_final_supporting.pdf)；[DOI](https://doi.org/10.1021/acs.jcim.6c00652.s001)；[官方来源与许可元数据](https://api.figshare.com/v2/articles/32979761)；[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)。用于本非商业文献研究，原件未修改。
+
+## 逐篇补读说明（2026-09-26）
+
+本轮补读F01 arXiv v3、P22 arXiv v2、P27机构公开正文以及P20正式SI，均只用作阅读缓存，未加入本目录；仍为17个归档PDF、263页。外部原文入口和阅读版本见[逐篇索引](../papers/README.md)及pdf_manifest.json的reading_access_update。P03使用作者公开稿网页，亦未归档PDF。

@@ -18,21 +18,21 @@
     "publication_date": "2022/12",
     "accessed": "2026-09-26",
     "status": "published",
-    "reading_status": "abstract_or_partial",
-    "read_url": "https://www.nature.com/articles/s42256-022-00580-7",
-    "read_version": "published abstract/limited text and IBM official checkpoint documentation",
+    "reading_status": "full_text_key_sections",
+    "read_url": "https://arxiv.org/pdf/2106.09553v3",
+    "read_version": "arXiv v3 (2022-12-14), methods and Tables 1–2; formal 2022 publication metadata retained; final-version identity not assumed",
     "selection": "background",
     "extraction": {
       "task_definition": "小分子性质预测的基础表征；不在三年主窗口。",
-      "dataset_and_labels": "PubChem/ZINC 无标签预训练；下游多种分子分类/回归基准。",
+      "dataset_and_labels": "最大预训练约11亿条PubChem/ZINC分子SMILES。分类：BBBP/Tox21/ClinTox/HIV/BACE/SIDER；回归：QM9/QM8/ESOL/FreeSolv/Lipophilicity。",
       "input_representation": "SMILES。",
-      "model_and_pretraining": "线性注意力、旋转位置编码的 MolFormer；原论文最大约 11 亿分子，公开 fork checkpoint 约 1 亿。",
-      "loss": "预训练 MLM；各下游目标须按配置区分。",
-      "inference": "分子编码器加性质预测头；具体权重须核对。",
-      "metrics": "分类 AUROC、回归误差等随任务变化，不是用户任务实测分数。",
-      "split_and_leakage_control": "原论文基准协议不能自动等同于用户划分。",
-      "limitations_and_comparability": "本轮主要核对摘要、官方代码与 checkpoint 说明；不声称逐项复现原论文。",
-      "evidence_location": "出版社摘要；IBM/molformer README pretrained models。"
+      "model_and_pretraining": "12层、12头、隐藏维度768的线性注意力Transformer编码器，使用旋转位置编码；以MoLFormer-XL原论文预训练规模为准，不混用其他权重版本。",
+      "loss": "预训练为遮盖语言建模；下游分类/回归各接相应监督目标。",
+      "inference": "最后一层token表示均值池化后接预测头；比较冻结特征与整体微调。",
+      "metrics": "所读v3中，MoLFormer-XL在BBBP、ClinTox、SIDER的AUROC分别为93.7%、94.8%、69.0%；ESOL、FreeSolv、Lipophilicity的RMSE分别为0.2787、0.2308、0.5289，误差单位依各端点。分类采用骨架划分，回归采用随机划分，不能合并为一个准确率。",
+      "split_and_leakage_control": "所读v3补充Section C明确：分类骨架划分，回归随机划分；不能自动等同于用户数据协议。",
+      "limitations_and_comparability": "本次已读arXiv v3正文关键部分；未逐项对照正式版。部分基线成绩引自其他工作，且预训练规模不同；不将原文结果视为用户任务实测结果。",
+      "evidence_location": "arXiv v3：Methods；PDF第10—11页Table 1/2及表注；第21—22页补充数据与划分说明。"
     },
     "window": "outside_foundational",
     "bibliographic_source": "https://api.crossref.org/works/10.1038/s42256-022-00580-7",
@@ -60,14 +60,21 @@
     "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md",
     "paper_note_path": "papers/F01_MoLFormer.md",
     "quick_read": {
-      "research": "研究能否直接从大量分子的 SMILES 字符串学习通用表征，再用于分子性质分类和回归。这是本系列的基础论文，发表于2022年，单列在近三年文献之外。",
-      "models": "MoLFormer：采用线性注意力和旋转位置编码的 Transformer，通过遮盖语言建模学习分子表示，下游接性质预测头。输入是 SMILES，不需要先把分子转成自然语言描述。",
-      "data": "使用 PubChem、ZINC 的无标签分子做预训练，并在多个分子性质基准上评价。原论文最大预训练规模约11亿分子；不同公开权重版本的训练规模不同，不能混用。",
-      "results": "论文展示了从 SMILES 学到的表征可用于多种分子分类、回归任务。当前阅读记录没有逐个核实原文结果表，因此这里不填写某个统一准确率，也不把这些基准成绩视为肠屏障任务结果。",
-      "contribution": "建立了利用大规模化学字符串预训练、再迁移到性质预测的技术路线；为后续多肽和天然产物研究提供可复用的分子编码器。",
-      "limitations": "通用小分子预训练不能自动保证在多肽、特定多酚或小样本端点上有效。本文成绩取决于所用权重和下游数据。阅读限制：目前依据摘要与既有基础记录，尚未逐表整理原文。"
+      "research": "从大量分子的SMILES学习通用表征，再迁移到性质分类和回归。2022年基础论文，单列在近三年文献之外。",
+      "models": "MoLFormer编码器：12层、每层12个注意力头、768维隐藏表示，结合线性注意力与旋转位置编码。遮盖语言建模预训练后，接性质预测头，可冻结或整体微调。",
+      "data": "最大预训练语料约11亿条，来自PubChem与ZINC。下游分类包括BBBP、Tox21、ClinTox、HIV、BACE、SIDER；回归包括QM9、QM8、ESOL、FreeSolv、Lipophilicity。",
+      "results": "所读v3中，MoLFormer-XL在BBBP、ClinTox、SIDER的AUROC分别为93.7%、94.8%、69.0%；ESOL、FreeSolv、Lipophilicity的RMSE分别为0.2787、0.2308、0.5289，误差单位依各端点。分类采用骨架划分，回归采用随机划分，不能合并为一个准确率。",
+      "contribution": "展示了大规模SMILES预训练的迁移价值，并用高效注意力降低训练成本；学习到的表示还包含与分子结构相关的信息。",
+      "limitations": "所读表格中的部分基线成绩引用既有文献，训练规模也不同；结果不能单独证明架构优越性。小分子基准成绩尚不能证明多肽或肠屏障端点效果。当前数值来自v3，未等同于正式版逐表核验。"
     },
-    "quick_read_updated": "2026-09-26"
+    "quick_read_updated": "2026-09-26",
+    "reading_update": {
+      "date": "2026-09-26",
+      "scope": "预印本v3的正文关键部分；保留2022年正式发表信息，未逐项比对正式版",
+      "primary_url": "https://arxiv.org/pdf/2106.09553v3",
+      "evidence_location": "arXiv v3：Methods；PDF第10—11页Table 1/2及表注；第21—22页补充数据与划分说明。",
+      "author_code_checked": false
+    }
   },
   {
     "id": "P01",
@@ -239,21 +246,21 @@
     "publication_date": "2024/08",
     "accessed": "2026-09-26",
     "status": "published",
-    "reading_status": "abstract_or_partial",
-    "read_url": "https://www.nature.com/articles/s42256-024-00876-w",
-    "read_version": "published metadata/abstract and limited source excerpts; full methods not verified",
+    "reading_status": "full_text_key_sections",
+    "read_url": "https://www.researchgate.net/publication/383120443_A_bioactivity_foundation_model_using_pairwise_meta-learning",
+    "read_version": "author-uploaded publisher-layout manuscript (Bin Feng, 2024-09-20), Methods/Results/Discussion; proof contains an online-date placeholder; final typeset identity not assumed",
     "selection": "include",
     "extraction": {
       "task_definition": "少样本 assay 内定量生物活性回归。",
-      "dataset_and_labels": "约 160 万活性记录、35,644 个 ChEMBL assays；多组 ChEMBL/BindingDB 等评估。",
-      "input_representation": "化合物与 assay 内成对活性关系。",
-      "model_and_pretraining": "ActFound：跨 assay 元学习及成对活性差学习；不能因为 foundation model 就称其为语言模型。",
-      "loss": "成对学习目标；完整公式本轮未核实，NR。",
-      "inference": "用支持化合物适应 assay，再预测查询化合物。",
-      "metrics": "作者摘要报告了域内预测及跨assay、跨骨架泛化能力；少量样本微调后，在所评估FEP基准上达到与FEP+(OPLS4)相近的表现。这里保留作者定性结论，未核对的逐基准数值不补写。",
-      "split_and_leakage_control": "assay 内/跨 assay 协议需据全文或代码进一步确认。",
-      "limitations_and_comparability": "只读出版社摘要及官方项目说明；不能作为现有二分类的分数对手。",
-      "evidence_location": "出版社摘要；BFeng14/ActFound 官方 README。"
+      "dataset_and_labels": "ChEMBL含35,644个assays；正式摘要写约160万活性记录，作者公开稿Methods写约140万、70万独立化合物，两种口径保留。评估包括ChEMBL、BindingDB、FS-Mol、pQSAR-ChEMBL、KIBA、Davis，另有FEP与GDSC实验。",
+      "input_representation": "2048维Morgan指纹；同一assay内构建化合物对。",
+      "model_and_pretraining": "共享两层感知机编码器（隐藏维度2048）＋线性层的孪生网络；成对元学习，内循环适应最后线性层；kNN-MAML利用近邻assays。未使用分子语言模型。",
+      "loss": "Methods：绝对活性均方误差与加权成对活性差均方误差相加；内/外循环使用各自支持/查询集合。",
+      "inference": "相对活性差加支持化合物的已知活性，按嵌入注意力与Tanimoto掩码融合为绝对预测；新assay需支持样本。",
+      "metrics": "ChEMBL/BindingDB的16-shot实验中，作者报告r²和RMSE均优于所比方法；每个assay用16个已测化合物微调。FEP实验中使用40%实测数据、平均约12个化合物微调后，作者报告超过FEP+(OPLS4)。这里的r²定义为max(Pearson相关系数,0)²，不是通常的回归决定系数。",
+      "split_and_leakage_control": "Fig. 2的ChEMBL/BindingDB为16-shot，每库500个测试assays；Fig. 3含跨库及KIBA/Davis迁移；FEP实验另报告排除与基准重叠的预训练化合物。补充实验全表尚未整理。",
+      "limitations_and_comparability": "作者指出未使用靶蛋白序列或实验文字描述，输入仍为简单分子指纹。FEP结果依赖目标assay支持标签，不能理解为无标签替代物理计算；数据量的摘要/正文差异尚未解决。",
+      "evidence_location": "作者公开稿：Fig. 1—4；Methods的Problem setting、Pairwise learning、Training data curation、Implementation details；Discussion。"
     },
     "window": "2023-09-26_to_2026-09-26",
     "bibliographic_source": "https://api.crossref.org/works/10.1038/s42256-024-00876-w",
@@ -287,14 +294,21 @@
     },
     "paper_note_path": "papers/P03_ActFound.md",
     "quick_read": {
-      "research": "针对每个实验只有少量化合物、不同实验测量尺度又不一致的问题，学习同一实验内两个化合物的相对活性差，再利用其他实验的信息辅助新任务。",
-      "models": "ActFound将成对活性学习与跨assay元学习结合；在目标assay中用少量已测化合物适应模型，再预测待测化合物。名称中的foundation model不代表它就是语言模型。",
-      "data": "预训练约160万条实验活性记录、35,644个ChEMBL assays；论文在六组真实活性数据上评价，并包含跨实验类型、分子骨架和FEP相关比较。",
-      "results": "作者摘要报告了域内预测及跨assay、跨骨架泛化能力；少量样本微调后，在所评估FEP基准上达到与FEP+(OPLS4)相近的表现。这里保留作者定性结论，未核对的逐基准数值不补写。",
-      "contribution": "用实验内部的相对活性关系缓解不同assay测量不兼容，并用元学习处理少样本问题，重点是如何组织监督信息。",
-      "limitations": "需要目标assay的支持样本，不能直接当作不需要新标签的通用预测器；定量活性与单一二分类标签也不等价。阅读限制：本笔记主要依据正式摘要及数据说明，尚缺完整结果表。"
+      "research": "面向每个实验仅有少量已测化合物的活性回归，学习同一assay内的活性差，缓解跨实验测量尺度不一致的问题。",
+      "models": "2048维Morgan指纹输入共享的两层感知机，再接线性层构成孪生网络；结合成对学习、元学习和相邻assay辅助微调。它没有使用分子语言模型作编码器。",
+      "data": "ChEMBL含35,644个assays；正式摘要写约160万活性记录，作者公开稿Methods写约140万、70万独立化合物，两种口径保留。评估包括ChEMBL、BindingDB、FS-Mol、pQSAR-ChEMBL、KIBA、Davis，另有FEP与GDSC实验。",
+      "results": "ChEMBL/BindingDB的16-shot实验中，作者报告r²和RMSE均优于所比方法；每个assay用16个已测化合物微调。FEP实验中使用40%实测数据、平均约12个化合物微调后，作者报告超过FEP+(OPLS4)。这里的r²定义为max(Pearson相关系数,0)²，不是通常的回归决定系数。",
+      "contribution": "把同一实验内可比较的活性差与跨实验元学习结合，使大量零散实验标签能够支持新assay的少样本建模。",
+      "limitations": "作者指出未使用靶蛋白序列或实验文字描述，输入仍为简单分子指纹。FEP结果依赖目标assay支持标签，不能理解为无标签替代物理计算；数据量的摘要/正文差异尚未解决。"
     },
-    "quick_read_updated": "2026-09-26"
+    "quick_read_updated": "2026-09-26",
+    "reading_update": {
+      "date": "2026-09-26",
+      "scope": "作者公开稿的正文关键部分；版式稿仍有上线日期占位符，不冒充已核对的最终排版版",
+      "primary_url": "https://www.researchgate.net/publication/383120443_A_bioactivity_foundation_model_using_pairwise_meta-learning",
+      "evidence_location": "作者公开稿：Fig. 1—4；Methods的Problem setting、Pairwise learning、Training data curation、Implementation details；Discussion。",
+      "author_code_checked": false
+    }
   },
   {
     "id": "P04",
@@ -464,20 +478,20 @@
     "accessed": "2026-09-26",
     "status": "published",
     "reading_status": "abstract_or_partial",
-    "read_url": "https://pubmed.ncbi.nlm.nih.gov/39357724/",
-    "read_version": "published metadata/abstract and limited source excerpts; full methods not verified",
+    "read_url": "https://www.sciencedirect.com/science/article/pii/S0141813024069812",
+    "read_version": "published abstract and publicly visible workflow excerpts; full methods and result tables remain incomplete",
     "selection": "include",
     "extraction": {
       "task_definition": "抗炎肽二分类。",
-      "dataset_and_labels": "基准 AIP 数据；另报告 17 个新增阳性肽；精确主数据规模与负例构造 NR。",
-      "input_representation": "肽序列的 ProtT5 嵌入。",
-      "model_and_pretraining": "DeepAIP，结合上下文自注意力和多尺度卷积。",
+      "dataset_and_labels": "出版社流程段落说明：合并PreAIP、AIPpred、IF-AIP所用数据，经CD-HIT阈值0.9处理后按80%/20%分为训练/测试；另有17条抗炎阳性序列。主集合准确样本量和阴性构造仍未取得。",
+      "input_representation": "Prot-T5-XL-Uniref50隐藏特征与平均池化，来自肽氨基酸序列。",
+      "model_and_pretraining": "使用Prot-T5-XL-Uniref50提取并平均池化序列特征，再结合上下文自注意力与多尺度卷积。作者在八种预训练特征中比较后选择ProtT5。",
       "loss": "NR：摘要不足以确认。",
       "inference": "输出 AIP 预测；阈值 NR。",
       "metrics": "摘要报告，相对次优比较方法，MCC和accuracy分别提高16.35%和6.91%；另将17条阳性肽全部识别为抗炎肽。这些是作者报告的增幅和阳性识别结果，不是可直接代换的绝对MCC/accuracy。",
-      "split_and_leakage_control": "训练测试与同源性约束 NR。",
-      "limitations_and_comparability": "仅摘要/官方代码入口；17 个全阳性外部样本不能估计特异度。",
-      "evidence_location": "PubMed 39357724 摘要；YangQingGuoCCZU/DeepAIP。"
+      "split_and_leakage_control": "出版社可见流程：合并数据后CD-HIT阈值0.9处理，80%训练/20%测试；是否按同源簇隔离划分，NR。",
+      "limitations_and_comparability": "17条外部序列全为阳性，不能估计特异度。0.9去冗余阈值不能自动证明严格跨同源簇外推。完整结果表、绝对分数与增幅计算口径仍待补读。",
+      "evidence_location": "PubMed 39357724摘要；ScienceDirect Highlights及DeepAIP construction process条目1—5。"
     },
     "window": "2023-09-26_to_2026-09-26",
     "bibliographic_source": "https://api.crossref.org/works/10.1016/j.ijbiomac.2024.136172",
@@ -510,13 +524,20 @@
     "paper_note_path": "papers/P06_DeepAIP.md",
     "quick_read": {
       "research": "利用预训练蛋白语言模型从序列提取信息，预测肽是否具有抗炎活性，并比较不同预训练特征的效果。",
-      "models": "DeepAIP使用ProtT5嵌入，结合上下文自注意力和多尺度卷积；作者比较后选择ProtT5作为特征输入。",
-      "data": "使用抗炎肽基准数据，并另外评价17条新收集的抗炎阳性序列。主数据集精确规模、负例来源与划分细节，现有摘要证据不足以确认。",
+      "models": "使用Prot-T5-XL-Uniref50提取并平均池化序列特征，再结合上下文自注意力与多尺度卷积。作者在八种预训练特征中比较后选择ProtT5。",
+      "data": "出版社流程段落说明：合并PreAIP、AIPpred、IF-AIP所用数据，经CD-HIT阈值0.9处理后按80%/20%分为训练/测试；另有17条抗炎阳性序列。主集合准确样本量和阴性构造仍未取得。",
       "results": "摘要报告，相对次优比较方法，MCC和accuracy分别提高16.35%和6.91%；另将17条阳性肽全部识别为抗炎肽。这些是作者报告的增幅和阳性识别结果，不是可直接代换的绝对MCC/accuracy。",
       "contribution": "展示上下文注意力对预训练肽序列特征的再加工方式，并比较特征来源，而非只更换一个分类器。",
-      "limitations": "17条外部序列全部为阳性，无法评价特异度或误报率。阅读限制：未取得完整方法和结果表，增幅的计算口径、同源性控制及主测试集表现仍需全文说明。"
+      "limitations": "17条外部序列全为阳性，不能估计特异度。0.9去冗余阈值不能自动证明严格跨同源簇外推。完整结果表、绝对分数与增幅计算口径仍待补读。"
     },
-    "quick_read_updated": "2026-09-26"
+    "quick_read_updated": "2026-09-26",
+    "reading_update": {
+      "date": "2026-09-26",
+      "scope": "正式摘要及出版社可见流程段落；尚缺完整结果表",
+      "primary_url": "https://www.sciencedirect.com/science/article/pii/S0141813024069812",
+      "evidence_location": "PubMed 39357724摘要；ScienceDirect Highlights及DeepAIP construction process条目1—5。",
+      "author_code_checked": false
+    }
   },
   {
     "id": "P07",
@@ -537,19 +558,19 @@
     "status": "published",
     "reading_status": "abstract_or_partial",
     "read_url": "https://www.sciencedirect.com/science/article/pii/S1476927124000094",
-    "read_version": "published metadata/abstract and limited source excerpts; full methods not verified",
+    "read_version": "published abstract, Highlights, Dataset and Sequence analysis excerpts; full split and deduplication details remain incomplete",
     "selection": "include",
     "extraction": {
       "task_definition": "抗菌、抗高血压、抗氧化、抗高血糖四功能多标签。",
-      "dataset_and_labels": "出版社数据段列出UniProt、APD、AHTPDB、DFBP、BIOPEP-UWM、BGI-marine等来源，并称负例取自缺少功能信息的UniProt序列。本笔记未确认去重后的独立样本数与完整标签分布。",
+      "dataset_and_labels": "来源为UniProt、APD、AHTPDB、DFBP、BIOPEP-UWM、BGI-marine。可见Sequence analysis列出抗菌3014、降压2597、抗氧化1202、降血糖516个阳性标签，另称活性阳性6772、阴性863；多标签计数会重叠，不能把各功能阳性相加当成独立肽数。UniProt阴性取自缺少功能注释的序列。",
       "input_representation": "序列编码、embedding 与语言 tokenizer。",
-      "model_and_pretraining": "Deep2Pep：BiLSTM/注意力残差及 BERT encoder；摘要不能证明使用大规模预训练 BERT。",
-      "loss": "NR。",
+      "model_and_pretraining": "BiLSTM、注意力残差模块与BERT encoder联合预测四类活性；Highlights说明使用加权focal loss应对标签不平衡。BiLSTM起主要作用；尚未确认BERT来自大规模预训练权重。",
+      "loss": "出版社Highlights明确为加权focal loss；完整公式、类别权重和超参数尚未取得。",
       "inference": "多标签输出；逐标签阈值 NR。",
       "metrics": "摘要报告subset accuracy=0.737、Macro F1=0.734、Hamming loss=0.095，并称优于所比较模型。Subset accuracy要求一条肽的标签集合全部匹配，不能当作普通二分类正确率。",
       "split_and_leakage_control": "去重、同源性、划分 NR。",
-      "limitations_and_comparability": "仅摘要可得；可作多功能任务参考，不是单标签屏障活性的直接基线。",
-      "evidence_location": "出版社/PubMed 38308955 摘要。"
+      "limitations_and_comparability": "缺注释不等于实验确认无活性；抗高血糖阳性标签明显较少，汇总分数不能代替逐标签表现。完整去重、集合划分与阈值仍未取得。",
+      "evidence_location": "ScienceDirect的Highlights、Dataset、Sequence analysis、Conclusion；PubMed 38308955摘要。"
     },
     "window": "2023-09-26_to_2026-09-26",
     "bibliographic_source": "https://api.crossref.org/works/10.1016/j.compbiolchem.2024.108021",
@@ -582,13 +603,20 @@
     "paper_note_path": "papers/P07_Deep2Pep.md",
     "quick_read": {
       "research": "允许同一条肽同时具有多种活性，联合预测抗菌、抗高血压、抗氧化和抗高血糖四个标签。",
-      "models": "结合序列编码、embedding和tokenizer，使用BiLSTM、注意力残差模块及BERT encoder。作者摘要认为BiLSTM起主要作用；仅出现BERT名称不能认定使用了大规模预训练权重。",
-      "data": "出版社数据段列出UniProt、APD、AHTPDB、DFBP、BIOPEP-UWM、BGI-marine等来源，并称负例取自缺少功能信息的UniProt序列。本笔记未确认去重后的独立样本数与完整标签分布。",
+      "models": "BiLSTM、注意力残差模块与BERT encoder联合预测四类活性；Highlights说明使用加权focal loss应对标签不平衡。BiLSTM起主要作用；尚未确认BERT来自大规模预训练权重。",
+      "data": "来源为UniProt、APD、AHTPDB、DFBP、BIOPEP-UWM、BGI-marine。可见Sequence analysis列出抗菌3014、降压2597、抗氧化1202、降血糖516个阳性标签，另称活性阳性6772、阴性863；多标签计数会重叠，不能把各功能阳性相加当成独立肽数。UniProt阴性取自缺少功能注释的序列。",
       "results": "摘要报告subset accuracy=0.737、Macro F1=0.734、Hamming loss=0.095，并称优于所比较模型。Subset accuracy要求一条肽的标签集合全部匹配，不能当作普通二分类正确率。",
       "contribution": "把四类肽活性组织为联合多标签任务，利用序列上下文及标签共同学习，使多功能肽不必被强制归入单一类别。",
-      "limitations": "缺少功能注释不代表真正无活性，负标签可能含未被研究的阳性肽。阅读限制：目前为摘要与出版社可见段落，去重、分割及预训练来源尚未完整确认。"
+      "limitations": "缺注释不等于实验确认无活性；抗高血糖阳性标签明显较少，汇总分数不能代替逐标签表现。完整去重、集合划分与阈值仍未取得。"
     },
-    "quick_read_updated": "2026-09-26"
+    "quick_read_updated": "2026-09-26",
+    "reading_update": {
+      "date": "2026-09-26",
+      "scope": "正式摘要及出版社数据/序列分析片段；尚未完整阅读正文",
+      "primary_url": "https://www.sciencedirect.com/science/article/pii/S1476927124000094",
+      "evidence_location": "ScienceDirect的Highlights、Dataset、Sequence analysis、Conclusion；PubMed 38308955摘要。",
+      "author_code_checked": false
+    }
   },
   {
     "id": "P08",
@@ -1385,20 +1413,20 @@
     "accessed": "2026-09-26",
     "status": "published",
     "reading_status": "abstract_or_partial",
-    "read_url": "https://researchers.unab.cl/en/publications/accurate-amp-simple-open-sourced-no-code-machine-learning-and-cdf/",
-    "read_version": "published abstract reproduced by author institution; full methods not verified",
+    "read_url": "https://www.sciencedirect.com/science/article/abs/pii/S2210271X24003219",
+    "read_version": "published abstract, Highlights and conclusion excerpts, plus author-institution abstract; full methods remain incomplete",
     "selection": "include",
     "extraction": {
       "task_definition": "酚类 DPPH 抗氧化分类。",
-      "dataset_and_labels": "作者机构保存的论文摘要明确为202种酚类化合物的抗DPPH数据。精确类别阈值、各集合数量和数据清洗后的分布，本笔记尚未取得。",
+      "dataset_and_labels": "202种酚类化合物的抗DPPH数据。出版社结论段落提到留一交叉验证（LOOCV）与90%/10%划分；具体类别阈值、各类数量及筛选流程仍未取得。",
       "input_representation": "量子 CDFT 与分子描述符。",
-      "model_and_pretraining": "J48、RandomTree、JCHAID 等树模型及特征选择。",
+      "model_and_pretraining": "在GFN1-xTB、GFN2-xTB层面计算概念密度泛函理论（CDFT）描述符；结合PCA、InfoGain等筛选方法，训练J48、RandomTree、JCHAID等树模型。",
       "loss": "各树模型目标；精确设置 NR。",
       "inference": "抗氧化类别预测；阈值 NR。",
-      "metrics": "摘要报告决策树在内部与外部验证中accuracy均超过85%。这里的“外部”沿用作者称谓，尚不能确认它是独立来源还是原数据池的留出集合，也未取得各模型完整结果表。",
-      "split_and_leakage_control": "训练测试划分、嵌套特征筛选 NR。",
-      "limitations_and_comparability": "化学对象接近，DPPH 不等于肠屏障作用；仅摘要/页面片段，不能视作全文阅读。",
-      "evidence_location": "DOI 10.1016/j.comptc.2024.114782 出版社摘要。 本次补读作者机构Universidad Andrés Bello收录的论文摘要，明确202种酚类及内部/外部验证accuracy>85%；未取得完整方法。"
+      "metrics": "摘要报告各决策树在内部与外部验证中accuracy超过85%；可见结论提到LOOCV与90/10划分。“外部”不宜直接理解为另一个独立来源队列，逐模型分数仍未取得。",
+      "split_and_leakage_control": "出版社Conclusion报告LOOCV与90/10划分；具体集合数量、独立来源验证和嵌套特征筛选仍NR。",
+      "limitations_and_comparability": "202个样本规模有限；可见材料不足以确认特征筛选是否在验证折内完成。DPPH清除能力不等同细胞抗氧化或肠屏障保护，当前也不能确认对新骨架的泛化。",
+      "evidence_location": "ScienceDirect摘要、Highlights、Conclusion；Universidad Andrés Bello作者机构摘要。"
     },
     "window": "2023-09-26_to_2026-09-26",
     "bibliographic_source": "https://api.crossref.org/works/10.1016/j.comptc.2024.114782",
@@ -1432,12 +1460,19 @@
     "quick_read": {
       "research": "用酚类分子的电子反应性与结构特征预测DPPH抗氧化活性，强调无需编程的建模流程和可解释规则。",
       "models": "在GFN1-xTB、GFN2-xTB层面计算概念密度泛函理论（CDFT）描述符；结合PCA、InfoGain等筛选方法，训练J48、RandomTree、JCHAID等树模型。",
-      "data": "作者机构保存的论文摘要明确为202种酚类化合物的抗DPPH数据。精确类别阈值、各集合数量和数据清洗后的分布，本笔记尚未取得。",
-      "results": "摘要报告决策树在内部与外部验证中accuracy均超过85%。这里的“外部”沿用作者称谓，尚不能确认它是独立来源还是原数据池的留出集合，也未取得各模型完整结果表。",
+      "data": "202种酚类化合物的抗DPPH数据。出版社结论段落提到留一交叉验证（LOOCV）与90%/10%划分；具体类别阈值、各类数量及筛选流程仍未取得。",
+      "results": "摘要报告各决策树在内部与外部验证中accuracy超过85%；可见结论提到LOOCV与90/10划分。“外部”不宜直接理解为另一个独立来源队列，逐模型分数仍未取得。",
       "contribution": "将电子反应性描述符与容易阅读的决策树规则连接，为酚类抗氧化结构—活性关系提供简单且可解释的建模路线。",
-      "limitations": "样本规模较小，标签阈值与划分会明显影响结果；DPPH化学清除活性不等同细胞抗氧化或肠屏障保护。阅读限制：主要依据作者机构摘要，尚未完成全文分析。"
+      "limitations": "202个样本规模有限；可见材料不足以确认特征筛选是否在验证折内完成。DPPH清除能力不等同细胞抗氧化或肠屏障保护，当前也不能确认对新骨架的泛化。"
     },
-    "quick_read_updated": "2026-09-26"
+    "quick_read_updated": "2026-09-26",
+    "reading_update": {
+      "date": "2026-09-26",
+      "scope": "正式摘要、Highlights和可见结论段落；尚缺完整方法与结果表",
+      "primary_url": "https://www.sciencedirect.com/science/article/abs/pii/S2210271X24003219",
+      "evidence_location": "ScienceDirect摘要、Highlights、Conclusion；Universidad Andrés Bello作者机构摘要。",
+      "author_code_checked": false
+    }
   },
   {
     "id": "P19",
@@ -1527,21 +1562,21 @@
     "publication_date": "",
     "accessed": "2026-09-26",
     "status": "published",
-    "reading_status": "abstract_or_partial",
+    "reading_status": "abstract_and_final_supplement",
     "read_url": "https://pubmed.ncbi.nlm.nih.gov/41854110/",
-    "read_version": "published metadata/abstract and limited source excerpts; full methods not verified",
+    "read_version": "published abstract plus formal Supporting Information s001 v1 (2026-03-19), Sections S1/S4/S6 and Tables S6/S7; main article remains access-limited",
     "selection": "include",
     "extraction": {
       "task_definition": "从代谢组预测连续肠屏障功能指数。",
-      "dataset_and_labels": "小鼠相关表型/代谢组，筛出 10 个核心代谢物；完整样本量本轮 NR。",
+      "dataset_and_labels": "小鼠实验S1报告七组、每组10只，最终清洗后建模数未确认；筛出10个功能相关代谢物。临床Table S7列健康/AP/IBD样本数：队列1为41/50/56，队列2为10/10/20；分别采血与采粪，用途不同，不当作同一回归测试集。",
       "input_representation": "生物样本的代谢物特征，非单分子 SMILES。",
-      "model_and_pretraining": "生物信息约束特征选择加五类回归模型。",
-      "loss": "精确算法 loss NR。",
+      "model_and_pretraining": "LASSO、XGBoost和随机森林用于集成特征筛选；最终五种回归器为线性回归、Bayesian Ridge、ElasticNet、PLS和SVR，辅以SHAP解释。",
+      "loss": "SI S4分别给出线性回归平方误差、ElasticNet正则化回归、Bayesian Ridge、PLS和SVR目标；不归并成一个神经网络loss。",
       "inference": "输出样本屏障指数。",
-      "metrics": "摘要 R² 0.604–0.654、MAE 0.319–0.352。",
-      "split_and_leakage_control": "完整划分、重复与泄漏控制 NR。",
-      "limitations_and_comparability": "只读摘要；相似关键词不构成同任务先例或直接基线。",
-      "evidence_location": "PubMed 41854110/ACS 摘要。"
+      "metrics": "正式SI Table S6中，10特征方案测试R²/MAE分别为：ElasticNet 0.620/0.350、Bayesian Ridge 0.642/0.329、线性回归0.604/0.352、PLS 0.654/0.319、SVR 0.643/0.329。这是同一方案跨回归器的表现，不能写成临床诊断准确率。",
+      "split_and_leakage_control": "SI S4.3：特征筛选调参用5折；最终回归调参用Repeated K-Fold（5折×5次）。最终训练/测试比例与预处理、特征筛选的嵌套边界尚未由主文确认。",
+      "limitations_and_comparability": "主文缺口仍影响对屏障指数定义、最终建模样本与训练/测试划分的判断；SI调参采用重复5折，但未据此确认所有预处理/筛选均在折内。临床组间存在BMI或年龄差异；代谢关联与体外转化不能单独证明体内保护因果。",
+      "evidence_location": "ACS正式SI（DOI 10.1021/acs.analchem.6c00178.s001）：S1/S4/S6；S24页Table S6、S25页Table S7。数值表已视觉确认。"
     },
     "window": "2023-09-26_to_2026-09-26",
     "bibliographic_source": "https://api.crossref.org/works/10.1021/acs.analchem.6c00178",
@@ -1578,14 +1613,22 @@
     "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md",
     "paper_note_path": "papers/P20_Barrier_metabolomics.md",
     "quick_read": {
-      "research": "从生物样本的代谢组特征预测连续肠屏障功能指数，并寻找与屏障功能障碍相关的关键代谢物。",
-      "models": "将生物学信息融入特征选择，再比较五类回归模型。输入是样本中的代谢物测量，不是单个候选分子的SMILES。",
-      "data": "小鼠相关表型与代谢组资料，最终筛出10个核心代谢物。当前摘要未提供足够信息确认独立样本量、分组分布和完整实验条件。",
-      "results": "摘要报告R²=0.604—0.654、MAE=0.319—0.352，描述的是屏障指数预测。MAE依赖指数的定义和量纲，不能直接与其他回归端点的误差比较。",
-      "contribution": "把屏障表型与代谢信息联系起来，用较少的代谢物特征形成可解释的预测思路，为机制研究提供候选线索。",
-      "limitations": "代谢物与屏障指数的预测关联不证明因果或干预作用。阅读限制：目前仅摘要，完整划分和混杂因素处理未确认；该任务不直接回答某个新化合物能否保护肠屏障。"
+      "research": "从代谢组特征预测连续肠屏障指数，并结合网络生物学与临床/体外验证筛选功能相关代谢物。",
+      "models": "LASSO、XGBoost和随机森林用于集成特征筛选；最终五种回归器为线性回归、Bayesian Ridge、ElasticNet、PLS和SVR，辅以SHAP解释。",
+      "data": "小鼠实验S1报告七组、每组10只，最终清洗后建模数未确认；筛出10个功能相关代谢物。临床Table S7列健康/AP/IBD样本数：队列1为41/50/56，队列2为10/10/20；分别采血与采粪，用途不同，不当作同一回归测试集。",
+      "results": "正式SI Table S6中，10特征方案测试R²/MAE分别为：ElasticNet 0.620/0.350、Bayesian Ridge 0.642/0.329、线性回归0.604/0.352、PLS 0.654/0.319、SVR 0.643/0.329。这是同一方案跨回归器的表现，不能写成临床诊断准确率。",
+      "contribution": "把生物学知识用于筛选和解释代谢特征，并通过不同回归器、临床样本及体外转化实验检验候选线索。",
+      "limitations": "主文缺口仍影响对屏障指数定义、最终建模样本与训练/测试划分的判断；SI调参采用重复5折，但未据此确认所有预处理/筛选均在折内。临床组间存在BMI或年龄差异；代谢关联与体外转化不能单独证明体内保护因果。"
     },
-    "quick_read_updated": "2026-09-26"
+    "quick_read_updated": "2026-09-26",
+    "read_supplement_url": "https://acs.figshare.com/articles/journal_contribution/A_Biologically_Informed_Machine_Learning_Pipeline_Uncovers_Metabolic_Features_of_Intestinal_Barrier_Dysfunction/31812620",
+    "reading_update": {
+      "date": "2026-09-26",
+      "scope": "正式摘要＋正式补充材料s001；主文仍未完整取得",
+      "primary_url": "https://pubmed.ncbi.nlm.nih.gov/41854110/",
+      "evidence_location": "ACS正式SI（DOI 10.1021/acs.analchem.6c00178.s001）：S1/S4/S6；S24页Table S6、S25页Table S7。数值表已视觉确认。",
+      "author_code_checked": false
+    }
   },
   {
     "id": "P21",
@@ -1694,21 +1737,21 @@
     "publication_date": "",
     "accessed": "2026-09-26",
     "status": "published",
-    "reading_status": "abstract_or_partial",
-    "read_url": "https://pubs.rsc.org/en/content/articlehtml/2025/dd/d5dd00122f",
-    "read_version": "published metadata/abstract and limited source excerpts; full methods not verified",
+    "reading_status": "full_text_key_sections",
+    "read_url": "https://arxiv.org/html/2405.04912v2",
+    "read_version": "arXiv v2 (2025-03-31), Results/Methods and Tables 1/4/5; 2025 Digital Discovery publication retained, final main text not verified",
     "selection": "background",
     "extraction": {
       "task_definition": "分子生成及条件优化，非直接活性识别。",
-      "dataset_and_labels": "正式论文摘要报告训练语料超过11亿条化学SMILES；下游是生成及优化任务，不是一个活性二分类数据集。",
+      "dataset_and_labels": "PubChem/ZINC约11亿条SMILES；去重版Uniq为6.5亿条。预印本Methods列QED、penalized logP、DRD2训练分子对分别为70,644、60,227、34,404；前两项测试各800个分子，DRD2为1000个。",
       "input_representation": "SMILES 自回归序列。",
-      "model_and_pretraining": "GP-MoLFormer为约4,680万参数的自回归Transformer解码器，使用线性注意力和旋转位置编码；性质优化采用按性质排序的分子对进行pair-tuning。",
-      "loss": "语言建模目标；本轮未逐项核实各适应目标。",
-      "inference": "采样/条件生成分子。",
-      "metrics": "作者报告三类任务表现优于或接近所比基线，并产生较高多样性的分子；同时发现明显的训练数据记忆，训练重复会降低生成新颖性。此处保留任务层面的结论，不换算成活性准确率。",
-      "split_and_leakage_control": "生成训练语料与条件任务协议不可直接转为活性二分类划分。",
-      "limitations_and_comparability": "背景项；正式发表 2025，2024 预印本归并；非本项目直接预测基线。",
-      "evidence_location": "Digital Discovery DOI 10.1039/D5DD00122F；作者预印本摘要。"
+      "model_and_pretraining": "4680万参数的自回归Transformer解码器，使用线性注意力和旋转位置编码。Pair-tuning冻结主体，只训练少量提示嵌入，学习把性质较差的分子转为较优分子。",
+      "loss": "自回归下一token交叉熵；pair-tuning对性质排序的分子对进行条件生成交叉熵训练，只更新提示嵌入。",
+      "inference": "无条件自回归采样、以骨架SMILES续写，或给定输入分子及软提示进行性质优化。",
+      "metrics": "v2 Table 1：Uniq生成3万个分子时IntDiv=0.8655、FCD=0.0591。Table 4：每个种子生成125次的QED最高0.948、有效率94.7%。Table 5：DRD2平均预测活性分数由种子的0.007升至生成物0.844（每种子20次选最高），并非实测活性。",
+      "split_and_leakage_control": "Table 1用3万生成物和17.5万参考分子，但不同模型参考分布不同；DRD2基线种子也不同。Methods将SMILES规范化且不保留异构信息。",
+      "limitations_and_comparability": "生成有效性、新颖性和预测器高分不能证明可合成性或真实药效；不同基线的训练/参考分布或种子不同，不能仅凭表中数字排名。预印本对无约束优化的高分，也不代表保留原结构。正式版数值尚未逐表比对。",
+      "evidence_location": "arXiv v2：Results的Table 1/4/5；Methods的Datasets and tokenization、Pair-tuning。"
     },
     "window": "2023-09-26_to_2026-09-26",
     "related_versions": [
@@ -1741,14 +1784,21 @@
     },
     "paper_note_path": "papers/P22_GP_MoLFormer.md",
     "quick_read": {
-      "research": "把化学语言预训练用于生成分子，覆盖从头生成、限定骨架的分子修饰，以及按目标性质优化三类任务。",
-      "models": "GP-MoLFormer为约4,680万参数的自回归Transformer解码器，使用线性注意力和旋转位置编码；性质优化采用按性质排序的分子对进行pair-tuning。",
-      "data": "正式论文摘要报告训练语料超过11亿条化学SMILES；下游是生成及优化任务，不是一个活性二分类数据集。",
-      "results": "作者报告三类任务表现优于或接近所比基线，并产生较高多样性的分子；同时发现明显的训练数据记忆，训练重复会降低生成新颖性。此处保留任务层面的结论，不换算成活性准确率。",
-      "contribution": "将通用化学语言模型扩展为多种生成任务的基础，并提出pair-tuning；另外把训练记忆、新颖性与生成规模之间的关系纳入分析。",
-      "limitations": "有效SMILES和新骨架不代表可合成、无毒或有真实生物活性；生成可能重复训练数据。阅读限制：本篇以2025正式摘要为依据，尚未逐项整理生成基准数值。"
+      "research": "研究从头分子生成、指定骨架修饰和目标性质优化，并分析训练数据重复与记忆对生成新颖性的影响。",
+      "models": "4680万参数的自回归Transformer解码器，使用线性注意力和旋转位置编码。Pair-tuning冻结主体，只训练少量提示嵌入，学习把性质较差的分子转为较优分子。",
+      "data": "PubChem/ZINC约11亿条SMILES；去重版Uniq为6.5亿条。预印本Methods列QED、penalized logP、DRD2训练分子对分别为70,644、60,227、34,404；前两项测试各800个分子，DRD2为1000个。",
+      "results": "v2 Table 1：Uniq生成3万个分子时IntDiv=0.8655、FCD=0.0591。Table 4：每个种子生成125次的QED最高0.948、有效率94.7%。Table 5：DRD2平均预测活性分数由种子的0.007升至生成物0.844（每种子20次选最高），并非实测活性。",
+      "contribution": "用统一分子生成器配合参数较少的pair-tuning处理多种生成任务，同时明确考察记忆、重复数据和生成规模。",
+      "limitations": "生成有效性、新颖性和预测器高分不能证明可合成性或真实药效；不同基线的训练/参考分布或种子不同，不能仅凭表中数字排名。预印本对无约束优化的高分，也不代表保留原结构。正式版数值尚未逐表比对。"
     },
-    "quick_read_updated": "2026-09-26"
+    "quick_read_updated": "2026-09-26",
+    "reading_update": {
+      "date": "2026-09-26",
+      "scope": "预印本v2的正文关键部分；2025正式发表信息保留，正式主文尚未逐表对照",
+      "primary_url": "https://arxiv.org/html/2405.04912v2",
+      "evidence_location": "arXiv v2：Results的Table 1/4/5；Methods的Datasets and tokenization、Pair-tuning。",
+      "author_code_checked": false
+    }
   },
   {
     "id": "P23",
@@ -2053,21 +2103,21 @@
     "publication_date": "",
     "accessed": "2026-09-26",
     "status": "published",
-    "reading_status": "abstract_or_partial",
-    "read_url": "https://www.sciencedirect.com/science/article/pii/S1466856425003315",
-    "read_version": "published metadata/abstract and limited source excerpts; full methods not verified",
+    "reading_status": "full_text_key_sections",
+    "read_url": "https://edepot.wur.nl/702069",
+    "read_version": "publisher-layout 2025 article deposited in Wageningen institutional repository; Sections 2–3, Tables 1/2 and Figure 6",
     "selection": "include",
     "extraction": {
       "task_definition": "食品任务：肽运输、分子味觉及图像质地。",
-      "dataset_and_labels": "三种不同模态数据；具体肽运输样本量与来源 NR。",
+      "dataset_and_labels": "5183条山羊乳肽；ChemTastesDB三种味觉子集，Methods列甜1313、苦1615、鲜220；80张肉类似物、鸡肉与豆腐图像。Methods均写80%/20%训练/测试。",
       "input_representation": "肽序列、分子 SMILES、图像分别处理。",
-      "model_and_pretraining": "ESMC 用于肽运输；MolFormer 用于小分子味觉；另有视觉模型。",
-      "loss": "NR：本轮仅摘要可用。",
-      "inference": "各任务预测，不能误写为 MolFormer 预测肽运输。",
-      "metrics": "摘要味觉 accuracy 0.99，未经划分复核不能作为性能结论。",
-      "split_and_leakage_control": "去重、划分与外推协议 NR。",
-      "limitations_and_comparability": "2025 正式论文，作为应用边界对照；不把三个任务合并成一个多模态肽活性模型。",
-      "evidence_location": "出版社摘要/Highlights，DOI 10.1016/j.ifset.2025.104247。"
+      "model_and_pretraining": "肽任务：ESMC嵌入＋MLP或BiLSTM，最好方案加入修饰位点特征；味觉：MoLFormer或ChemBERTa2嵌入＋MLP；图像：CLIP嵌入＋MLP。三个任务分别建模。",
+      "loss": "肽与味觉分类用交叉熵；图像回归段也写cross-entropy，与连续回归描述存在疑点，按原文保留、不自行更正。",
+      "inference": "分别以肽嵌入/修饰、SMILES嵌入、图像嵌入接预测头；MoLFormer只用于味觉实验。",
+      "metrics": "肽运输：修饰增强BiLSTM准确率0.89、AUC 0.952，二肽组成基线为0.79/0.853。味觉：MoLFormer准确率0.99、ChemBERTa2为0.98；Table 2测试集为323苦＋263甜＋44鲜。图像纤维度：Fig. 6C报告R²=0.81、RMSE=8.03。",
+      "split_and_leakage_control": "Methods三任务均写80/20；未见独立来源、分子骨架或肽同源簇隔离验证的充分说明。图像总数80与Fig. 6C测试n=20并不符合所述比例。",
+      "limitations_and_comparability": "图像仅来自一项既有研究，样本少；文中留出测试不足以证明跨研究或新骨架泛化。原文有口径差异：甜味数量Methods为1313、Results为1331；图像Methods写80/20，但Fig. 6C写测试n=20，需保留而不自行统一。",
+      "evidence_location": "机构PDF第2—3页Methods；第4页Table 1、第5页Table 2、第6页Fig. 6C、第7页Discussion。表格与图注已视觉确认。"
     },
     "window": "2023-09-26_to_2026-09-26",
     "bibliographic_source": "https://api.crossref.org/works/10.1016/j.ifset.2025.104247",
@@ -2093,13 +2143,20 @@
     "quality_review_scope": "record structure, NR and version consistency; targeted primary-source rechecks documented in quality_check.md",
     "paper_note_path": "papers/P27_Food_foundation_models.md",
     "quick_read": {
-      "research": "在三类食品相关任务中考察基础模型的迁移使用：肽运输预测、小分子味觉分类、图像质地分析。三者是不同输入和标签的任务。",
-      "models": "ESMC用于肽运输，MoLFormer用于小分子味觉，视觉模型用于图像任务；不能把论文概括成“MoLFormer预测肽运输”。",
-      "data": "分别使用肽序列、分子SMILES和图像数据。当前可见摘要不足以确认各数据集的准确样本量、来源、重复样本和划分方式。",
-      "results": "摘要报告味觉任务accuracy达到0.99。该成绩只对应味觉实验；肽运输和图像任务的完整结果尚未核对，不能把0.99套用于这些任务。",
-      "contribution": "展示了不同基础模型在食品研究中的迁移方向，帮助区分模型、输入模态与应用任务之间的对应关系。",
-      "limitations": "只有摘要与可见页面支持当前笔记，尚不能判断高准确率是否在独立化合物或外部来源上保持。三个任务并列展示，不代表已经建立统一的多模态肽活性模型。"
+      "research": "用预训练表征分别解决山羊乳肽Caco-2运输分类、分子甜/苦/鲜味分类和食品图像纤维度回归。",
+      "models": "肽任务：ESMC嵌入＋MLP或BiLSTM，最好方案加入修饰位点特征；味觉：MoLFormer或ChemBERTa2嵌入＋MLP；图像：CLIP嵌入＋MLP。三个任务分别建模。",
+      "data": "5183条山羊乳肽；ChemTastesDB三种味觉子集，Methods列甜1313、苦1615、鲜220；80张肉类似物、鸡肉与豆腐图像。Methods均写80%/20%训练/测试。",
+      "results": "肽运输：修饰增强BiLSTM准确率0.89、AUC 0.952，二肽组成基线为0.79/0.853。味觉：MoLFormer准确率0.99、ChemBERTa2为0.98；Table 2测试集为323苦＋263甜＋44鲜。图像纤维度：Fig. 6C报告R²=0.81、RMSE=8.03。",
+      "contribution": "展示如何把已有食品实验标签接到不同基础模型表征上，并证明肽修饰信息在本数据上具有额外价值。",
+      "limitations": "图像仅来自一项既有研究，样本少；文中留出测试不足以证明跨研究或新骨架泛化。原文有口径差异：甜味数量Methods为1313、Results为1331；图像Methods写80/20，但Fig. 6C写测试n=20，需保留而不自行统一。"
     },
-    "quick_read_updated": "2026-09-26"
+    "quick_read_updated": "2026-09-26",
+    "reading_update": {
+      "date": "2026-09-26",
+      "scope": "Wageningen机构公开正式论文的正文关键部分",
+      "primary_url": "https://edepot.wur.nl/702069",
+      "evidence_location": "机构PDF第2—3页Methods；第4页Table 1、第5页Table 2、第6页Fig. 6C、第7页Discussion。表格与图注已视觉确认。",
+      "author_code_checked": false
+    }
   }
 ]
