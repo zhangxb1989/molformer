@@ -1,36 +1,33 @@
-# 续接记录：归档已补齐，方法访问限制保留
+# 续接记录：作者代码核查与官方原件补档
 
-更新：2026-09-26。仓库 `zhangxb1989/molformer`，**只写 gpt，不修改 main**。本轮沿用 28 条文献记录，没有扩大候选库或启动训练。用户已取消此前误带入的无关分析字段，不要重新添加。
+更新：2026-09-26。仓库 zhangxb1989/molformer，**只操作 gpt，不修改 main**。沿用 28 条文献，用户已取消的无关字段不重新添加；未启动模型训练。
 
 ## 先读
 
-README.md、code_audit.md、quality_check.md、comparison_and_novelty.md、structured_review.md、sources.json、screening.md、pdf_manifest.json、archive_verification.json。不要从零重查。
+README.md、code_audit.md、quality_check.md、comparison_and_novelty.md、sources.json、pdf_manifest.json、access_audit.json。不要从零重查。
 
-## 已完成
+## 本次已完成
 
-1. 对 28 条记录做结构、版本/阅读状态、NR 与引用一致性检查；关键方法和数值的原始来源抽查范围写在 quality_check.md，不能说成全部全文重读或代码复现。
-2. 原 pending_upload 的 7 份 PDF 已补齐，加 P01 共 8 份。PDF 归档提交为 `ac3d399aadf06ce7a74e2810204ee47ee9f528c4`，全部从 GitHub 读回并核验 SHA-256/字节数/Git blob SHA。
-3. P19 当前官方原件与旧记录字节不同，manifest 保留 previous_download，当前字段对应实际归档原件。其余 7 份与旧哈希相同。不要把旧 P19 哈希覆盖回当前文件。
-4. 清理题名/期刊中的 HTML 标签、实体及换行，同步 JSON、Markdown、BibTeX、PDF 清单和本地历史命名的 inventory。
-5. P14 的 7,475 条通透数据补记 PAMPA 6,869/Caco-2 606。P14 Table 1 的历史分类指标与 P09 原表 AUC/F1 名称不一致，且划分不同；该表不可用于直接排名。
-6. P12/P13 公式页人工核对：P12 后续已由作者固定代码提交确认完整 BCE、两次等系数反传，并发现测试标签参与阈值选择；P13 主文确为 MSE。P21 继续采用 2026 正式版，不能恢复旧预印本的负采样计数矛盾。
-7. 新增 code_audit.md、code_evidence.json：P12/P15 作者代码静态核查，固定提交与文件 SHA；未运行训练。P15 已补分类 BCE/专用回归 MSE、25% 掩码启动示例；THPep 划分生成和最终论文对应仍未闭合。
+1. P12 作者代码固定提交 1f7b35ffa8b3d51a32a92a9753ddf642d1b5c9de：确认完整 BCE、初始/对抗两次等系数反传、30 模型等权概率平均；发现用 test 标签选阈值并在同批 test 计分。Accuracy 是样本平均 Jaccard。只能对可见代码路径作判断，未证明论文表格由此提交生成；FGM 源实现仍缺。
+2. P15 固定代码提交 6b9708d4cb05717307d310daaf1c0f88c71ff084：确认启动示例 25% span 掩码、0.6/0.4 目标、分类 BCE/专用回归 MSE；token CE 包含非 padding 原始 token。现成划分文件与 5 折 fallback 是不同路径，不能将所有结果写成统一 3×5 折。
+3. code_audit.md/code_evidence.json 已提交于 ae7654274e664c64d7c7ab77075e290f9d5c6fc2。全部为静态阅读，未执行作者代码、未改作者仓库。
+4. NCBI 旧 OA Web Service 已停止；新版官方入口 https://pmc.ncbi.nlm.nih.gov/tools/pmcaws/。本轮核查现有 10 条的版本元数据，新增 8 份原 PDF：P02、P04、P09、P11、P15、P16、P21、P24。PDF 提交 f4bbf7471ec32a629f7b231902288b34de73fce5，全部新增文件已从 GitHub 读回核验。累计 16 份原件，其余 12 条链接保留。
+5. 先前 8 份原 PDF 的校验仍有效；P19 当前文件与旧缓存不同，previous_download 保留旧值，不恢复旧哈希。
+6. P14/P09 的历史 AUC/F1 表头不一致、不同划分限制继续保留；P21 沿用正式版，不恢复旧预印本计数矛盾。
 
-## 仍有证据或访问限制
+## 仍未解决的证据限制
 
-- P15 PeptideCLM-2 正式版元数据已再次确认（2026-07-13 在线，DOI 10.1021/acs.jcim.6c00652），所读方法仍为 bioRxiv v5（2026-06-23）。正式全文返回 403，方法差异核对**未完成**。预印本 THPep 划分措辞也需结合代码；不要宣称已与正式版一致。
-- 其余 20 条 PDF 未归档，保留入口和原因；P17 转载许可未核实。未取得或许可不明的原件不补造、不用网页打印件替代。
-- 未核实字段继续保留 NR；first 须全时段查新才可能进一步讨论。
-- 原项目 128 与 109 的化合物口径、标签证据、六个全阳性外测、实际 checkpoint 仍需用户原始数据核查，不在本轮冒充已完成。
+- P15 正式版元数据确定（2026-07-13 在线，10.1021/acs.jcim.6c00652），正式全文方法仍受访问限制；归档 PDF 是 June 23, 2026 bioRxiv v5。正式版与预印本一致性未验证。
+- P15 THPep 的 prepared_data 划分文件/生成脚本未见，manifest 的 cluster-aware 声明和随机划分文字仍不能闭合。P12 FGM 的扰动实现及论文表格对应快照未核实。
+- 未归档原文逐条见 manifest/access_audit。P08/P25 是 TDM 作者稿且云服务无 PDF；P17 转载许可未核实。本轮八份原件的传输问题均已解决，其余文献仍按各自访问与许可状态处理。
+- 原项目 128/109 化合物口径、标签证据、六个全阳性外测和实际 MolFormer checkpoint 需要原始数据核查；不能冒充已解决，也不能凭文献分析产生训练成绩。
 
-## 当前结论
+## 当前研究结论
 
-MolFormer 肽任务已有 P10/P16/P25 等先例，不能声称 first；P24 的 83 种植物化学物 TEER/Papp/ER 是端点邻近研究。原多酚任务更适合用可追溯数据、严格分组评估和相对描述符/指纹的实际增量支持贡献。不同端点、数据划分和指标不可直接横比。
+MolFormer 肽任务已有 P10/P16/P25 等先例，不能声称 first。P24 的 83 种植物化学物 TEER/Papp/ER 是最邻近端点证据。原多酚任务更适合用可追溯数据、严格分组评估和相对指纹/描述符的实际增量支持贡献。测试数据不能用于选阈值。不同端点、指标和划分不可直接横比。
 
-## 保存与分支
+## 保存与后续操作
 
-本轮开始 main 为 `3b9ac434db387fadf2cf99b99def654cbf193841`，PDF 归档后再次读取仍相同。后续提交须读取 gpt 当前 HEAD 作为父节点，不写死旧 SHA；使用 GitHub 连接器提交并 `update_ref(gpt, force=false)`。
+main 基线为 3b9ac434db387fadf2cf99b99def654cbf193841。提交前读取当前 gpt HEAD，不写死旧 SHA；只通过 GitHub 连接器 update_ref(gpt, force=false)。本地 work/review/ 是工作缓存，work/source_code/ 是所读作者代码缓存，work/pmc_access/ 含完整与未完整下载；只按 manifest 的已核实路径提交。
 
-本机工作缓存位于当前聊天的 `work/review/`，源文提取与渲染在 `work/`；这些只是本地工作缓存，不要把全文缓存整体上传。最终公开报告与 8 份许可允许的原 PDF 位于 GitHub 的 `research/literature/2026-09-26/`。
-
-用户此前多次担心中断，继续工作时每分钟内用简短中文报告实际进度。不要把保留的访问限制说成全部解决。
+后续优先解决需要新证据的正式版/划分问题或用户原始数据审计；不要反复把访问限制当成已完成。继续用简短中文报告实际进度。

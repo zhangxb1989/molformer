@@ -2,7 +2,7 @@
   "date": "2026-09-26",
   "repository": "zhangxb1989/molformer",
   "branch": "gpt",
-  "pdf_archive_commit": "ac3d399aadf06ce7a74e2810204ee47ee9f528c4",
+  "pdf_archive_commit": "f4bbf7471ec32a629f7b231902288b34de73fce5",
   "method": "HTTP GET immutable raw GitHub URLs; recompute SHA-256, Git blob SHA-1 and byte length; compare with independently downloaded official originals",
   "main_before": "3b9ac434db387fadf2cf99b99def654cbf193841",
   "main_observed_after_pdf_archive": "3b9ac434db387fadf2cf99b99def654cbf193841",
@@ -18,6 +18,24 @@
       "commit": "ac3d399aadf06ce7a74e2810204ee47ee9f528c4"
     },
     {
+      "id": "P02",
+      "status": "verified",
+      "path": "pdfs/P02_2023_PeptideBERT.pdf",
+      "bytes": 3328848,
+      "sha256": "fc9a414ace169aeac472023082cdac2a4de9363d39eac292b5171b6d7172439c",
+      "git_blob_sha": "a1d600b68de6ed3a4fa339c7c9cae75e561722d0",
+      "commit": "f4bbf7471ec32a629f7b231902288b34de73fce5"
+    },
+    {
+      "id": "P04",
+      "status": "verified",
+      "path": "pdfs/P04_2024_AutoPeptideML.pdf",
+      "bytes": 3822452,
+      "sha256": "6d13df2eb109a81c4fdd52cf0994d8f4d726c2aad8d9b1afeb426d3a7860ee36",
+      "git_blob_sha": "43c2a2a827293a0f3a1cf7dc28834734e61abbf2",
+      "commit": "f4bbf7471ec32a629f7b231902288b34de73fce5"
+    },
+    {
       "id": "P05",
       "status": "verified",
       "path": "pdfs/P05_2024_PepNet.pdf",
@@ -27,6 +45,15 @@
       "commit": "ac3d399aadf06ce7a74e2810204ee47ee9f528c4"
     },
     {
+      "id": "P09",
+      "status": "verified",
+      "path": "pdfs/P09_2025_PepLand.pdf",
+      "bytes": 1110354,
+      "sha256": "0982436f7cca9c4058d784fd81fea3fe611e2ac7881c5b1c5bc099e9ce4bdc4f",
+      "git_blob_sha": "766b28c4a8e361b3ad20bbbdb43adb12a3b834bf",
+      "commit": "f4bbf7471ec32a629f7b231902288b34de73fce5"
+    },
+    {
       "id": "P10",
       "status": "verified",
       "path": "pdfs/P10_2025_Peptide_generalization.pdf",
@@ -34,6 +61,15 @@
       "sha256": "c2bac22770cdde899f33fcc940fa77623ac72388d8655817b9eacdd2c5118f3f",
       "git_blob_sha": "754e73d95efa1706942dd5092f7dcb17f7d9f996",
       "commit": "ac3d399aadf06ce7a74e2810204ee47ee9f528c4"
+    },
+    {
+      "id": "P11",
+      "status": "verified",
+      "path": "pdfs/P11_2025_AOP_DRL.pdf",
+      "bytes": 7684323,
+      "sha256": "05b4b0b56a853ce92fe565a6ea2bc5071ca7eeb7c3866aba0a143826dea1896e",
+      "git_blob_sha": "7b61bc6333759cf9110fe0c751e2c772dccc4ea5",
+      "commit": "f4bbf7471ec32a629f7b231902288b34de73fce5"
     },
     {
       "id": "P12",
@@ -63,6 +99,24 @@
       "commit": "ac3d399aadf06ce7a74e2810204ee47ee9f528c4"
     },
     {
+      "id": "P15",
+      "status": "verified",
+      "path": "pdfs/P15_2026_PeptideCLM2_preprint_v5.pdf",
+      "bytes": 8449958,
+      "sha256": "37f0cf70bf36272b1b6912313e970df2851b4c34a6b05d125eddcd0d197c4397",
+      "git_blob_sha": "35abd87f9433e973e215fabf362faf64c1865647",
+      "commit": "f4bbf7471ec32a629f7b231902288b34de73fce5"
+    },
+    {
+      "id": "P16",
+      "status": "verified",
+      "path": "pdfs/P16_2026_LANTERN.pdf",
+      "bytes": 4594042,
+      "sha256": "79bc634f59d718bd7fb5aef4a2c77560f1184266b4a3bad46069f92846276d73",
+      "git_blob_sha": "2e901f4c90018df49bf486c262754ff8323d8dbe",
+      "commit": "f4bbf7471ec32a629f7b231902288b34de73fce5"
+    },
+    {
       "id": "P19",
       "status": "verified",
       "path": "pdfs/P19_2025_Antioxidant_QSAR.pdf",
@@ -72,6 +126,15 @@
       "commit": "ac3d399aadf06ce7a74e2810204ee47ee9f528c4"
     },
     {
+      "id": "P21",
+      "status": "verified",
+      "path": "pdfs/P21_2026_HELM_BERT.pdf",
+      "bytes": 6015930,
+      "sha256": "40f9f2d3fa490a5ff1f34c20d6dbf584eaf0b790930498c186e5b0c0e7ef7e57",
+      "git_blob_sha": "b98a581d4b67360ca88eeb2703aa94c533eb3393",
+      "commit": "f4bbf7471ec32a629f7b231902288b34de73fce5"
+    },
+    {
       "id": "P23",
       "status": "verified",
       "path": "pdfs/P23_2023_Systematic_molecular_benchmark.pdf",
@@ -79,6 +142,17 @@
       "sha256": "ca3671eab2830724bf58ec4d661b2584e392c8fb93b306743aae6022787e02a2",
       "git_blob_sha": "9eadf0b0091ea52339347e86d38317de34a18f22",
       "commit": "ac3d399aadf06ce7a74e2810204ee47ee9f528c4"
+    },
+    {
+      "id": "P24",
+      "status": "verified",
+      "path": "pdfs/P24_2026_Phytochemical_Caco2_QSPR.pdf",
+      "bytes": 1152353,
+      "sha256": "27a2245ad4d7bcd012c4291b8af8b2fab5fdaa7be0ab4ccdd2892bb2d435e900",
+      "git_blob_sha": "7682f8c244172cf0cd5fd89b7adfaeb681633144",
+      "commit": "f4bbf7471ec32a629f7b231902288b34de73fce5"
     }
-  ]
+  ],
+  "previous_pdf_archive_commit": "ac3d399aadf06ce7a74e2810204ee47ee9f528c4",
+  "verification_note": "Each record identifies the immutable commit actually downloaded. Earlier PDFs retain their earlier verified commit; their blobs are unchanged in the latest archive tree."
 }

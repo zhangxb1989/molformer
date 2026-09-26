@@ -3,35 +3,71 @@
     "id": "P01",
     "path": "pdfs/P01_2023_Representation_limits_comment.pdf",
     "bytes": 348717,
-    "sha256": "ba04c28d269f2bf30343685ef70ae5b114fff2c49b2670997954ac8ec96f6a4f",
     "pages": 2,
+    "sha256": "ba04c28d269f2bf30343685ef70ae5b114fff2c49b2670997954ac8ec96f6a4f",
     "git_blob_sha": "e28a113263054fc9c90527ef7454c1b7979cf74c",
     "remote_verified_commit": "ac3d399aadf06ce7a74e2810204ee47ee9f528c4"
+  },
+  {
+    "id": "P02",
+    "path": "pdfs/P02_2023_PeptideBERT.pdf",
+    "bytes": 3328848,
+    "pages": 8,
+    "sha256": "fc9a414ace169aeac472023082cdac2a4de9363d39eac292b5171b6d7172439c",
+    "git_blob_sha": "a1d600b68de6ed3a4fa339c7c9cae75e561722d0",
+    "remote_verified_commit": "f4bbf7471ec32a629f7b231902288b34de73fce5"
+  },
+  {
+    "id": "P04",
+    "path": "pdfs/P04_2024_AutoPeptideML.pdf",
+    "bytes": 3822452,
+    "pages": 12,
+    "sha256": "6d13df2eb109a81c4fdd52cf0994d8f4d726c2aad8d9b1afeb426d3a7860ee36",
+    "git_blob_sha": "43c2a2a827293a0f3a1cf7dc28834734e61abbf2",
+    "remote_verified_commit": "f4bbf7471ec32a629f7b231902288b34de73fce5"
   },
   {
     "id": "P05",
     "path": "pdfs/P05_2024_PepNet.pdf",
     "bytes": 3613872,
-    "sha256": "d7d5d342331aa196392b0529b64e1fa2577905d55be0da57ad8079fba9153302",
     "pages": 13,
+    "sha256": "d7d5d342331aa196392b0529b64e1fa2577905d55be0da57ad8079fba9153302",
     "git_blob_sha": "beed6dfc208eb14f5c35b07c1a3eea11b075876d",
     "remote_verified_commit": "ac3d399aadf06ce7a74e2810204ee47ee9f528c4"
+  },
+  {
+    "id": "P09",
+    "path": "pdfs/P09_2025_PepLand.pdf",
+    "bytes": 1110354,
+    "pages": 9,
+    "sha256": "0982436f7cca9c4058d784fd81fea3fe611e2ac7881c5b1c5bc099e9ce4bdc4f",
+    "git_blob_sha": "766b28c4a8e361b3ad20bbbdb43adb12a3b834bf",
+    "remote_verified_commit": "f4bbf7471ec32a629f7b231902288b34de73fce5"
   },
   {
     "id": "P10",
     "path": "pdfs/P10_2025_Peptide_generalization.pdf",
     "bytes": 3575776,
-    "sha256": "c2bac22770cdde899f33fcc940fa77623ac72388d8655817b9eacdd2c5118f3f",
     "pages": 13,
+    "sha256": "c2bac22770cdde899f33fcc940fa77623ac72388d8655817b9eacdd2c5118f3f",
     "git_blob_sha": "754e73d95efa1706942dd5092f7dcb17f7d9f996",
     "remote_verified_commit": "ac3d399aadf06ce7a74e2810204ee47ee9f528c4"
+  },
+  {
+    "id": "P11",
+    "path": "pdfs/P11_2025_AOP_DRL.pdf",
+    "bytes": 7684323,
+    "pages": 12,
+    "sha256": "05b4b0b56a853ce92fe565a6ea2bc5071ca7eeb7c3866aba0a143826dea1896e",
+    "git_blob_sha": "7b61bc6333759cf9110fe0c751e2c772dccc4ea5",
+    "remote_verified_commit": "f4bbf7471ec32a629f7b231902288b34de73fce5"
   },
   {
     "id": "P12",
     "path": "pdfs/P12_2025_MFP_MFL.pdf",
     "bytes": 10905048,
-    "sha256": "489a4fb41f6b57d8eddf451d84171a0e0063426f71efbb62efbcec500bb5f0ee",
     "pages": 22,
+    "sha256": "489a4fb41f6b57d8eddf451d84171a0e0063426f71efbb62efbcec500bb5f0ee",
     "git_blob_sha": "6858bc72c58b1b3067779fb07b176acde404b768",
     "remote_verified_commit": "ac3d399aadf06ce7a74e2810204ee47ee9f528c4"
   },
@@ -39,8 +75,8 @@
     "id": "P13",
     "path": "pdfs/P13_2025_BPFun.pdf",
     "bytes": 4108558,
-    "sha256": "41af5ea84f20e6e56c45335abfe590c2d7914d33e5acd613978bcc10b6747650",
     "pages": 27,
+    "sha256": "41af5ea84f20e6e56c45335abfe590c2d7914d33e5acd613978bcc10b6747650",
     "git_blob_sha": "fc48301754d6dbe48bdb56195d447f2d1aebc969",
     "remote_verified_commit": "ac3d399aadf06ce7a74e2810204ee47ee9f528c4"
   },
@@ -48,27 +84,63 @@
     "id": "P14",
     "path": "pdfs/P14_2026_PeptiVerse.pdf",
     "bytes": 1767725,
-    "sha256": "3ff4ad3a7e04a4989db84085559ad33341fcd82a8d1399efdd7b13e7ed5a3683",
     "pages": 12,
+    "sha256": "3ff4ad3a7e04a4989db84085559ad33341fcd82a8d1399efdd7b13e7ed5a3683",
     "git_blob_sha": "56a920545004da576080fe0ed1ec16218664f44c",
     "remote_verified_commit": "ac3d399aadf06ce7a74e2810204ee47ee9f528c4"
+  },
+  {
+    "id": "P15",
+    "path": "pdfs/P15_2026_PeptideCLM2_preprint_v5.pdf",
+    "bytes": 8449958,
+    "pages": 36,
+    "sha256": "37f0cf70bf36272b1b6912313e970df2851b4c34a6b05d125eddcd0d197c4397",
+    "git_blob_sha": "35abd87f9433e973e215fabf362faf64c1865647",
+    "remote_verified_commit": "f4bbf7471ec32a629f7b231902288b34de73fce5"
+  },
+  {
+    "id": "P16",
+    "path": "pdfs/P16_2026_LANTERN.pdf",
+    "bytes": 4594042,
+    "pages": 27,
+    "sha256": "79bc634f59d718bd7fb5aef4a2c77560f1184266b4a3bad46069f92846276d73",
+    "git_blob_sha": "2e901f4c90018df49bf486c262754ff8323d8dbe",
+    "remote_verified_commit": "f4bbf7471ec32a629f7b231902288b34de73fce5"
   },
   {
     "id": "P19",
     "path": "pdfs/P19_2025_Antioxidant_QSAR.pdf",
     "bytes": 1317845,
-    "sha256": "1de670b0e63c61398db2affbe9232678196abebc83ec503e5547b7466899a056",
     "pages": 13,
+    "sha256": "1de670b0e63c61398db2affbe9232678196abebc83ec503e5547b7466899a056",
     "git_blob_sha": "3ea7b381c23e75eb22c40de53e41bf0bf6339144",
     "remote_verified_commit": "ac3d399aadf06ce7a74e2810204ee47ee9f528c4"
+  },
+  {
+    "id": "P21",
+    "path": "pdfs/P21_2026_HELM_BERT.pdf",
+    "bytes": 6015930,
+    "pages": 17,
+    "sha256": "40f9f2d3fa490a5ff1f34c20d6dbf584eaf0b790930498c186e5b0c0e7ef7e57",
+    "git_blob_sha": "b98a581d4b67360ca88eeb2703aa94c533eb3393",
+    "remote_verified_commit": "f4bbf7471ec32a629f7b231902288b34de73fce5"
   },
   {
     "id": "P23",
     "path": "pdfs/P23_2023_Systematic_molecular_benchmark.pdf",
     "bytes": 7166556,
-    "sha256": "ca3671eab2830724bf58ec4d661b2584e392c8fb93b306743aae6022787e02a2",
     "pages": 20,
+    "sha256": "ca3671eab2830724bf58ec4d661b2584e392c8fb93b306743aae6022787e02a2",
     "git_blob_sha": "9eadf0b0091ea52339347e86d38317de34a18f22",
     "remote_verified_commit": "ac3d399aadf06ce7a74e2810204ee47ee9f528c4"
+  },
+  {
+    "id": "P24",
+    "path": "pdfs/P24_2026_Phytochemical_Caco2_QSPR.pdf",
+    "bytes": 1152353,
+    "pages": 11,
+    "sha256": "27a2245ad4d7bcd012c4291b8af8b2fab5fdaa7be0ab4ccdd2892bb2d435e900",
+    "git_blob_sha": "7682f8c244172cf0cd5fd89b7adfaeb681633144",
+    "remote_verified_commit": "f4bbf7471ec32a629f7b231902288b34de73fce5"
   }
 ]

@@ -80,7 +80,7 @@
     "doi": "10.1021/acs.jpclett.3c02398",
     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10683064/",
     "accessed": "2026-09-26",
-    "status": "link_only",
+    "status": "downloaded_verified",
     "license": [
       "https://creativecommons.org/licenses/by/4.0/"
     ],
@@ -90,10 +90,38 @@
         "url": "https://pubs.acs.org/doi/pdf/10.1021/acs.jpclett.3c02398",
         "status": "error",
         "error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "date": "2026-09-26",
+        "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC10683064.1/PMC10683064.1.pdf",
+        "status": "saved_verified",
+        "bytes": 3328848,
+        "sha256": "fc9a414ace169aeac472023082cdac2a4de9363d39eac292b5171b6d7172439c",
+        "metadata_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC10683064.1/PMC10683064.1.json"
       }
     ],
-    "download_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10683064/pdf/jz3c02398.pdf",
-    "reason": "Publisher/PMC download blocked or non-PDF response; link retained"
+    "download_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC10683064.1/PMC10683064.1.pdf",
+    "reason": "Original PDF obtained through NCBI official cloud; redistribution license verified in official metadata and PDF.",
+    "bytes": 3328848,
+    "pages": 8,
+    "sha256": "fc9a414ace169aeac472023082cdac2a4de9363d39eac292b5171b6d7172439c",
+    "git_blob_sha": "a1d600b68de6ed3a4fa339c7c9cae75e561722d0",
+    "path": "pdfs/P02_2023_PeptideBERT.pdf",
+    "license_label": "CC BY",
+    "license_evidence": "https://pmc-oa-opendata.s3.amazonaws.com/PMC10683064.1/PMC10683064.1.json",
+    "archive_download_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC10683064.1/PMC10683064.1.pdf",
+    "source_md5_verified": true,
+    "source_md5": "a3242d067f9642067dd16fb49d857917",
+    "document_doi": "10.1021/acs.jpclett.3c02398",
+    "document_version": "published version deposited in PMC",
+    "pmcid": "PMC10683064",
+    "pmc_version": 1,
+    "modified": false,
+    "github_archive_status": "archived_verified",
+    "remote_sha256_verified": true,
+    "github_blob_sha": "a1d600b68de6ed3a4fa339c7c9cae75e561722d0",
+    "remote_verified_commit": "f4bbf7471ec32a629f7b231902288b34de73fce5",
+    "verified_date": "2026-09-26"
   },
   {
     "id": "P03",
@@ -136,7 +164,7 @@
     "doi": "10.1093/bioinformatics/btae555",
     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11438549/",
     "accessed": "2026-09-26",
-    "status": "link_only",
+    "status": "downloaded_verified",
     "license": [
       "https://creativecommons.org/licenses/by/4.0/"
     ],
@@ -146,10 +174,38 @@
         "url": "https://academic.oup.com/bioinformatics/article-pdf/40/9/btae555/59423926/btae555.pdf",
         "status": "error",
         "error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "date": "2026-09-26",
+        "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11438549.1/PMC11438549.1.pdf",
+        "status": "saved_verified",
+        "bytes": 3822452,
+        "sha256": "6d13df2eb109a81c4fdd52cf0994d8f4d726c2aad8d9b1afeb426d3a7860ee36",
+        "metadata_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11438549.1/PMC11438549.1.json"
       }
     ],
-    "download_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11438549/pdf/btae555.pdf",
-    "reason": "Publisher/PMC download blocked or non-PDF response; link retained"
+    "download_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11438549.1/PMC11438549.1.pdf",
+    "reason": "Original PDF obtained through NCBI official cloud; redistribution license verified in official metadata and PDF.",
+    "bytes": 3822452,
+    "pages": 12,
+    "sha256": "6d13df2eb109a81c4fdd52cf0994d8f4d726c2aad8d9b1afeb426d3a7860ee36",
+    "git_blob_sha": "43c2a2a827293a0f3a1cf7dc28834734e61abbf2",
+    "path": "pdfs/P04_2024_AutoPeptideML.pdf",
+    "license_label": "CC BY",
+    "license_evidence": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11438549.1/PMC11438549.1.json",
+    "archive_download_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11438549.1/PMC11438549.1.pdf",
+    "source_md5_verified": true,
+    "source_md5": "9b086638efe9946fb14e4800c629dce8",
+    "document_doi": "10.1093/bioinformatics/btae555",
+    "document_version": "published version deposited in PMC",
+    "pmcid": "PMC11438549",
+    "pmc_version": 1,
+    "modified": false,
+    "github_archive_status": "archived_verified",
+    "remote_sha256_verified": true,
+    "github_blob_sha": "43c2a2a827293a0f3a1cf7dc28834734e61abbf2",
+    "remote_verified_commit": "f4bbf7471ec32a629f7b231902288b34de73fce5",
+    "verified_date": "2026-09-26"
   },
   {
     "id": "P05",
@@ -241,7 +297,7 @@
     "license": [],
     "attempts": [],
     "download_url": "",
-    "reason": "No verified redistributable PDF in this run; link retained"
+    "reason": "PMC official cloud metadata lists a TDM author manuscript and no PDF; this is not a verified redistribution permission. Existing source link retained."
   },
   {
     "id": "P09",
@@ -263,7 +319,7 @@
     "doi": "10.1093/bib/bbaf367",
     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12315545/",
     "accessed": "2026-09-26",
-    "status": "link_only",
+    "status": "downloaded_verified",
     "license": [
       "https://creativecommons.org/licenses/by/4.0/"
     ],
@@ -272,10 +328,38 @@
         "id": "P09",
         "url": "https://repository.kaust.edu.sa/server/api/core/bitstreams/1d141159-a56e-430f-b8aa-775f9565d298/content",
         "status": "not_pdf"
+      },
+      {
+        "date": "2026-09-26",
+        "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12315545.1/PMC12315545.1.pdf",
+        "status": "saved_verified",
+        "bytes": 1110354,
+        "sha256": "0982436f7cca9c4058d784fd81fea3fe611e2ac7881c5b1c5bc099e9ce4bdc4f",
+        "metadata_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12315545.1/PMC12315545.1.json"
       }
     ],
-    "download_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12315545/pdf/bbaf367.pdf",
-    "reason": "Publisher/PMC download blocked or non-PDF response; link retained"
+    "download_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12315545.1/PMC12315545.1.pdf",
+    "reason": "Original PDF obtained through NCBI official cloud; redistribution license verified in official metadata and PDF.",
+    "bytes": 1110354,
+    "pages": 9,
+    "sha256": "0982436f7cca9c4058d784fd81fea3fe611e2ac7881c5b1c5bc099e9ce4bdc4f",
+    "git_blob_sha": "766b28c4a8e361b3ad20bbbdb43adb12a3b834bf",
+    "path": "pdfs/P09_2025_PepLand.pdf",
+    "license_label": "CC BY",
+    "license_evidence": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12315545.1/PMC12315545.1.json",
+    "archive_download_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12315545.1/PMC12315545.1.pdf",
+    "source_md5_verified": true,
+    "source_md5": "2a60f46964dbec63bdd4919086999815",
+    "document_doi": "10.1093/bib/bbaf367",
+    "document_version": "published version deposited in PMC",
+    "pmcid": "PMC12315545",
+    "pmc_version": 1,
+    "modified": false,
+    "github_archive_status": "archived_verified",
+    "remote_sha256_verified": true,
+    "github_blob_sha": "766b28c4a8e361b3ad20bbbdb43adb12a3b834bf",
+    "remote_verified_commit": "f4bbf7471ec32a629f7b231902288b34de73fce5",
+    "verified_date": "2026-09-26"
   },
   {
     "id": "P10",
@@ -340,11 +424,42 @@
     "doi": "10.1016/j.csbj.2025.08.014",
     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12800373/",
     "accessed": "2026-09-26",
-    "status": "link_only",
-    "license": [],
-    "attempts": [],
-    "download_url": "",
-    "reason": "No verified redistributable PDF in this run; link retained"
+    "status": "downloaded_verified",
+    "license": [
+      "https://creativecommons.org/licenses/by-nc-nd/4.0/"
+    ],
+    "attempts": [
+      {
+        "date": "2026-09-26",
+        "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12800373.1/PMC12800373.1.pdf",
+        "status": "saved_verified",
+        "bytes": 7684323,
+        "sha256": "05b4b0b56a853ce92fe565a6ea2bc5071ca7eeb7c3866aba0a143826dea1896e",
+        "metadata_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12800373.1/PMC12800373.1.json"
+      }
+    ],
+    "download_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12800373.1/PMC12800373.1.pdf",
+    "reason": "Original PDF obtained through NCBI official cloud; redistribution license verified in official metadata and PDF.",
+    "license_evidence": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12800373.1/PMC12800373.1.json",
+    "license_label": "CC BY-NC-ND",
+    "bytes": 7684323,
+    "pages": 12,
+    "sha256": "05b4b0b56a853ce92fe565a6ea2bc5071ca7eeb7c3866aba0a143826dea1896e",
+    "git_blob_sha": "7b61bc6333759cf9110fe0c751e2c772dccc4ea5",
+    "path": "pdfs/P11_2025_AOP_DRL.pdf",
+    "archive_download_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12800373.1/PMC12800373.1.pdf",
+    "source_md5_verified": true,
+    "source_md5": "f24d305072274b3668e234419548face",
+    "document_doi": "10.1016/j.csbj.2025.08.014",
+    "document_version": "published version deposited in PMC",
+    "pmcid": "PMC12800373",
+    "pmc_version": 1,
+    "modified": false,
+    "github_archive_status": "archived_verified",
+    "remote_sha256_verified": true,
+    "github_blob_sha": "7b61bc6333759cf9110fe0c751e2c772dccc4ea5",
+    "remote_verified_commit": "f4bbf7471ec32a629f7b231902288b34de73fce5",
+    "verified_date": "2026-09-26"
   },
   {
     "id": "P12",
@@ -492,7 +607,7 @@
     "doi": "10.1021/acs.jcim.6c00652",
     "source_url": "https://pubs.acs.org/doi/10.1021/acs.jcim.6c00652",
     "accessed": "2026-09-26",
-    "status": "link_only",
+    "status": "downloaded_verified",
     "license": [
       "https://creativecommons.org/licenses/by/4.0/"
     ],
@@ -502,12 +617,40 @@
         "url": "https://pubs.acs.org/doi/10.1021/acs.jcim.6c00652",
         "status": "http_403",
         "purpose": "final-method comparison"
+      },
+      {
+        "date": "2026-09-26",
+        "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12803269.5/PMC12803269.5.pdf",
+        "status": "saved_verified",
+        "bytes": 8449958,
+        "sha256": "37f0cf70bf36272b1b6912313e970df2851b4c34a6b05d125eddcd0d197c4397",
+        "metadata_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12803269.5/PMC12803269.5.json"
       }
     ],
-    "download_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12803269/pdf/nihpp-2026.01.06.697994v5.pdf",
-    "reason": "Publisher/PMC download blocked or non-PDF response; link retained",
+    "download_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12803269.5/PMC12803269.5.pdf",
+    "reason": "Original PDF obtained through NCBI official cloud; redistribution license verified in official metadata and PDF.",
     "license_scope": "bioRxiv preprint v5 only; journal-version redistribution permission not verified",
-    "download_version": "bioRxiv v5, 2026-06-23; not the final journal PDF"
+    "download_version": "bioRxiv v5, 2026-06-23; not the final journal PDF",
+    "bytes": 8449958,
+    "pages": 36,
+    "sha256": "37f0cf70bf36272b1b6912313e970df2851b4c34a6b05d125eddcd0d197c4397",
+    "git_blob_sha": "35abd87f9433e973e215fabf362faf64c1865647",
+    "path": "pdfs/P15_2026_PeptideCLM2_preprint_v5.pdf",
+    "license_label": "CC BY",
+    "license_evidence": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12803269.5/PMC12803269.5.json",
+    "archive_download_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12803269.5/PMC12803269.5.pdf",
+    "source_md5_verified": true,
+    "source_md5": "9ca79665a9e93e688d8e8344142a9b3d",
+    "document_doi": "10.64898/2026.01.06.697994",
+    "document_version": "bioRxiv preprint v5, 2026-06-23",
+    "pmcid": "PMC12803269",
+    "pmc_version": 5,
+    "modified": false,
+    "github_archive_status": "archived_verified",
+    "remote_sha256_verified": true,
+    "github_blob_sha": "35abd87f9433e973e215fabf362faf64c1865647",
+    "remote_verified_commit": "f4bbf7471ec32a629f7b231902288b34de73fce5",
+    "verified_date": "2026-09-26"
   },
   {
     "id": "P16",
@@ -523,7 +666,7 @@
     "doi": "10.7717/peerj.20980",
     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13045841/",
     "accessed": "2026-09-26",
-    "status": "link_only",
+    "status": "downloaded_verified",
     "license": [
       "https://creativecommons.org/licenses/by/4.0/"
     ],
@@ -533,10 +676,38 @@
         "url": "https://peerj.com/articles/20980.pdf",
         "status": "error",
         "error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "date": "2026-09-26",
+        "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13045841.1/PMC13045841.1.pdf",
+        "status": "saved_verified",
+        "bytes": 4594042,
+        "sha256": "79bc634f59d718bd7fb5aef4a2c77560f1184266b4a3bad46069f92846276d73",
+        "metadata_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13045841.1/PMC13045841.1.json"
       }
     ],
-    "download_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13045841/pdf/peerj-14-20980.pdf",
-    "reason": "Publisher/PMC download blocked or non-PDF response; link retained"
+    "download_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13045841.1/PMC13045841.1.pdf",
+    "reason": "Original PDF obtained through NCBI official cloud; redistribution license verified in official metadata and PDF.",
+    "bytes": 4594042,
+    "pages": 27,
+    "sha256": "79bc634f59d718bd7fb5aef4a2c77560f1184266b4a3bad46069f92846276d73",
+    "git_blob_sha": "2e901f4c90018df49bf486c262754ff8323d8dbe",
+    "path": "pdfs/P16_2026_LANTERN.pdf",
+    "license_label": "CC BY",
+    "license_evidence": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13045841.1/PMC13045841.1.json",
+    "archive_download_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13045841.1/PMC13045841.1.pdf",
+    "source_md5_verified": true,
+    "source_md5": "9cbd27e5d72b0cd21ac4956f584f9884",
+    "document_doi": "10.7717/peerj.20980",
+    "document_version": "published version deposited in PMC",
+    "pmcid": "PMC13045841",
+    "pmc_version": 1,
+    "modified": false,
+    "github_archive_status": "archived_verified",
+    "remote_sha256_verified": true,
+    "github_blob_sha": "2e901f4c90018df49bf486c262754ff8323d8dbe",
+    "remote_verified_commit": "f4bbf7471ec32a629f7b231902288b34de73fce5",
+    "verified_date": "2026-09-26"
   },
   {
     "id": "P17",
@@ -675,18 +846,48 @@
     "doi": "10.1021/acs.jcim.6c00451",
     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13417886/",
     "accessed": "2026-09-26",
-    "status": "link_only",
-    "license": [],
+    "status": "downloaded_verified",
+    "license": [
+      "https://creativecommons.org/licenses/by-nc-nd/4.0/"
+    ],
     "attempts": [
       {
         "id": "P21_final",
         "url": "https://pubs.acs.org/doi/pdf/10.1021/acs.jcim.6c00451",
         "status": "error",
         "error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "date": "2026-09-26",
+        "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13417886.1/PMC13417886.1.pdf",
+        "status": "saved_verified",
+        "bytes": 6015930,
+        "sha256": "40f9f2d3fa490a5ff1f34c20d6dbf584eaf0b790930498c186e5b0c0e7ef7e57",
+        "metadata_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13417886.1/PMC13417886.1.json"
       }
     ],
-    "download_url": "",
-    "reason": "No verified redistributable PDF in this run; link retained"
+    "download_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13417886.1/PMC13417886.1.pdf",
+    "reason": "Original PDF obtained through NCBI official cloud; redistribution license verified in official metadata and PDF.",
+    "bytes": 6015930,
+    "pages": 17,
+    "sha256": "40f9f2d3fa490a5ff1f34c20d6dbf584eaf0b790930498c186e5b0c0e7ef7e57",
+    "git_blob_sha": "b98a581d4b67360ca88eeb2703aa94c533eb3393",
+    "path": "pdfs/P21_2026_HELM_BERT.pdf",
+    "license_label": "CC BY-NC-ND",
+    "license_evidence": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13417886.1/PMC13417886.1.json",
+    "archive_download_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13417886.1/PMC13417886.1.pdf",
+    "source_md5_verified": true,
+    "source_md5": "3008f47f58c8f9cd1fa1b3bdc8d93e83",
+    "document_doi": "10.1021/acs.jcim.6c00451",
+    "document_version": "published version deposited in PMC",
+    "pmcid": "PMC13417886",
+    "pmc_version": 1,
+    "modified": false,
+    "github_archive_status": "archived_verified",
+    "remote_sha256_verified": true,
+    "github_blob_sha": "b98a581d4b67360ca88eeb2703aa94c533eb3393",
+    "remote_verified_commit": "f4bbf7471ec32a629f7b231902288b34de73fce5",
+    "verified_date": "2026-09-26"
   },
   {
     "id": "P22",
@@ -766,18 +967,48 @@
     "doi": "10.1002/jsfa.70701",
     "source_url": "https://scijournals.onlinelibrary.wiley.com/doi/10.1002/jsfa.70701",
     "accessed": "2026-09-26",
-    "status": "link_only",
-    "license": [],
+    "status": "downloaded_verified",
+    "license": [
+      "https://creativecommons.org/licenses/by-nc-nd/4.0/"
+    ],
     "attempts": [
       {
         "id": "P24",
         "url": "https://scijournals.onlinelibrary.wiley.com/doi/pdfdirect/10.1002/jsfa.70701",
         "status": "error",
         "error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "date": "2026-09-26",
+        "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13341053.1/PMC13341053.1.pdf",
+        "status": "saved_verified",
+        "bytes": 1152353,
+        "sha256": "27a2245ad4d7bcd012c4291b8af8b2fab5fdaa7be0ab4ccdd2892bb2d435e900",
+        "metadata_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13341053.1/PMC13341053.1.json"
       }
     ],
-    "download_url": "",
-    "reason": "No verified redistributable PDF in this run; link retained"
+    "download_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13341053.1/PMC13341053.1.pdf",
+    "reason": "Original PDF obtained through NCBI official cloud; redistribution license verified in official metadata and PDF.",
+    "bytes": 1152353,
+    "pages": 11,
+    "sha256": "27a2245ad4d7bcd012c4291b8af8b2fab5fdaa7be0ab4ccdd2892bb2d435e900",
+    "git_blob_sha": "7682f8c244172cf0cd5fd89b7adfaeb681633144",
+    "path": "pdfs/P24_2026_Phytochemical_Caco2_QSPR.pdf",
+    "license_label": "CC BY-NC-ND",
+    "license_evidence": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13341053.1/PMC13341053.1.json",
+    "archive_download_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13341053.1/PMC13341053.1.pdf",
+    "source_md5_verified": true,
+    "source_md5": "6d651b27aa9039944eef2a3d2a88a840",
+    "document_doi": "10.1002/jsfa.70701",
+    "document_version": "published version deposited in PMC",
+    "pmcid": "PMC13341053",
+    "pmc_version": 1,
+    "modified": false,
+    "github_archive_status": "archived_verified",
+    "remote_sha256_verified": true,
+    "github_blob_sha": "7682f8c244172cf0cd5fd89b7adfaeb681633144",
+    "remote_verified_commit": "f4bbf7471ec32a629f7b231902288b34de73fce5",
+    "verified_date": "2026-09-26"
   },
   {
     "id": "P25",
@@ -795,7 +1026,7 @@
     "license": [],
     "attempts": [],
     "download_url": "",
-    "reason": "No verified redistributable PDF in this run; link retained"
+    "reason": "PMC official cloud metadata lists a TDM author manuscript and no PDF; this is not a verified redistribution permission. Existing source link retained."
   },
   {
     "id": "P26",

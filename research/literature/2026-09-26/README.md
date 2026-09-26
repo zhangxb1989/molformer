@@ -24,6 +24,6 @@
 
 ## 本轮续接状态
 
-28 条记录已完成结构、版本与 NR 一致性检查，并对关键数值和公式进行来源抽查。7 份待上传 PDF 已补齐，加上已有 P01 共 8 份；均已从 GitHub 读回核验 SHA-256。其余 20 条仍保留来源链接与限制，未宣称全部原文已归档。
+沿用 28 条记录。累计归档 **16 份原 PDF**，每份均已从 GitHub 读回核验 SHA-256；其余 12 条保留入口与具体原因。新增原件来自 NCBI 官方公开云服务，归档版本、许可和来源见 [PDF 清单](pdf_manifest.json) 与 [访问核查](access_audit.json)。P15 文件明确是 2026-06-23 预印本 v5，不能当作正式排版论文。
 
-详见 [质量检查与版本限制](quality_check.md)、[远端归档校验](archive_verification.json) 和 [续接记录](CONTINUE_HERE.md)。P15 正式全文方法对照仍受访问限制；P19 本次官方 PDF 与旧记录字节不同，两个哈希均已保留。
+[作者代码核查](code_audit.md) 已补齐 P12/P15 的部分 loss、阈值及推理配置：P12 公开路径存在测试标签参与阈值选择；P15 THPep 的划分生成和正式版方法对应仍未验证。详见 [质量检查](quality_check.md)、[归档校验](archive_verification.json) 和 [续接记录](CONTINUE_HERE.md)。没有启动训练或产生新的模型成绩。
